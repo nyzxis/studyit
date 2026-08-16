@@ -1,0 +1,9 @@
+{
+  "name": "learning-port",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Learning Port - focused study hub",
+  "scripts": {
+    "dev": "python -m http.server 8080"
+  }
+}

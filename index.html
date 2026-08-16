@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Port — Study Hub</title>
+<meta name="description" content="Learning Port: a calm, focused study hub for subjects, topics and self-tests.">
+<meta name="theme-color" content="#F7F6F3">
+<meta property="og:title" content="Learning Port — Study Hub">
+<meta property="og:description" content="Read. Test. Lock it in. A calm, focused study dock with notes, self-tests and a Pomodoro timer.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='10' fill='%231B1B1A'/%3E%3Cpath d='M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z' fill='%23F7F6F3'/%3E%3Ccircle cx='29' cy='12' r='2.4' fill='%234F46E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/enhance.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand">
+      <span class="mark js-logo"></span>
+      <span>LEARNING PORT<small>focus study hub</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#subjects">Subjects</a>
+      <a href="#progress">Progress</a>
+      <a href="#badges">Badges</a>
+    </nav>
+    <button class="nav-kbd" id="palBtn" type="button" title="Quick jump (Ctrl+K)">Ctrl+K</button>
+    <div class="progress-chip" id="headerProgress"><span class="led"></span> 0/0 topics connected</div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ BENTO: everything that matters, one screen ============ -->
+  <section class="hero" style="padding-bottom:24px;">
+    <div class="wrap">
+      <div class="home-grid">
+
+        <div class="bento-card b-hero spot rv">
+          <div class="hero-greet" id="heroGreet">Welcome back</div>
+          <div class="hero-eyebrow">Interactive study platform</div>
+          <h1 class="hero-title">Plug in a subject.<br>Read. Test. <em>Lock it in.</em></h1>
+          <p class="hero-sub">
+            Your coursework, organized like a docking station — distraction-free notes,
+            instant self-tests, and a Pomodoro timer to keep you in flow.
+          </p>
+          <div class="hero-actions">
+            <a href="#subjects" class="btn btn-primary">Open the dock</a>
+            <button class="btn btn-ghost" id="heroPalBtn" type="button">Quick jump · Ctrl+K</button>
+          </div>
+        </div>
+
+        <div class="bento-card b-stat spot rv">
+          <div class="bento-label">Subjects docked</div>
+          <div class="bento-big count-up" id="heroSubjectCount">3</div>
+          <div class="bento-sub">Ready to study</div>
+        </div>
+        <div class="bento-card b-stat spot rv">
+          <div class="bento-label">Topics loaded</div>
+          <div class="bento-big count-up" id="heroTopicCount">15</div>
+          <div class="bento-sub">Notes + key points</div>
+        </div>
+        <div class="bento-card b-stat spot rv">
+          <div class="bento-label">Self-tests ready</div>
+          <div class="bento-big count-up" id="heroQuizCount">15</div>
+          <div class="bento-sub">Instant feedback</div>
+        </div>
+        <div class="bento-card b-stat spot rv">
+          <div class="bento-label">Ports open</div>
+          <div class="bento-big count-up" id="heroPortsLeft">15</div>
+          <div class="bento-sub">Left to connect</div>
+        </div>
+
+        <div class="bento-card b-ring spot rv" id="progress">
+          <div class="bento-label">Overall completion</div>
+          <div class="overall-bar"><i id="dockOverallBar"></i></div>
+          <div class="overall-text" id="dockOverallText"></div>
+          <div id="dockStreak" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);"></div>
+          <div id="weekGoal" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);"></div>
+        </div>
+
+        <div class="bento-card b-pomo spot rv">
+          <div class="bento-label">Focus timer</div>
+          <div class="pomo-panel" id="pomoPanel"></div>
+        </div>
+
+        <div class="bento-card b-next spot rv">
+          <div class="next-strip" id="dockNext"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUBJECTS ============ -->
+  <section id="subjects">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Select a subject</div>
+          <h2 class="section-title">Your subjects</h2>
+          <p class="section-desc">Each topic opens on its own wide page with notes, key points and a self-test.</p>
+        </div>
+      </div>
+      <div class="subjects-grid" id="subjectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROGRESS MAP ============ -->
+  <section id="progressMap">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Live readout</div>
+          <h2 class="section-title">Your progress</h2>
+          <p class="section-desc">Per-subject rings and your study activity heatmap.</p>
+        </div>
+      </div>
+      <div class="dock-map" style="grid-template-columns:1fr;">
+        <div class="dock-panel">
+          <h3>Per-subject rings</h3>
+          <div class="dock-rings" id="dockRings"></div>
+        </div>
+      </div>
+      <div class="heatmap-wrap" id="dockHeatmap"></div>
+    </div>
+  </section>
+
+  <!-- ============ BADGES ============ -->
+  <section id="badges">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Trophy case</div>
+          <h2 class="section-title">Badges earned</h2>
+          <p class="section-desc">Milestones unlocked as you read, test and connect.</p>
+        </div>
+      </div>
+      <div class="trophy-tray" id="badgeTray"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>LEARNING PORT · built for Dani's coursework</span>
+    <span>© <span id="year"></span> · progress saved locally in your browser</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+<script src="js/vendor/anime.min.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/pomodoro.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/spotlight.js"></script>
+
+
+
+<script src="js/smart.js"></script>
+
+</body>
+</html>

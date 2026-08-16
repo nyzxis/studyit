@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-test — Learning Port</title>
+<meta name="theme-color" content="#F7F6F3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='10' fill='%231B1B1A'/%3E%3Cpath d='M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z' fill='%23F7F6F3'/%3E%3Ccircle cx='29' cy='12' r='2.4' fill='%234F46E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/enhance.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand">
+      <span class="mark js-logo"></span>
+      <span>LEARNING PORT<small>focus study hub</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#subjects">Subjects</a>
+      <a href="index.html#dockMap">Progress</a>
+      <a href="index.html#badges">Badges</a>
+    </nav>
+    <div class="progress-chip" id="headerProgress"><span class="led"></span> 0/0 topics connected</div>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:40px;">
+    <div class="wrap">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>/</span>
+        <a id="crumbSubject" href="subject.html">Subject</a> <span>/</span>
+        <a id="crumbTopic" href="topic.html">Topic</a> <span>/</span>
+        <span>Self-test</span>
+      </div>
+
+      <div class="quiz-hero">
+        <span class="icon-box" id="quizIcon" style="margin:0 auto 18px;"></span>
+        <div class="content-eyebrow" id="quizEyebrow">SUBJECT · TOPIC 00</div>
+        <h1 class="content-title" id="quizTitle">Self-test</h1>
+        <p class="content-summary" id="quizSummary">Answer each question — you'll see the right answer and a short explanation right away.</p>
+      </div>
+
+      <div id="quizHolder" style="max-width:640px;margin:0 auto;"></div>
+
+      <p class="quiz-hint">Tip: press <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer, and <kbd>Enter</kbd> to move on.</p>
+
+      <div style="text-align:center;margin-top:26px;">
+        <a href="#" id="backToNotes" class="btn btn-ghost">Back to notes</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>LEARNING PORT · built for Dani's coursework</span>
+    <span>© <span id="year"></span> · progress saved locally in your browser</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+
+<script src="js/common.js"></script>
+
+<script src="js/quiz.js"></script>
+<script src="js/vendor/anime.min.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/pomodoro.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/spotlight.js"></script>
+
+
+
+<script src="js/smart.js"></script>
+
+</body>
+</html>

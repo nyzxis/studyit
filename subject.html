@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject — Learning Port</title>
+<meta name="theme-color" content="#F7F6F3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='10' fill='%231B1B1A'/%3E%3Cpath d='M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z' fill='%23F7F6F3'/%3E%3Ccircle cx='29' cy='12' r='2.4' fill='%234F46E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/enhance.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand">
+      <span class="mark js-logo"></span>
+      <span>LEARNING PORT<small>focus study hub</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#subjects">Subjects</a>
+      <a href="index.html#dockMap">Progress</a>
+      <a href="index.html#badges">Badges</a>
+    </nav>
+    <div class="progress-chip" id="headerProgress"><span class="led"></span> 0/0 topics connected</div>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:40px;">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span id="crumbSubject">Subject</span></div>
+
+      <div class="topic-hero">
+        <span class="icon-box" id="subjectIcon"></span>
+        <div class="topic-hero-text">
+          <div class="content-eyebrow" id="subjectCode">CODE</div>
+          <h1 class="content-title" id="subjectName">Subject</h1>
+          <p class="content-summary" id="subjectTagline">Tagline</p>
+        </div>
+      </div>
+
+      <div class="topic-meta-row">
+        <div class="subject-ring-wrap">
+          <svg class="ring subject-ring" width="54" height="54" viewBox="0 0 54 54" role="img" aria-label="subject completion">
+            <circle class="ring-track" cx="27" cy="27" r="21"/>
+            <circle class="ring-fill" id="subjectRing" cx="27" cy="27" r="21" data-circ="131.9" data-pct="0" style="stroke:var(--done);stroke-dasharray:131.94689145077132;stroke-dashoffset:131.94689145077132;"/>
+            <text x="50%" y="50%" class="ring-num" id="subjectRingNum" dominant-baseline="central" text-anchor="middle">0%</text>
+          </svg>
+        </div>
+        <div class="progress-chip" id="subjectProgressChip">0/0 ports connected</div>
+        <div class="subject-bar" style="width:min(260px, 100%);"><i id="subjectProgressBar" style="width:0%;"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Topic dock</div>
+          <h2 class="section-title">Choose a topic</h2>
+          <p class="section-desc">Each topic opens on its own wide page — full notes, a table of contents, and a self-test at the end.</p>
+        </div>
+      </div>
+      <div class="topic-card-grid" id="topicGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>LEARNING PORT · built for Dani's coursework</span>
+    <span>© <span id="year"></span> · progress saved locally in your browser</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+
+<script src="js/common.js"></script>
+<script src="js/subject.js"></script>
+<script src="js/vendor/anime.min.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/pomodoro.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/spotlight.js"></script>
+
+
+
+<script src="js/smart.js"></script>
+
+</body>
+</html>
