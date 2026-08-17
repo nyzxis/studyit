@@ -89,6 +89,22 @@
   --sh-pop: 0 8px 16px rgba(0,0,0,.3), 0 32px 72px rgba(0,0,0,.42);
 }
 
+/* ---------- skip link ---------- */
+.skip-link{
+  position:absolute; left:-9999px; top:0;
+  z-index:90;
+  background:var(--ink); color:var(--bg);
+  padding:11px 18px; border-radius:999px;
+  font-family:var(--display); font-size:13px; font-weight:600;
+  text-decoration:none;
+  transition:left 120ms var(--spring-soft);
+}
+.skip-link:focus{
+  left:14px;
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
 /* ---------- focus-visible (accessibility) ---------- */
 :focus-visible{
   outline: 2px solid var(--accent);
@@ -102,7 +118,7 @@ a:focus:not(:focus-visible){
 
 /* ---------- reset / base ---------- */
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; scroll-padding-top:72px; -webkit-text-size-adjust:100%; }
 body{
   margin:0;
   background:var(--bg);
