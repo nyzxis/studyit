@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Learning Port — Study Hub</title>
+<title>Learning Port Study Hub</title>
 <meta name="description" content="Learning Port: a calm, focused study hub for subjects, topics and self-tests.">
 <meta name="theme-color" content="#F7F6F3">
-<meta property="og:title" content="Learning Port — Study Hub">
+<meta property="og:title" content="Learning Port Study Hub">
 <meta property="og:description" content="Read. Test. Lock it in. A calm, focused study dock with notes, self-tests and a Pomodoro timer.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='10' fill='%231B1B1A'/%3E%3Cpath d='M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z' fill='%23F7F6F3'/%3E%3Ccircle cx='29' cy='12' r='2.4' fill='%234F46E5'/%3E%3C/svg%3E">
@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/boot.js"></script>
 <link rel="stylesheet" href="css/enhance.css">
+<link rel="stylesheet" href="css/motion.css">
+<script src="js/vendor/anime.umd.min.js"></script>
 </head>
 <body>
 
@@ -36,61 +38,67 @@
 
 <main id="top">
 
-  <!-- ============ BENTO: everything that matters, one screen ============ -->
-  <section class="hero" style="padding-bottom:24px;">
+  <!-- ============ HERO: editorial split, quiet confidence ============ -->
+  <section class="hero">
     <div class="wrap">
-      <div class="home-grid">
+      <div class="hero-grid">
 
-        <div class="bento-card b-hero spot rv">
+        <div class="hero-main">
           <div class="hero-greet" id="heroGreet">Welcome back</div>
-          <div class="hero-eyebrow">Interactive study platform</div>
-          <h1 class="hero-title">Plug in a subject.<br>Read. Test. <em>Lock it in.</em></h1>
-          <p class="hero-sub">
-            Your coursework, organized like a docking station — distraction-free notes,
-            instant self-tests, and a Pomodoro timer to keep you in flow.
+          <div class="hero-eyebrow rv">Interactive study platform</div>
+          <h1 class="hero-title rv">Plug in a subject.<br>Read. Test. <em>Lock it in.</em></h1>
+          <p class="hero-sub rv">
+                      Your coursework, organized like a docking station, distraction-free notes,
+                      instant self-tests, and a Pomodoro timer to keep you in flow.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions rv">
             <a href="#subjects" class="btn btn-primary">Open the dock</a>
             <button class="btn btn-ghost" id="heroPalBtn" type="button">Quick jump · Ctrl+K</button>
           </div>
         </div>
 
-        <div class="bento-card b-stat spot rv">
-          <div class="bento-label">Subjects docked</div>
-          <div class="bento-big count-up" id="heroSubjectCount">3</div>
-          <div class="bento-sub">Ready to study</div>
-        </div>
-        <div class="bento-card b-stat spot rv">
-          <div class="bento-label">Topics loaded</div>
-          <div class="bento-big count-up" id="heroTopicCount">15</div>
-          <div class="bento-sub">Notes + key points</div>
-        </div>
-        <div class="bento-card b-stat spot rv">
-          <div class="bento-label">Self-tests ready</div>
-          <div class="bento-big count-up" id="heroQuizCount">15</div>
-          <div class="bento-sub">Instant feedback</div>
-        </div>
-        <div class="bento-card b-stat spot rv">
-          <div class="bento-label">Ports open</div>
-          <div class="bento-big count-up" id="heroPortsLeft">15</div>
-          <div class="bento-sub">Left to connect</div>
-        </div>
+        <div class="hero-side">
+          <div class="readout rv">
+            <div class="readout-head">
+              <div class="readout-dots"><span></span><span></span><span></span><span></span></div>
+              <span class="readout-label">Study readout</span>
+            </div>
+            <div class="readout-grid">
+              <div class="readout-cell">
+                <div class="readout-num count-up rv" id="heroSubjectCount">3</div>
+                <div class="readout-label">Subjects docked</div>
+              </div>
+              <div class="readout-cell">
+                <div class="readout-num count-up rv" id="heroTopicCount">15</div>
+                <div class="readout-label">Topics loaded</div>
+              </div>
+              <div class="readout-cell">
+                <div class="readout-num count-up rv" id="heroQuizCount">15</div>
+                <div class="readout-label">Self-tests ready</div>
+              </div>
+              <div class="readout-cell">
+                <div class="readout-num count-up rv" id="heroPortsLeft">15</div>
+                <div class="readout-label">Ports open</div>
+              </div>
+            </div>
+          </div>
 
-        <div class="bento-card b-ring spot rv" id="progress">
-          <div class="bento-label">Overall completion</div>
-          <div class="overall-bar"><i id="dockOverallBar"></i></div>
-          <div class="overall-text" id="dockOverallText"></div>
-          <div id="dockStreak" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);"></div>
-          <div id="weekGoal" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);"></div>
-        </div>
+          <div class="progress-card rv" id="progress">
+            <div class="bento-label">Overall completion</div>
+            <div class="overall-bar"><i id="dockOverallBar"></i></div>
+            <div class="overall-text" id="dockOverallText"></div>
+            <div id="dockStreak" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);"></div>
+            <div id="weekGoal" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);"></div>
+          </div>
 
-        <div class="bento-card b-pomo spot rv">
-          <div class="bento-label">Focus timer</div>
-          <div class="pomo-panel" id="pomoPanel"></div>
-        </div>
+          <div class="pomo-mini rv">
+            <div class="bento-label">Focus timer</div>
+            <div class="pomo-panel" id="pomoPanel"></div>
+          </div>
 
-        <div class="bento-card b-next spot rv">
-          <div class="next-strip" id="dockNext"></div>
+          <div class="next-card rv">
+            <div class="next-strip" id="dockNext"></div>
+          </div>
         </div>
 
       </div>
@@ -161,16 +169,13 @@
 
 <script src="js/common.js"></script>
 <script src="js/home.js"></script>
-<script src="js/vendor/anime.min.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/achievements.js"></script>
 <script src="js/pomodoro.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/spotlight.js"></script>
-
-
-
 <script src="js/smart.js"></script>
+<script src="js/motion.js"></script>
 
 </body>
 </html>

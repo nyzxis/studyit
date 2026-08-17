@@ -1,0 +1,411 @@
+/* ==========================================================
+   LEARNING PORT — motion enhancement layer (v2)
+   Deeper choreography: directional scroll reveals, grid
+   stagger, quiz flow, topic/subject page polish, page
+   transitions, magnetic controls.
+   Complements style.css + enhance.css — does not replace.
+   ========================================================== */
+
+/* ---------- spring tokens (extended) ---------- */
+:root{
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring-soft-bounce: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --dur-5: 1200ms;
+  --dur-6: 1600ms;
+}
+
+/* ---------- page transition (soft fade-slide) ---------- */
+html{
+  view-transition-name: root;
+}
+body{
+  transition:
+    opacity var(--dur-2) var(--spring-soft),
+    transform var(--dur-2) var(--spring-soft);
+}
+body.page-leaving{
+  opacity: 0;
+  transform: translateY(6px);
+}
+body.page-entering{
+  animation: pageEnter var(--dur-2) var(--spring-soft) forwards;
+}
+@keyframes pageEnter{
+  from{ opacity:0; transform:translateY(8px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* ---------- directional scroll reveal ---------- */
+/* Each .rv element gets a data-direction attribute:
+   "up" (default) = fade-up, "left" = fade-left, "right" = fade-right */
+:root{ --rv-delay: 0ms; }
+
+.rv{
+  opacity:0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur-3) var(--spring-soft),
+    transform var(--dur-3) var(--spring-soft),
+    filter var(--dur-3) var(--spring-soft);
+}
+.rv.in{
+  opacity:1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.rv.dir-left{
+  transform: translateX(-18px);
+}
+.rv.dir-left.in{
+  transform: translateX(0);
+}
+.rv.dir-right{
+  transform: translateX(18px);
+}
+.rv.dir-right.in{
+  transform: translateX(0);
+}
+
+/* staggered children inside grids — each child gets inline delay */
+.rv-stagger > .rv{
+  transition-delay: var(--rv-delay, 0ms);
+}
+
+/* ---------- subject grid: left-to-right entrance ---------- */
+#subjectsGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 800px){
+  #subjectsGrid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  #subjectsGrid{ grid-template-columns: 1fr; }
+}
+
+/* subject card entrance: each card slides up + fades, staggered L→R */
+.subject-card{
+  opacity:0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur-3) var(--spring-soft),
+    transform var(--dur-3) var(--spring-soft),
+    border-color var(--dur-2) var(--spring),
+    box-shadow var(--dur-2) var(--spring),
+    transform var(--dur-2) var(--spring);
+}
+.subject-card.in{
+  opacity:1;
+  transform: translateY(0);
+}
+/* the add card is always visible */
+.subject-card.add{
+  opacity:1 !important;
+  transform: none !important;
+  transition: border-color var(--dur-2) var(--spring), color var(--dur-2) var(--spring);
+}
+
+/* ---------- badge tray stagger ---------- */
+.trophy-tray{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap:10px;
+}
+.badge{
+  opacity:0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--dur-2) var(--spring-soft),
+    transform var(--dur-2) var(--spring-soft),
+    transform var(--dur-1) var(--spring),
+    box-shadow var(--dur-1) var(--spring);
+}
+.badge.in{
+  opacity:1;
+  transform: translateY(0);
+}
+.badge:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+
+/* ---------- topic card grid: alternate stagger ---------- */
+.topic-card-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+}
+.topic-card{
+  opacity:0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--dur-3) var(--spring-soft),
+    transform var(--dur-3) var(--spring-soft),
+    transform var(--dur-1) var(--spring),
+    box-shadow var(--dur-1) var(--spring),
+    border-color var(--dur-1) var(--spring);
+}
+.topic-card.in{
+  opacity:1;
+  transform: translateY(0);
+}
+.topic-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+  border-color: var(--ink-4);
+}
+
+/* ---------- quiz card entrance (per question) ---------- */
+.quiz-card{
+  animation: quizCardIn var(--dur-2) var(--spring-soft) forwards;
+}
+@keyframes quizCardIn{
+  from{
+    opacity:0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+.quiz-opt{
+  transition:
+    border-color var(--dur-1) var(--spring),
+    background var(--dur-1) var(--spring),
+    color var(--dur-1) var(--spring),
+    transform var(--dur-1) var(--spring);
+}
+.quiz-opt.correct,
+.quiz-opt.wrong{
+  animation: optPop var(--dur-1) var(--spring-bounce) forwards;
+}
+@keyframes optPop{
+  0%{ transform: scale(1); }
+  40%{ transform: scale(1.04); }
+  100%{ transform: scale(1); }
+}
+
+/* ---------- results screen reveal ---------- */
+.quiz-result{
+  animation: resultReveal var(--dur-3) var(--spring-soft) forwards;
+}
+@keyframes resultReveal{
+  from{
+    opacity:0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ---------- topic page: note block entrances ---------- */
+.note-block{
+  opacity:0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--dur-3) var(--spring-soft),
+    transform var(--dur-3) var(--spring-soft);
+}
+.note-block.in{
+  opacity:1;
+  transform: translateY(0);
+}
+.note-block h4{
+  transition: color var(--dur-2) var(--spring);
+}
+.note-block.in h4{
+  color: var(--ink);
+}
+
+/* ---------- subject page: ring draw-in ---------- */
+.subject-ring{
+  animation: ringAppear var(--dur-3) var(--spring-soft) forwards;
+}
+.subject-ring .ring-fill{
+  transition: stroke-dashoffset var(--dur-4) var(--spring-soft);
+}
+@keyframes ringAppear{
+  from{ opacity:0; transform: scale(0.85); }
+  to{ opacity:1; transform: scale(1); }
+}
+
+/* ---------- TOC active highlight transition ---------- */
+.toc a.active{
+  transition:
+    border-left-color var(--dur-2) var(--spring),
+    background var(--dur-2) var(--spring),
+    color var(--dur-2) var(--spring);
+}
+
+/* ---------- reading bar glow (refined) ---------- */
+.reading-bar{
+  transition: width 80ms linear;
+}
+
+/* ---------- hero entrance refinement ---------- */
+.hero-eyebrow{
+  animation: eyebrowIn var(--dur-2) var(--spring-soft) forwards;
+}
+.hero-title{
+  animation: titleIn var(--dur-3) var(--spring-soft) forwards;
+}
+.hero-sub{
+  animation: subIn var(--dur-3) var(--spring-soft) forwards;
+}
+.hero-actions{
+  animation: actionsIn var(--dur-2) var(--spring-soft) forwards;
+}
+@keyframes eyebrowIn{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+@keyframes titleIn{
+  from{ opacity:0; transform: translateY(12px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+@keyframes subIn{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+@keyframes actionsIn{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* ---------- magnetic button refinement ---------- */
+.btn,
+.pager-link,
+.mark-done,
+.sg-tab,
+.pomo-btn,
+.topic-pager a,
+.subject-card .go{
+  transition:
+    transform var(--dur-1) var(--spring),
+    background var(--dur-1) var(--spring),
+    border-color var(--dur-1) var(--spring),
+    box-shadow var(--dur-2) var(--spring),
+    color var(--dur-1) var(--spring),
+    gap var(--dur-1) var(--spring);
+}
+.btn:active,
+.pager-link:active,
+.mark-done:active,
+.sg-tab:active,
+.pomo-btn:active,
+.subject-card .go:active{
+  transform: scale(0.97);
+}
+
+/* ---------- Pomodoro state transition ---------- */
+.pomo{
+  transition:
+    transform var(--dur-3) var(--spring),
+    box-shadow var(--dur-2) var(--spring),
+    border-color var(--dur-2) var(--spring);
+}
+.pomo[data-state="focus"] .pomo-dot{
+  animation: dotFocusPulse 2.4s ease-in-out infinite;
+}
+.pomo[data-state="break"] .pomo-dot{
+  animation: dotBreakPulse 2.4s ease-in-out infinite;
+}
+@keyframes dotFocusPulse{
+  0%,100%{ box-shadow: 0 0 6px rgba(79,70,229,0.3); }
+  50%{ box-shadow: 0 0 12px rgba(79,70,229,0.6); }
+}
+@keyframes dotBreakPulse{
+  0%,100%{ box-shadow: 0 0 6px rgba(62,123,82,0.3); }
+  50%{ box-shadow: 0 0 12px rgba(62,123,82,0.6); }
+}
+
+/* ---------- scroll-triggered section header fade ---------- */
+.section-head{
+  opacity:0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--dur-2) var(--spring-soft),
+    transform var(--dur-2) var(--spring-soft);
+}
+.section-head.in{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* ---------- nav pill hover refinement ---------- */
+.nav-links a{
+  position: relative;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:4px; left:50%; right:50%;
+  height:2px;
+  background: var(--accent);
+  border-radius: 99px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--dur-1) var(--spring);
+}
+.nav-links a:hover::after{
+  left: 10px; right: 10px;
+  transform: scaleX(1);
+}
+
+/* ---------- progress chip LED pulse ---------- */
+.progress-chip .led.on{
+  animation: ledOn 3.6s ease-in-out infinite;
+}
+@keyframes ledOn{
+  0%,100%{ box-shadow: 0 0 0 3px var(--done-soft), 0 0 8px rgba(62,123,82,0.3); }
+  50%{ box-shadow: 0 0 0 3px var(--done-soft), 0 0 14px rgba(62,123,82,0.55); }
+}
+
+/* ---------- subject completion bar draw ---------- */
+.subject-bar i,
+.mini-bar i,
+.overall-bar i,
+.subject-ring .ring-fill,
+.toc-progress i{
+  transition: width var(--dur-3) var(--spring-soft);
+}
+
+/* ---------- reduced motion guard (covers new animations) ---------- */
+@media (prefers-reduced-motion: reduce){
+  .rv,
+  .subject-card,
+  .badge,
+  .topic-card,
+  .quiz-card,
+  .quiz-result,
+  .note-block,
+  .subject-ring,
+  .section-head,
+  .hero-eyebrow,
+  .hero-title,
+  .hero-sub,
+  .hero-actions{
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+    animation:none !important;
+    transition-duration:0.01ms !important;
+  }
+  .quiz-opt.correct,
+  .quiz-opt.wrong{ animation:none !important; }
+  .pomo[data-state="focus"] .pomo-dot,
+  .pomo[data-state="break"] .pomo-dot{ animation:none !important; }
+  .progress-chip .led.on{ animation:none !important; }
+  .nav-links a::after{ display:none; }
+  body.page-leaving,
+  body.page-entering{
+    opacity:1 !important;
+    transform:none !important;
+    animation:none !important;
+  }
+  .pomo{ transition-duration:0.01ms !important; }
+}

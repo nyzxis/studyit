@@ -1,0 +1,9 @@
+node_modules/
+js/vendor/
+.data/
+.impeccable/
+.agents/
+.opencode/
+skills-lock.json
+package-lock.json
+supabase-setup.sql

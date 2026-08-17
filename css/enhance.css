@@ -701,30 +701,7 @@ body.page-out{ opacity:0; }
   to{ opacity:1; transform:translateY(0); }
 }
 
-/* ---------- ambient mesh (fixed, ultra quiet) ---------- */
-.lp-mesh{
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  overflow:hidden;
-}
-.lp-mesh i{
-  position:absolute; width:60vmax; height:60vmax; border-radius:50%;
-  filter:blur(60px); opacity:.05;
-}
-.lp-mesh .m1{
-  top:-20vmax; right:-15vmax;
-  background:radial-gradient(circle, var(--accent), transparent 65%);
-  animation:drift1 46s ease-in-out infinite alternate;
-}
-.lp-mesh .m2{
-  bottom:-25vmax; left:-15vmax;
-  background:radial-gradient(circle, var(--done), transparent 65%);
-  animation:drift2 58s ease-in-out infinite alternate;
-}
-@keyframes drift1{ to{ transform:translate(-12vmax, 10vmax) scale(1.15); } }
-@keyframes drift2{ to{ transform:translate(10vmax, -8vmax) scale(1.1); } }
-[data-theme="dark"] .lp-mesh i{ opacity:.07; }
-
-/* ---------- zen / focus reading mode ---------- */
+/* ---------- loading screen ---------- */
 .zen header.site,
 .zen footer,
 .zen .toc,
@@ -906,20 +883,6 @@ body.zen::after{ opacity:0; }
   100%{ transform:translateX(300%); }
 }
 
-/* ---------- skeleton shimmer for JS grids ---------- */
-.subjects-grid:empty,
-.topic-card-grid:empty,
-.trophy-tray:empty{
-  min-height:180px;
-  border-radius:var(--r-lg);
-  background:
-    linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--bg-raised) 70%, transparent) 50%, transparent 70%),
-    var(--bg-sunken);
-  background-size:200% 100%;
-  animation:shimmer 1.4s linear infinite;
-}
-@keyframes shimmer{ to{ background-position:-200% 0; } }
-
 /* ---------- scrollbar ---------- */
 *::-webkit-scrollbar{ width:10px; height:10px; }
 *::-webkit-scrollbar-track{ background:transparent; }
@@ -962,7 +925,7 @@ body{ text-rendering:optimizeLegibility; }
 @media print{
   header.site, footer, .pomo, .zen-toggle, .back-to-top,
   .study-games, .topic-pager, .toc, .reading-bar,
-  .lp-mesh, .boot, .toast, .cmdk-overlay, .keys-overlay{ display:none !important; }
+  .boot, .toast, .cmdk-overlay, .keys-overlay{ display:none !important; }
   body{ background:#fff; color:#000; }
   body::after{ display:none; }
   .notes-main li.important{ background:#f5f2e8; -webkit-print-color-adjust:exact; }
@@ -1145,6 +1108,28 @@ body{ text-rendering:optimizeLegibility; }
   transition:width var(--dur-3) var(--spring-soft);
 }
 .toc-progress span{ position:relative; }
+
+/* ---------- reveal all / hide all ---------- */
+.reveal-all-wrap{ margin-bottom:14px; }
+.reveal-all{
+  display:flex; width:100%; align-items:center; justify-content:center; gap:7px;
+  padding:9px 12px;
+  border:1px dashed color-mix(in srgb, var(--warn) 45%, transparent);
+  border-radius:var(--r-sm);
+  background:var(--warn-soft);
+  color:var(--warn);
+  font-family:var(--mono); font-size:10px; font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase;
+  cursor:pointer;
+  transition:all var(--dur-2) var(--spring);
+}
+.reveal-all:hover{ box-shadow:var(--sh-1); }
+.reveal-all.active{
+  border-style:solid;
+  background:var(--accent-soft);
+  border-color:color-mix(in srgb, var(--accent) 40%, transparent);
+  color:var(--accent-ink);
+}
 
 /* non-flippable important points keep the amber style */
 .note-sec li.important{
@@ -1623,3 +1608,27 @@ body{ text-rendering:optimizeLegibility; }
   .blank-wrap{ flex-direction:column; }
   .blank-check{ width:100%; }
 }
+
+/* ============================================================
+   Detailed chapters dock — segmented toggle (subject page)
+   ============================================================ */
+.dock-tabs{
+  display:inline-flex; gap:2px; padding:3px;
+  background:var(--panel-2); border:1px solid var(--line);
+  border-radius:12px; flex-shrink:0;
+}
+.dock-tab{
+  font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+  padding:8px 14px; border:0; border-radius:9px; cursor:pointer;
+  background:transparent; color:var(--ink-2);
+  transition:background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.dock-tab:hover{ color:var(--ink-1); }
+.dock-tab.active{
+  background:var(--accent); color:#fff;
+  box-shadow:0 2px 10px -3px rgba(0,0,0,.35);
+}
+.dock-note{
+  font-size:13.5px; color:var(--ink-2); margin:0 0 22px; max-width:62ch;
+}
+.dock-panel{ margin-top:2px; }
