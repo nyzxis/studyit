@@ -410,20 +410,18 @@ body.page-entering{
   .pomo{ transition-duration:0.01ms !important; }
 }
 
-/* ---------- subtle moving dot grid background ---------- */
+/* ---------- moving dot grid background ---------- */
 .dot-grid{
   position:fixed; inset:0; z-index:65; pointer-events:none;
-  background-image:
-    radial-gradient(circle, color-mix(in srgb, var(--ink-1) 55%, transparent) 2.5px, transparent 2.8px);
-  background-size:36px 36px;
-  background-position:-1px -1px;
-  opacity:.65;
-  animation:dotDrift 32s linear infinite;
+  background:
+    radial-gradient(circle, var(--ink-1) 2px, transparent 2.5px) 0 0 / 32px 32px;
+  opacity:.6;
+  animation:dotDrift 30s linear infinite;
 }
 html[data-theme="dark"] .dot-grid{
-  background-image:
-    radial-gradient(circle, color-mix(in srgb, var(--paper) 70%, transparent) 2.5px, transparent 2.8px);
-  opacity:.85;
+  background:
+    radial-gradient(circle, var(--paper) 2.5px, transparent 3px) 0 0 / 32px 32px;
+  opacity:.8;
 }
 @keyframes dotDrift{
   0%{ background-position:0 0; }
