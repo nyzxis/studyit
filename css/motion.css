@@ -412,7 +412,7 @@ body.page-entering{
 
 /* ---------- subtle dot grid background ---------- */
 .dot-grid{
-  position:fixed; inset:0; z-index:61; pointer-events:none;
+  position:fixed; inset:0; z-index:59; pointer-events:none;
   background-image:
     radial-gradient(circle, color-mix(in srgb, var(--ink-1) 35%, transparent) 1px, transparent 1.4px);
   background-size:24px 24px;
@@ -434,5 +434,5 @@ body{ z-index:1; position:relative; }
 /* ---------- respect reduced motion ---------- */
 @media (prefers-reduced-motion: reduce){
   .dot-grid{ animation:none; }
-  .wrap{ z-index:100; }
+  .wrap{ z-index:62; }
 }
