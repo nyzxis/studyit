@@ -269,45 +269,6 @@
 }
 .cmdk-item.active, .cmdk-item:hover{ background:var(--accent-soft); color:var(--accent-ink); }
 
-/* ---------- study games (games.js) ---------- */
-.flash-card{
-  background:var(--bg); border:1px solid var(--line);
-  border-radius:var(--r-md); padding:30px 24px;
-  text-align:center; cursor:pointer; min-height:150px;
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--display); font-size:16px; font-weight:600;
-  letter-spacing:-.01em;
-  transition: transform var(--dur-2) var(--spring), background var(--dur-2) var(--spring);
-}
-.flash-card:hover{ transform:translateY(-2px); }
-.flash-card.flipped{ background:var(--accent-soft); color:var(--accent-ink); }
-.sg-nav{ display:flex; gap:10px; justify-content:center; margin-top:16px; }
-.sg-nav button{
-  padding:9px 16px; border-radius:999px; cursor:pointer;
-  border:1px solid var(--line); background:var(--bg-raised);
-  font-family:var(--display); font-size:12.5px; font-weight:600; color:var(--ink-2);
-  transition:all var(--dur-1) var(--spring);
-}
-.sg-nav button:hover{ border-color:var(--ink-4); }
-.match-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:9px; }
-.match-cell{
-  padding:16px 10px; text-align:center; cursor:pointer;
-  background:var(--bg); border:1px solid var(--line); border-radius:var(--r-sm);
-  font-size:12.5px; font-weight:500;
-  transition:all var(--dur-1) var(--spring);
-}
-.match-cell:hover{ border-color:var(--ink-4); }
-.match-cell.sel{ background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); }
-.match-cell.hit{ background:var(--done-soft); border-color:var(--done); color:var(--done); pointer-events:none; }
-.type-input{
-  width:100%; padding:14px 16px;
-  border:1px solid var(--line); border-radius:var(--r-sm);
-  background:var(--bg); font-family:var(--display); font-size:15px; color:var(--ink);
-  outline:none;
-  transition:border-color var(--dur-1) var(--spring);
-}
-.type-input:focus{ border-color:var(--accent); }
-
 /* ---------- notes reader blocks (topic.js) ---------- */
 .note-block{ margin-bottom:8px; }
 .note-block h4{
