@@ -1,12 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "subject.html", "use": "@vercel/static" },
-    { "src": "topic.html", "use": "@vercel/static" },
-    { "src": "quiz.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "version": 2
 }
