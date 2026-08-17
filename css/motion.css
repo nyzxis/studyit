@@ -414,16 +414,16 @@ body.page-entering{
 .dot-grid{
   position:fixed; inset:0; z-index:65; pointer-events:none;
   background-image:
-    radial-gradient(circle, color-mix(in srgb, var(--ink-1) 40%, transparent) 2.2px, transparent 2.4px);
-  background-size:40px 40px;
+    radial-gradient(circle, color-mix(in srgb, var(--ink-1) 55%, transparent) 2.5px, transparent 2.8px);
+  background-size:36px 36px;
   background-position:-1px -1px;
-  opacity:.7;
-  animation:dotDrift 36s linear infinite;
+  opacity:.65;
+  animation:dotDrift 32s linear infinite;
 }
 html[data-theme="dark"] .dot-grid{
   background-image:
-    radial-gradient(circle, color-mix(in srgb, var(--paper) 55%, transparent) 2.2px, transparent 2.4px);
-  opacity:.5;
+    radial-gradient(circle, color-mix(in srgb, var(--paper) 70%, transparent) 2.5px, transparent 2.8px);
+  opacity:.85;
 }
 @keyframes dotDrift{
   0%{ background-position:0 0; }
