@@ -409,26 +409,3 @@ body.page-entering{
   }
   .pomo{ transition-duration:0.01ms !important; }
 }
-
-/* ---------- moving dot grid background ---------- */
-.dot-grid{
-  position:fixed; inset:0; z-index:65; pointer-events:none;
-  background-image: radial-gradient(circle, #53524E 2.2px, transparent 2.6px);
-  background-size: 30px 30px;
-  background-repeat: repeat;
-  opacity:.85;
-  animation: dotDrift 30s linear infinite;
-}
-html[data-theme="dark"] .dot-grid{
-  background-image: radial-gradient(circle, #EDEBE6 2.5px, transparent 3px);
-  background-size: 30px 30px;
-  background-repeat: repeat;
-  opacity:.95;
-}
-@keyframes dotDrift{
-  0%{ background-position:0 0; }
-  100%{ background-position:40px 40px; }
-}
-@media (prefers-reduced-motion: reduce){
-  .dot-grid{ animation:none; }
-}
