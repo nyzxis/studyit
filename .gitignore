@@ -1,5 +1,4 @@
 node_modules/
-js/vendor/
 .data/
 .impeccable/
 .agents/
@@ -7,3 +6,4 @@ js/vendor/
 skills-lock.json
 package-lock.json
 supabase-setup.sql
+.env
