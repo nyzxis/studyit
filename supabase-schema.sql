@@ -66,54 +66,66 @@ alter table public.focus_sessions enable row level security;
 alter table public.user_badges    enable row level security;
 
 -- profiles: SELECT public, INSERT via trigger, UPDATE own row
+drop policy if exists "profiles_select_public" on public.profiles;
 create policy "profiles_select_public"
   on public.profiles for select
   using (true);
 
+drop policy if exists "profiles_update_own" on public.profiles;
 create policy "profiles_update_own"
   on public.profiles for update
   using (auth.uid() = id);
 
 -- user_progress: own rows only
+drop policy if exists "user_progress_select_own" on public.user_progress;
 create policy "user_progress_select_own"
   on public.user_progress for select
   using (auth.uid() = user_id);
 
+drop policy if exists "user_progress_insert_own" on public.user_progress;
 create policy "user_progress_insert_own"
   on public.user_progress for insert
   with check (auth.uid() = user_id);
 
+drop policy if exists "user_progress_update_own" on public.user_progress;
 create policy "user_progress_update_own"
   on public.user_progress for update
   using (auth.uid() = user_id);
 
 -- quiz_attempts: own rows only
+drop policy if exists "quiz_attempts_select_own" on public.quiz_attempts;
 create policy "quiz_attempts_select_own"
   on public.quiz_attempts for select
   using (auth.uid() = user_id);
 
+drop policy if exists "quiz_attempts_insert_own" on public.quiz_attempts;
 create policy "quiz_attempts_insert_own"
   on public.quiz_attempts for insert
   with check (auth.uid() = user_id);
 
 -- focus_sessions: own rows only
+drop policy if exists "focus_sessions_select_own" on public.focus_sessions;
 create policy "focus_sessions_select_own"
   on public.focus_sessions for select
   using (auth.uid() = user_id);
 
+drop policy if exists "focus_sessions_insert_own" on public.focus_sessions;
 create policy "focus_sessions_insert_own"
   on public.focus_sessions for insert
   with check (auth.uid() = user_id);
 
+drop policy if exists "focus_sessions_update_own" on public.focus_sessions;
 create policy "focus_sessions_update_own"
   on public.focus_sessions for update
   using (auth.uid() = user_id);
 
 -- user_badges: own rows only
+drop policy if exists "user_badges_select_own" on public.user_badges;
 create policy "user_badges_select_own"
   on public.user_badges for select
   using (auth.uid() = user_id);
 
+drop policy if exists "user_badges_insert_own" on public.user_badges;
 create policy "user_badges_insert_own"
   on public.user_badges for insert
   with check (auth.uid() = user_id);
