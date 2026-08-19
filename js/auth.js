@@ -32,8 +32,14 @@
       btn.disabled = true;
       btn.textContent = "Signing in...";
       try {
-        const { error } = await window.LPSupabase.signIn(email, password);
+        const { data, error } = await window.LPSupabase.signIn(email, password);
         if (error) throw error;
+        if (!data.session) {
+          showError(errEl, "Check your email to confirm your account before signing in.");
+          btn.disabled = false;
+          btn.textContent = "Sign in";
+          return;
+        }
         await window.LPSupabase.migrateFromLocalStorage();
         window.location.href = "index.html";
       } catch (err) {
@@ -57,8 +63,15 @@
       btn.disabled = true;
       btn.textContent = "Creating account...";
       try {
-        const { error } = await window.LPSupabase.signUp(email, password);
+        const { data, error } = await window.LPSupabase.signUp(email, password);
         if (error) throw error;
+        // If session is null, email confirmation is required
+        if (!data.session) {
+          showError(errEl, "Account created! Check your email to confirm before signing in.");
+          btn.disabled = false;
+          btn.textContent = "Create account";
+          return;
+        }
         await window.LPSupabase.migrateFromLocalStorage();
         window.location.href = "index.html";
       } catch (err) {

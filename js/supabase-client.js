@@ -221,7 +221,8 @@
     const MIGRATION_KEY = "lp_migrated";
     if (localStorage.getItem(MIGRATION_KEY)) return;
 
-    const user = await getUser();
+    let user;
+    try { user = await getUser(); } catch (e) { return; }
     if (!user) return;
 
     // Migrate progress
