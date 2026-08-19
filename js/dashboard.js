@@ -226,7 +226,7 @@
     await buildRings();
     buildStreak();
     await buildNext();
-    buildHeatmap();
+    await buildHeatmap();
     document.addEventListener("lp:focus-change", buildHeatmap);
     // delay ring animation until section is in view
     const sec = document.getElementById("dockMap");
