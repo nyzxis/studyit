@@ -273,7 +273,19 @@
     localStorage.setItem(MIGRATION_KEY, "1");
   }
 
-  window.LPSupabase = {
+  /* ---------------- init (auto-migrate on login) ---------------- */
+async function init() {
+  const { data: { subscription } } = onAuthStateChange(async (event, session) => {
+    if (event === "SIGNED_IN" && session) {
+      await migrateFromLocalStorage();
+    }
+  });
+  return subscription;
+}
+
+init();
+
+window.LPSupabase = {
     supabase,
     signUp,
     signIn,
@@ -293,6 +305,7 @@
     saveFocusSession,
     getBadges,
     saveBadge,
-    migrateFromLocalStorage
+    migrateFromLocalStorage,
+    init
   };
 })();
