@@ -1,65 +1,154 @@
 /* ============================================================
    LEARNING PORT — shared helpers (used by every page)
+   Progress now backed by Supabase; localStorage is fallback
+   for logged-out browsing only.
    ============================================================ */
 
 const STORE_KEY = "learningPortProgress.v1";
 
-function loadProgress(){
-  try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
-  catch(e){ return {}; }
+/* ---------------- localStorage fallback (logged-out) ---------------- */
+function loadProgressLocal() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
+  catch (e) { return {}; }
 }
-function saveProgress(p){ localStorage.setItem(STORE_KEY, JSON.stringify(p)); }
-let progress = loadProgress();
+function saveProgressLocal(p) {
+  localStorage.setItem(STORE_KEY, JSON.stringify(p));
+}
 
-function ensureSubjectProgress(subjectId){
-  if(!progress[subjectId]) progress[subjectId] = { readTopics:{}, quizScores:{} };
+/* ---------------- Supabase-backed progress ---------------- */
+let _progressCache = null;
+let _progressCacheTime = 0;
+const PROGRESS_CACHE_TTL = 30000; // 30s
+
+async function loadProgress() {
+  if (window.LPSupabase) {
+    try {
+      const user = await window.LPSupabase.getUser();
+      if (user) {
+        const now = Date.now();
+        if (_progressCache && (now - _progressCacheTime) < PROGRESS_CACHE_TTL) {
+          return _progressCache;
+        }
+        const rows = await window.LPSupabase.getProgress();
+        const progress = {};
+        rows.forEach(r => {
+          if (!progress[r.subject_id]) {
+            progress[r.subject_id] = { readTopics: {}, quizScores: {} };
+          }
+          if (r.completed) {
+            progress[r.subject_id].readTopics[r.topic_id] = true;
+          }
+        });
+        const attempts = await window.LPSupabase.getQuizAttempts();
+        attempts.forEach(a => {
+          if (!progress[a.subject_id]) {
+            progress[a.subject_id] = { readTopics: {}, quizScores: {} };
+          }
+          const prev = progress[a.subject_id].quizScores[a.topic_id];
+          if (!prev || a.score > prev.score) {
+            progress[a.subject_id].quizScores[a.topic_id] = { score: a.score, total: a.total };
+          }
+        });
+        _progressCache = progress;
+        _progressCacheTime = now;
+        return progress;
+      }
+    } catch (e) {
+      // Fall through to localStorage
+    }
+  }
+  return loadProgressLocal();
+}
+
+function invalidateProgressCache() {
+  _progressCache = null;
+  _progressCacheTime = 0;
+}
+
+function ensureSubjectProgress(subjectId, progress) {
+  if (!progress[subjectId]) progress[subjectId] = { readTopics: {}, quizScores: {} };
   return progress[subjectId];
 }
-function topicIsRead(subjectId, topicId){
-  return !!ensureSubjectProgress(subjectId).readTopics[topicId];
+
+async function topicIsRead(subjectId, topicId) {
+  const progress = await loadProgress();
+  return !!ensureSubjectProgress(subjectId, progress).readTopics[topicId];
 }
-function toggleTopicRead(subjectId, topicId){
-  const sp = ensureSubjectProgress(subjectId);
+
+async function toggleTopicRead(subjectId, topicId) {
+  const progress = await loadProgress();
+  const sp = ensureSubjectProgress(subjectId, progress);
   sp.readTopics[topicId] = !sp.readTopics[topicId];
-  saveProgress(progress);
+
+  if (window.LPSupabase) {
+    try {
+      const user = await window.LPSupabase.getUser();
+      if (user) {
+        await window.LPSupabase.upsertProgress(subjectId, topicId, sp.readTopics[topicId]);
+        invalidateProgressCache();
+        return;
+      }
+    } catch (e) { /* fall through to localStorage */ }
+  }
+  saveProgressLocal(progress);
 }
-function bestQuizScore(subjectId, topicId){
-  return ensureSubjectProgress(subjectId).quizScores[topicId];
+
+async function bestQuizScore(subjectId, topicId) {
+  const progress = await loadProgress();
+  return ensureSubjectProgress(subjectId, progress).quizScores[topicId];
 }
-function recordQuizScore(subjectId, topicId, score, total){
-  const sp = ensureSubjectProgress(subjectId);
+
+async function recordQuizScore(subjectId, topicId, score, total) {
+  const progress = await loadProgress();
+  const sp = ensureSubjectProgress(subjectId, progress);
   const prev = sp.quizScores[topicId];
-  if(!prev || score > prev.score) sp.quizScores[topicId] = { score, total };
-  saveProgress(progress);
+  if (!prev || score > prev.score) {
+    sp.quizScores[topicId] = { score, total };
+  }
+
+  if (window.LPSupabase) {
+    try {
+      const user = await window.LPSupabase.getUser();
+      if (user) {
+        await window.LPSupabase.saveQuizAttempt(subjectId, topicId, score, total);
+        invalidateProgressCache();
+        return;
+      }
+    } catch (e) { /* fall through to localStorage */ }
+  }
+  saveProgressLocal(progress);
 }
-function subjectCompletion(subject){
-  const sp = ensureSubjectProgress(subject.id);
+
+async function subjectCompletion(subject) {
+  const progress = await loadProgress();
+  const sp = ensureSubjectProgress(subject.id, progress);
   const total = subject.topics.length;
   let done = 0;
-  subject.topics.forEach(t=>{
+  subject.topics.forEach(t => {
     const read = !!sp.readTopics[t.id];
     const quiz = sp.quizScores[t.id];
-    const passed = quiz && quiz.score/quiz.total >= 0.6;
+    const passed = quiz && quiz.score / quiz.total >= 0.6;
     const hasQuiz = !!(t.quiz && t.quiz.length);
-    if(read && (!hasQuiz || passed)) done++;
+    if (read && (!hasQuiz || passed)) done++;
   });
   return { done, total };
 }
 
 /* ---------------- overall stats + streak ---------------- */
-function overallStats(){
+async function overallStats() {
   let done = 0, total = 0, quizzesPassed = 0, quizTotal = 0;
-  SUBJECTS.forEach(s=>{
-    const c = subjectCompletion(s);
-    done += c.done; total += c.total;
-    s.topics.forEach(t=>{
-      if(t.quiz && t.quiz.length){
+  for (const s of SUBJECTS) {
+    const c = await subjectCompletion(s);
+    done += c.done;
+    total += c.total;
+    for (const t of s.topics) {
+      if (t.quiz && t.quiz.length) {
         quizTotal++;
-        const q = bestQuizScore(s.id, t.id);
-        if(q && q.score/q.total >= 0.6) quizzesPassed++;
+        const q = await bestQuizScore(s.id, t.id);
+        if (q && q.score / q.total >= 0.6) quizzesPassed++;
       }
-    });
-  });
+    }
+  }
   return { done, total, quizzesPassed, quizTotal };
 }
 
@@ -103,14 +192,16 @@ function recordVisit(){
 function getStreak(){ return loadStreak(); }
 
 /* smart "next up" topic: first unread topic without a passing quiz */
-function nextUpTopic(){
+async function nextUpTopic(){
+  const progress = await loadProgress();
   for(let si=0; si<SUBJECTS.length; si++){
     const s = SUBJECTS[si];
     for(let ti=0; ti<s.topics.length; ti++){
       const t = s.topics[ti];
-      const quiz = bestQuizScore(s.id, t.id);
+      const sp = ensureSubjectProgress(s.id, progress);
+      const quiz = sp.quizScores[t.id];
       const passed = quiz && quiz.score/quiz.total >= 0.6;
-      if(!topicIsRead(s.id, t.id) || (t.quiz && t.quiz.length && !passed)){
+      if(!sp.readTopics[t.id] || (t.quiz && t.quiz.length && !passed)){
         return { subject:s, topic:t };
       }
     }
@@ -155,17 +246,21 @@ function showToast(msg){
 }
 
 /* ---------------- shared header/footer chrome ---------------- */
-function paintHeaderChrome(){
+async function paintHeaderChrome() {
   const logoSlot = document.querySelectorAll(".js-logo");
-  logoSlot.forEach(s=> s.innerHTML = LOGO_SVG);
+  logoSlot.forEach(s => s.innerHTML = LOGO_SVG);
 
   let done = 0, total = 0;
-  SUBJECTS.forEach(s=>{ const c = subjectCompletion(s); done += c.done; total += c.total; });
+  for (const s of SUBJECTS) {
+    const c = await subjectCompletion(s);
+    done += c.done;
+    total += c.total;
+  }
   const chip = document.getElementById("headerProgress");
-  if(chip) chip.innerHTML = `<span class="led ${done>0 ? "on":""}"></span> ${done}/${total} topics connected`;
+  if (chip) chip.innerHTML = `<span class="led ${done > 0 ? "on" : ""}"></span> ${done}/${total} topics connected`;
 
   const yearEl = document.getElementById("year");
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
 document.addEventListener("DOMContentLoaded", paintHeaderChrome);

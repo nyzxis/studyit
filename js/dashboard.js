@@ -20,25 +20,25 @@
       </svg>`;
   }
 
-  function buildRings(){
-    const host = document.getElementById("dockRings");
-    if(!host) return;
-    host.innerHTML = "";
-    SUBJECTS.forEach(subject=>{
-      const { done, total } = subjectCompletion(subject);
-      const pct = total ? Math.round((done/total)*100) : 0;
-      const card = el("a", "dock-subject");
-      card.href = "subject.html?id=" + encodeURIComponent(subject.id);
-      card.innerHTML = `
-        ${svgRing(pct, subject.color || "#7c3aed", 96)}
-        <div class="dock-subject-info">
-          <div class="dock-subject-name">${esc(subject.name)}</div>
-          <div class="dock-subject-meta">${done}/${total} connected ${pct>0?"· "+pct+"%":""}</div>
-        </div>
-      `;
-      host.appendChild(card);
-    });
-  }
+  async function buildRings() {
+      const host = document.getElementById("dockRings");
+      if (!host) return;
+      host.innerHTML = "";
+      for (const subject of SUBJECTS) {
+        const { done, total } = await subjectCompletion(subject);
+        const pct = total ? Math.round((done / total) * 100) : 0;
+        const card = el("a", "dock-subject");
+        card.href = "subject.html?id=" + encodeURIComponent(subject.id);
+        card.innerHTML = `
+          ${svgRing(pct, subject.color || "#7c3aed", 96)}
+          <div class="dock-subject-info">
+            <div class="dock-subject-name">${esc(subject.name)}</div>
+            <div class="dock-subject-meta">${done}/${total} connected ${pct > 0 ? "· " + pct + "%" : ""}</div>
+          </div>
+        `;
+        host.appendChild(card);
+      }
+    }
 
   function animateRings(){
     if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -102,42 +102,41 @@
     `;
   }
 
-  function buildNext(){
-    const host = document.getElementById("dockNext");
-    if(!host) return;
-    const up = nextUpTopic();
-    const stats = overallStats();
-    const left = stats.total - stats.done;
-    if(!up){
+  async function buildNext() {
+      const host = document.getElementById("dockNext");
+      if (!host) return;
+      const up = await nextUpTopic();
+      const stats = await overallStats();
+      const left = stats.total - stats.done;
+      if (!up) {
+        host.innerHTML = `
+          <div class="next-label">NEXT UP</div>
+          <div class="next-title">All topics locked in</div>
+          <p>Every port is connected — the whole dock is green. Retake a quiz to keep your edge.</p>
+          <a class="btn btn-primary" href="#subjects">Browse subjects</a>
+        `;
+        return;
+      }
       host.innerHTML = `
         <div class="next-label">NEXT UP</div>
-        <div class="next-title">All topics locked in</div>
-        <p>Every port is connected — the whole dock is green. Retake a quiz to keep your edge.</p>
-        <a class="btn btn-primary" href="#subjects">Browse subjects</a>
-      `;
-      return;
-    }
-    host.innerHTML = `
-      <div class="next-label">NEXT UP</div>
-      <div class="next-title">${esc(up.topic.title)}</div>
-      <p><span class="next-sub">${esc(up.subject.name)}</span> · ${left>0 ? left + " topic" + (left>1?"s":"") + " left in the dock" : "finish this one to clear the subject"}</p>
-      <a class="btn btn-primary" href="topic.html?subject=${encodeURIComponent(up.subject.id)}&topic=${encodeURIComponent(up.topic.id)}">Continue studying →</a>
-    `;
-  }
+        <div class="next-title">${esc(up.topic.title)}</div>
+        <p><span class="next-sub">${esc(up.subject.name)}</span> · ${left > 0 ? left + " topic" + (left > 1 ? "s" : "") + " left in the dock" : "finish this one to clear the subject"}</p>
+        <a class="btn btn-primary" href="topic.html?subject=${encodeURIComponent(up.subject.id)}&topic=${encodeURIComponent(up.topic.id)}">Continue studying →</a>
+      `  }
 
-  function buildOverall(){
-    const stats = overallStats();
-    const pct = stats.total ? Math.round(stats.done/stats.total*100) : 0;
-    const bar = document.getElementById("dockOverallBar");
-    const txt = document.getElementById("dockOverallText");
-    if(bar){
-      bar.style.width = pct + "%";
-      bar.dataset.pct = pct;
+  async function buildOverall() {
+      const stats = await overallStats();
+      const pct = stats.total ? Math.round(stats.done / stats.total * 100) : 0;
+      const bar = document.getElementById("dockOverallBar");
+      const txt = document.getElementById("dockOverallText");
+      if (bar) {
+        bar.style.width = pct + "%";
+        bar.dataset.pct = pct;
+      }
+      if (txt) {
+        txt.innerHTML = `<b>${stats.done}/${stats.total}</b> topics fully connected · <b>${stats.quizzesPassed}/${stats.quizTotal}</b> self-tests passed`;
+      }
     }
-    if(txt){
-      txt.innerHTML = `<b>${stats.done}/${stats.total}</b> topics fully connected · <b>${stats.quizzesPassed}/${stats.quizTotal}</b> self-tests passed`;
-    }
-  }
 
   /* ---------------- activity heatmap (last 14 weeks) ---------------- */
   function buildHeatmap(){
@@ -200,11 +199,11 @@
     return m >= 60 ? (Math.round(m/60*10)/10+"h") : Math.round(m)+"m";
   }
 
-  document.addEventListener("DOMContentLoaded", ()=>{
-    buildOverall();
-    buildRings();
+  document.addEventListener("DOMContentLoaded", async ()=>{
+    await buildOverall();
+    await buildRings();
     buildStreak();
-    buildNext();
+    await buildNext();
     buildHeatmap();
     document.addEventListener("lp:focus-change", buildHeatmap);
     // delay ring animation until section is in view
