@@ -5,5 +5,8 @@
   "description": "Learning Port - focused study hub",
   "scripts": {
     "dev": "python -m http.server 8080"
+  },
+  "dependencies": {
+    "@supabase/server": "^1.4.1"
   }
 }
