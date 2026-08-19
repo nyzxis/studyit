@@ -4,10 +4,16 @@
 
 const LOGO_SVG = `
 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="1" y="1" width="38" height="38" rx="10" fill="var(--ink)"/>
-  <path d="M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z" fill="var(--bg)"/>
-  <path d="M16 15.8v4.9h3.1c1.6 0 2.7-1 2.7-2.45s-1.1-2.45-2.7-2.45H16z" fill="var(--accent)"/>
-  <circle cx="29" cy="12" r="2.4" fill="var(--bg)"/>
+  <rect x="1" y="1" width="38" height="38" rx="10" fill="url(#lp-grad)"/>
+  <path d="M13 27V13h6.2c3.3 0 5.6 2.1 5.6 5.2s-2.3 5.2-5.6 5.2H16v3.6h-3z" fill="#fff"/>
+  <path d="M16 15.8v4.9h3.1c1.6 0 2.7-1 2.7-2.45s-1.1-2.45-2.7-2.45H16z" fill="url(#lp-grad)"/>
+  <circle cx="29" cy="12" r="2.4" fill="#fff"/>
+  <defs>
+    <linearGradient id="lp-grad" x1="1" y1="1" x2="39" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#9b6bff"/>
+    </linearGradient>
+  </defs>
 </svg>`;
 
 /* Simple two-color line illustrations, one per Economics topic.

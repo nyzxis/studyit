@@ -164,7 +164,7 @@
     paint();
   }
 
-  async function complete() {
+  function complete() {
     clearInterval(tick);
     state.running = false;
     state.endsAt = null;
@@ -173,14 +173,6 @@
       if (window.LPX) window.LPX.add(30, "focus session complete");
       if (typeof showToast === "function") showToast("Focus session complete — take a break");
       setMode(state.sessions % 4 === 0 ? "long" : "short", true);
-
-      // Save to Supabase
-      if (window.LPSupabase) {
-        try {
-          const startedAt = new Date(Date.now() - 25 * 60 * 1000).toISOString();
-          await window.LPSupabase.saveFocusSession(null, 25, startedAt, true);
-        } catch (e) { /* ignore */ }
-      }
     } else {
       if (typeof showToast === "function") showToast("Break over — back to it");
       setMode("focus", true);

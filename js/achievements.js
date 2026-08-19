@@ -46,71 +46,45 @@
   function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || { seen:{} }; }catch(e){ return { seen:{} }; } }
   function save(s){ localStorage.setItem(KEY, JSON.stringify(s)); }
 
-  async function countRead(){
+  function countRead(){
     let n = 0;
-    for (const s of SUBJECTS) {
-      for (const t of s.topics) {
-        if (await topicIsRead(s.id, t.id)) n++;
-      }
-    }
+    SUBJECTS.forEach(s=>{
+      s.topics.forEach(t=>{ if(topicIsRead(s.id, t.id)) n++; });
+    });
     return n;
   }
-
-  async function countQuestionsAnswered(){
+  function countQuestionsAnswered(){
     /* best scores are the only durable record; treat each stored best score as full quiz attempts */
     let n = 0;
-    for (const s of SUBJECTS) {
-      for (const t of s.topics) {
-        const q = await bestQuizScore(s.id, t.id);
-        if (q) n += q.total;
-      }
-    }
+    SUBJECTS.forEach(s=>{
+      s.topics.forEach(t=>{
+        const q = bestQuizScore(s.id, t.id);
+        if(q) n += q.total;
+      });
+    });
     return n;
   }
-
-  async function focusMinutes(){
-    // Try Supabase first
-    if (window.LPSupabase) {
-      try {
-        const user = await window.LPSupabase.getUser();
-        if (user) {
-          return await window.LPSupabase.getFocusMinutes();
-        }
-      } catch (e) { /* fall through */ }
-    }
-    // Fallback to localStorage
-    try {
+  function focusMinutes(){
+    try{
       const f = JSON.parse(localStorage.getItem("learningPortFocus.v1") || "{}");
       let sum = 0;
-      Object.keys(f).forEach(k => { if (!isNaN(parseFloat(f[k]))) sum += parseFloat(f[k]); });
+      Object.keys(f).forEach(k=>{ if(!isNaN(parseFloat(f[k]))) sum += parseFloat(f[k]); });
       return Math.round(sum);
-    } catch (e) { return 0; }
+    }catch(e){ return 0; }
   }
 
-  /* returns array of badge ids that are currently earned */
-  async function evaluate(){
-    const readN = await countRead();
-    const qAnswered = await countQuestionsAnswered();
-    const focusMin = await focusMinutes();
-
-    // Compute quizzesPassed manually (overallStats is async; avoid double work)
-    let quizzesPassed = 0, quizTotal = 0;
-    for (const s of SUBJECTS) {
-      for (const t of s.topics) {
-        if (t.quiz && t.quiz.length) {
-          quizTotal++;
-          const q = await bestQuizScore(s.id, t.id);
-          if (q && q.score / q.total >= 0.6) quizzesPassed++;
-        }
-      }
-    }
-
+  /* returns array of {badge, newlyUnlocked} */
+  function evaluate(){
+    const stats = overallStats();
     const streak = getStreak().count;
-    const perfect = await (async () => {
-      for (const s of SUBJECTS) {
-        for (const t of s.topics) {
-          const q = await bestQuizScore(s.id, t.id);
-          if (q && q.total > 0 && q.score === q.total) return true;
+    const readN = countRead();
+    const qAnswered = countQuestionsAnswered();
+    const focusMin = focusMinutes();
+    const perfect = (function(){
+      for(const s of SUBJECTS){
+        for(const t of s.topics){
+          const q = bestQuizScore(s.id, t.id);
+          if(q && q.total > 0 && q.score === q.total) return true;
         }
       }
       return false;
@@ -118,30 +92,17 @@
 
     const ids = [];
     ids.push("first-visit");
-    if (readN >= 1) ids.push("first-read");
-    if (readN >= 5) ids.push("read-5");
-    if (quizzesPassed >= 1) ids.push("quiz-pass");
-    if (perfect) ids.push("quiz-perfect");
-    if (streak >= 3) ids.push("streak-3");
-    if (streak >= 7) ids.push("streak-7");
-
-    // Check subject completion
-    for (const s of SUBJECTS) {
-      const c = await subjectCompletion(s);
-      if (c.total > 0 && c.done === c.total) { ids.push("subject-clear"); break; }
-    }
-
-    // Check all clear
-    let allDone = true;
-    for (const s of SUBJECTS) {
-      const c = await subjectCompletion(s);
-      if (c.done !== c.total) { allDone = false; break; }
-    }
-    if (allDone && SUBJECTS.length > 0) ids.push("all-clear");
-
-    if (focusMin >= 30) ids.push("focus-30");
-    if (focusMin >= 120) ids.push("focus-120");
-    if (qAnswered >= 60) ids.push("quiz-60-plus");
+    if(readN >= 1) ids.push("first-read");
+    if(readN >= 5) ids.push("read-5");
+    if(stats.quizzesPassed >= 1) ids.push("quiz-pass");
+    if(perfect) ids.push("quiz-perfect");
+    if(streak >= 3) ids.push("streak-3");
+    if(streak >= 7) ids.push("streak-7");
+    if(SUBJECTS.some(s=>{ const c = subjectCompletion(s); return c.total>0 && c.done === c.total; })) ids.push("subject-clear");
+    if(stats.total > 0 && stats.done === stats.total) ids.push("all-clear");
+    if(focusMin >= 30) ids.push("focus-30");
+    if(focusMin >= 120) ids.push("focus-120");
+    if(qAnswered >= 60) ids.push("quiz-60-plus");
 
     return ids;
   }
@@ -166,8 +127,8 @@
   }
 
   /* returns the global list + render the trophy tray */
-  async function render(id){
-    const ids = await evaluate();
+  function render(id){
+    const ids = evaluate();
     const seen = load().seen;
     const host = document.getElementById(id);
     if(!host){
@@ -178,18 +139,11 @@
       return ids;
     }
     host.innerHTML = "";
-    for (const b of BADGES) {
+    BADGES.forEach(b=>{
       const on = ids.indexOf(b.id) !== -1;
-      if (on && !seen[b.id]) {
+      if(on && !seen[b.id]) {
         seen[b.id] = 1;
         save({seen});
-        // Save to Supabase
-        if (window.LPSupabase) {
-          try {
-            const user = await window.LPSupabase.getUser();
-            if (user) await window.LPSupabase.saveBadge(b.id);
-          } catch (e) { /* ignore */ }
-        }
         setTimeout(()=> toast(b), 250);
       }
       const card = el("div","badge-card"+(on?" earned":" locked"));
@@ -199,18 +153,18 @@
         <div class="badge-hint">${on ? esc(b.hint) : "Locked · " + esc(b.hint)}</div>
       `;
       host.appendChild(card);
-    }
+    });
     return ids;
   }
 
-  document.addEventListener("DOMContentLoaded", async ()=>{
-    await render(document.getElementById("badgeTray") ? "badgeTray" : null);
+  document.addEventListener("DOMContentLoaded", ()=>{
+    render(document.getElementById("badgeTray") ? "badgeTray" : null);
   });
 
   window.LPBadges = {
     evaluate,
     render,
-    recheck: async function(){ await render(document.getElementById("badgeTray") ? "badgeTray" : null); }
+    recheck: function(){ render(document.getElementById("badgeTray") ? "badgeTray" : null); }
   };
 
 })();

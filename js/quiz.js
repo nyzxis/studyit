@@ -157,6 +157,7 @@ function renderQuiz(subject, topic, holder){
       qIndex === topic.quiz.length-1 ? "See results" : "Next question →");
     nextBtn.addEventListener("click", ()=>{
       if(qIndex === topic.quiz.length-1){
+        recordQuizScore(subject.id, topic.id, score, topic.quiz.length);
         renderResult();
       }else{
         qIndex++;
@@ -238,7 +239,7 @@ function renderQuiz(subject, topic, holder){
     }
   }
 
-  async function renderResult(){
+  function renderResult(){
     currentKey = null;
     clearInterval(timerInt);
     const pct = Math.round(score/topic.quiz.length*100);
@@ -295,16 +296,6 @@ function renderQuiz(subject, topic, holder){
       window.anime({ targets:o, v:pct, duration:1200, easing:"easeOutExpo", update:function(){ setRing(o.v); } });
     }else{
       setRing(pct);
-    }
-
-    /* save attempt to Supabase */
-    await recordQuizScore(subject.id, topic.id, score, topic.quiz.length);
-
-    /* show best score if different from current */
-    const best = await bestQuizScore(subject.id, topic.id);
-    if(best && best.score !== score){
-      const bestEl = el("div","result-best", `Best: ${best.score}/${best.total} (${Math.round(best.score/best.total*100)}%)`);
-      box.querySelector(".result-copy").appendChild(bestEl);
     }
 
     const missed = [];
