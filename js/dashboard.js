@@ -139,62 +139,84 @@
     }
 
   /* ---------------- activity heatmap (last 14 weeks) ---------------- */
-  function buildHeatmap(){
-    const host = document.getElementById("dockHeatmap");
-    if(!host) return;
+    async function buildHeatmap(){
+      const host = document.getElementById("dockHeatmap");
+      if(!host) return;
 
-    const today = new Date();
-    const todayKey = dayKey(today);
-    const totalW = 14;
+      const today = new Date();
+      const todayKey = dayKey(today);
+      const totalW = 14;
 
-    /* Build dates, oldest -> newest, Monday-based columns */
-    const colAlign = (()=>{ const d = new Date(today); d.setDate(d.getDate() - ((d.getDay()+6)%7)); return d; })();
-    const dates = [];
-    for(let w=0; w<totalW; w++){
-      const colStart = new Date(colAlign);
-      colStart.setDate(colAlign.getDate() - (totalW-1-w)*7);
-      for(let dow=0; dow<7; dow++){
-        const d = new Date(colStart);
-        d.setDate(colStart.getDate()+dow);
-        dates.push(d);
+      /* Build dates, oldest -> newest, Monday-based columns */
+      const colAlign = (()=>{ const d = new Date(today); d.setDate(d.getDate() - ((d.getDay()+6)%7)); return d; })();
+      const dates = [];
+      for(let w=0; w<totalW; w++){
+        const colStart = new Date(colAlign);
+        colStart.setDate(colAlign.getDate() - (totalW-1-w)*7);
+        for(let dow=0; dow<7; dow++){
+          const d = new Date(colStart);
+          d.setDate(colStart.getDate()+dow);
+          dates.push(d);
+        }
       }
+
+      const streak = getStreak();
+      let focus = {};
+
+      // Try Supabase first
+      if (window.LPSupabase) {
+        try {
+          const user = await window.LPSupabase.getUser();
+          if (user) {
+            const sessions = await window.LPSupabase.getFocusSessions();
+            sessions.forEach(s => {
+              const day = dayKey(new Date(s.started_at));
+              focus[day] = (focus[day] || 0) + s.duration_min;
+            });
+          }
+        } catch (e) { /* fall through to localStorage */ }
+      }
+
+      // Fallback to localStorage
+      if (Object.keys(focus).length === 0) {
+        try {
+          focus = JSON.parse(localStorage.getItem("learningPortFocus.v1")) || {};
+        } catch (e) { focus = {}; }
+      }
+
+      const levels = dates.map(d=>{
+        const k = dayKey(d);
+        const mins = parseFloat(focus[k])||0;
+        let lvl = 0;
+        if(mins > 0) lvl = mins >= 45 ? 4 : mins >= 20 ? 3 : mins >= 8 ? 2 : 1;
+        else if(streak.days && streak.days[k]) lvl = 1;
+        return { k, d, mins, lvl, today: k===todayKey };
+      });
+
+      const totalMins = Object.keys(focus).reduce((a,k)=>a+(parseFloat(focus[k])||0),0);
+      const currentStreak = (()=>{ let c=0; for(let i=dates.length-1;i>=0;i--){ if(levels[i].lvl >= 1){ c++; } else break; } return c; })();
+
+      let cells = "";
+      levels.forEach(o=>{
+        cells += `<i class="hm-cell hm-${o.lvl}${o.today?" today":""}" title="${o.k}: ${o.mins>0?Math.round(o.mins)+" min "+ (o.lvl>1?"focused":"visited") : "no activity"}"></i>`;
+      });
+
+      host.innerHTML = `
+        <div class="heatmap-head">
+          <span class="heatmap-title">Study activity — last ${totalW} weeks</span>
+          <span class="heatmap-total">${formatMin(totalMins)} total · ${currentStreak} days active loop</span>
+        </div>
+        <div class="heatmap-body">
+          <div class="hm-labels">${["M","T","W","T","F","S","S"].map((l,i)=>`<span style="top:${(i*12)+4}px">${l}</span>`).join("")}</div>
+          <div class="hm-scroll"><div class="hm-cols">${cells}</div></div>
+        </div>
+        <div class="heatmap-legend">
+          <span>Less</span>
+          ${[0,1,2,3,4].map(l=>`<i class="hm-cell hm-${l}"></i>`).join("")}
+          <span>More</span>
+        </div>
+      `;
     }
-
-    const streak = getStreak();
-    const focus = (function(){ try{ return JSON.parse(localStorage.getItem("learningPortFocus.v1"))||{}; }catch(e){ return {}; } })();
-    const levels = dates.map(d=>{
-      const k = dayKey(d);
-      const mins = parseFloat(focus[k])||0;
-      let lvl = 0;
-      if(mins > 0) lvl = mins >= 45 ? 4 : mins >= 20 ? 3 : mins >= 8 ? 2 : 1;
-      else if(streak.days && streak.days[k]) lvl = 1;
-      return { k, d, mins, lvl, today: k===todayKey };
-    });
-
-    const totalMins = Object.keys(focus).reduce((a,k)=>a+(parseFloat(focus[k])||0),0);
-    const currentStreak = (()=>{ let c=0; for(let i=dates.length-1;i>=0;i--){ if(levels[i].lvl >= 1){ c++; } else break; } return c; })();
-
-    let cells = "";
-    levels.forEach(o=>{
-      cells += `<i class="hm-cell hm-${o.lvl}${o.today?" today":""}" title="${o.k}: ${o.mins>0?Math.round(o.mins)+" min "+ (o.lvl>1?"focused":"visited") : "no activity"}"></i>`;
-    });
-
-    host.innerHTML = `
-      <div class="heatmap-head">
-        <span class="heatmap-title">Study activity — last ${totalW} weeks</span>
-        <span class="heatmap-total">${formatMin(totalMins)} total · ${currentStreak} days active loop</span>
-      </div>
-      <div class="heatmap-body">
-        <div class="hm-labels">${["M","T","W","T","F","S","S"].map((l,i)=>`<span style="top:${(i*12)+4}px">${l}</span>`).join("")}</div>
-        <div class="hm-scroll"><div class="hm-cols">${cells}</div></div>
-      </div>
-      <div class="heatmap-legend">
-        <span>Less</span>
-        ${[0,1,2,3,4].map(l=>`<i class="hm-cell hm-${l}"></i>`).join("")}
-        <span>More</span>
-      </div>
-    `;
-  }
   function formatMin(m){
     return m >= 60 ? (Math.round(m/60*10)/10+"h") : Math.round(m)+"m";
   }
