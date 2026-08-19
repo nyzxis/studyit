@@ -32,6 +32,12 @@
       btn.disabled = true;
       btn.textContent = "Signing in...";
       try {
+        if (!window.LPSupabase) {
+          showError(errEl, "Supabase not loaded. Check your connection.");
+          btn.disabled = false;
+          btn.textContent = "Sign in";
+          return;
+        }
         const { data, error } = await window.LPSupabase.signIn(email, password);
         if (error) throw error;
         if (!data.session) {
@@ -43,6 +49,7 @@
         await window.LPSupabase.migrateFromLocalStorage();
         window.location.href = "index.html";
       } catch (err) {
+        console.error("Login error:", err);
         showError(errEl, err.message || "Sign in failed. Check your credentials.");
         btn.disabled = false;
         btn.textContent = "Sign in";
@@ -63,6 +70,12 @@
       btn.disabled = true;
       btn.textContent = "Creating account...";
       try {
+        if (!window.LPSupabase) {
+          showError(errEl, "Supabase not loaded. Check your connection.");
+          btn.disabled = false;
+          btn.textContent = "Create account";
+          return;
+        }
         const { data, error } = await window.LPSupabase.signUp(email, password);
         if (error) throw error;
         // If session is null, email confirmation is required
@@ -75,6 +88,7 @@
         await window.LPSupabase.migrateFromLocalStorage();
         window.location.href = "index.html";
       } catch (err) {
+        console.error("Signup error:", err);
         showError(errEl, err.message || "Sign up failed. Try a different email.");
         btn.disabled = false;
         btn.textContent = "Create account";
@@ -121,7 +135,16 @@
     }
   }
 
+  // Global error handler for debugging
+  window.addEventListener("error", (e) => {
+    console.error("Global error:", e.error?.message || e.message);
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
+    if (!window.LPSupabase) {
+      console.error("LPSupabase not available on DOMContentLoaded");
+      return;
+    }
     if (document.body.dataset.requireAuth === "true") {
       requireAuth();
     }

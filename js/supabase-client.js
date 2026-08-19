@@ -9,6 +9,11 @@
   const SUPABASE_URL = "https://eqrvzzvywxfvhxeyvrmp.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_fxTY9N-Yt8nlr7SowfoqYA_uhIc73Oo";
 
+  if (!window.supabase) {
+    console.error("Supabase SDK not loaded. Check js/vendor/supabase.min.js");
+    return;
+  }
+
   const { createClient } = window.supabase;
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
