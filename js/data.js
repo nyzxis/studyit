@@ -1610,2000 +1610,891 @@ const SUBJECTS = [
     ]
   },
 
-/* ============================================================/* ============================================================
+/* ============================================================
+/* ============================================================
     MULTIMEDIA AND WEB PUBLISHING SUBJECT
     ============================================================ */
   {
     id: "mw",
     name: "Fundamentals of Multimedia and Web Publishing",
-    code: "IMWF0023",
-    tagline: "Elements, Internet, HTML & Networks",
+    code: "ITMF0024",
+    tagline: "Elements, Internet, HTML, Networks, E-Commerce & Web Design",
     color: "#10b981",
     icon: "multimedia",
     chaptersLabel: "ITMF0024 · Ch 1-9",
+    dockDefault: "detailed",
     topics: [
 
-      /* ================= TOPIC 1: ELEMENTS OF MULTIMEDIA ================= */
+      /* ================= TOPIC 1: MULTIMEDIA FUNDAMENTALS (CH 1) ================= */
       {
-        id: "m1",
+        id: "w1",
         num: "01",
-        title: "Elements of Multimedia",
-        summary: "The five core elements of multimedia, the extended set, and how they combine to create rich content.",
+        title: "Multimedia Fundamentals",
+        summary: "What multimedia is, its five elements, system & product characteristics, types of applications, the development process and design considerations.",
         sections: [
           {
             heading: "What is Multimedia",
             points: [
-              "Multimedia combines multiple types of media — text, images, audio, video and animation — into a single interactive experience.",
-              "It is delivered through digital devices such as computers, smartphones, tablets and interactive kiosks.",
-              "The goal of multimedia is to communicate information effectively using more than one medium at the same time."
+              "Multimedia is any combination of text, graphics, sound, animation and video used to communicate ideas to users effectively.",
+              "Tay Vaughan: 'Multimedia is any combination of text, graphic art, sound, animation and video delivered to you by computer or other electronic means.'",
+              "Stephen Mc Gloughin: 'Multimedia is the presentation of a computer application, incorporating media elements such as text, graphics, video, animation and sound on computer.'",
+              "A multimedia system encompasses the computer and software systems used in multimedia environments — it has interactive control, and distributed multimedia systems operate over a network infrastructure."
             ]
           },
           {
-            heading: "The Five Core Elements",
+            heading: "The Five Multimedia Elements",
             points: [
-              { t: "Text — the fundamental medium for conveying information and ideas.", important: true },
-              { t: "Images — static visuals (photographs, illustrations, diagrams) that complement text.", important: true },
-              { t: "Audio — sound elements (speech, music, effects) that enhance engagement.", important: true },
-              { t: "Video — moving images combined with audio for storytelling and demonstration.", important: true },
-              { t: "Animation — sequenced images creating the illusion of motion for dynamic content.", important: true },
-              { t: "Always list these FIVE as the core elements of multimedia — text, images, audio, video, animation.", tip: true }
+              "Text — the most common element; delivers a message in the most straightforward way as characters; used as labels, prompts and simple directions; should grab attention through size and colour.",
+              "Audio — gives the impact of hearing: music (enhances emotion — sadness, happiness, patriotism, love), and sound effects (used for a specific point, not just background noise, e.g. an explosion to show anger).",
+              "Graphics — pictures, photos, slides, illustrations, drawings and still images; show meaning quicker than text (showing a photo of an apple is faster than describing its shape, colour and size).",
+              "Animation — shows movement; objects appear to move because a series of slightly different pictures are displayed rapidly in sequence (like flipping a book).",
+              "Video — the most complicated element and the one with the most impact; includes full motion, still graphics, audio and animation; conveys a great deal of information in the least time.",
+              "Note: video is used for realistic events (e.g. a birthday party); animation is used for unrealistic events that are hard to film (e.g. blood flow in the human body)."
             ]
           },
           {
-            heading: "Extended Elements",
+            heading: "Multimedia System Characteristics (4)",
             points: [
-              "Interactivity — user-driven engagement that responds to input and changes output.",
-              "Time-based media — content that unfolds over time (video, audio, animation).",
-              "Solid — 3D objects and shapes for immersive experiences and AR/VR integration.",
-              { t: "Interactivity is what separates true multimedia from simple media — the user can control the experience.", tip: true }
+              "Computer-controlled — a computer produces, stores, transmits and presents the information to the end user.",
+              "Integration — all components (text, graphics, audio, video, animation) are controlled by software/computer so you can read, hear and see them at the same time.",
+              "Use of digitized data — text, sound, pictures, video and numbers must be converted into digital data the computer can recognise.",
+              "Interactivity — users navigate a presentation using a mouse, keyboard or touch screen; interactivity can be feedback or navigation control."
             ]
           },
           {
-            heading: "How Elements Combine",
+            heading: "Multimedia Product Characteristics (4)",
             points: [
-              "A website uses text + images + video to teach a topic.",
-              "An e-learning module combines text, narration (audio), animation and interactivity.",
-              "A game combines graphics, audio, animation and interactivity for immersion.",
-              "AR/VR experiences add 3D solid objects for a fully immersive feel."
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "Which of the following is NOT one of the five core elements of multimedia?",
-            options: ["Text", "Images", "Interactivity", "Animation"],
-            answer: 2,
-            explain: "The five core elements are text, images, audio, video and animation. Interactivity is an extended element."
-          },
-          {
-            q: "What is the fundamental medium for conveying information and ideas?",
-            options: ["Video", "Audio", "Text", "Animation"],
-            answer: 2,
-            explain: "Text is the fundamental medium for conveying information and ideas."
-          },
-          {
-            q: "Which element combines moving images with audio for storytelling?",
-            options: ["Animation", "Video", "Images", "Text"],
-            answer: 1,
-            explain: "Video is moving images combined with audio for storytelling and demonstration."
-          },
-          {
-            q: "Sequenced images creating the illusion of motion is called...",
-            options: ["Video", "Animation", "Interactivity", "Simulation"],
-            answer: 1,
-            explain: "Animation is sequenced images creating the illusion of motion for dynamic content."
-          },
-          {
-            q: "What separates true multimedia from simple media?",
-            options: ["Higher resolution", "Interactivity", "More colours", "Longer duration"],
-            answer: 1,
-            explain: "Interactivity — user-driven engagement that responds to input — is what separates true multimedia from simple media."
-          },
-          {
-            q: "3D objects and shapes for immersive experiences belong to which extended element?",
-            options: ["Solid", "Audio", "Interactivity", "Time-based media"],
-            answer: 0,
-            explain: "Solid refers to 3D objects and shapes for immersive experiences and AR/VR integration."
-          }
-        ],
-        takeaways: [
-          "Multimedia combines text, images, audio, video and animation into one interactive experience.",
-          "The FIVE core elements to remember: text, images, audio, video, animation.",
-          "Interactivity, time-based media and solid (3D) objects are extended elements.",
-          "AR/VR experiences add 3D solid objects for full immersion."
-        ]
-      },
-
-      /* ================= TOPIC 2: APPLICATIONS & DEVELOPMENT PROCESS ================= */
-      {
-        id: "m2",
-        num: "02",
-        title: "Applications & Development Process",
-        summary: "Where multimedia is used in the real world, and the standard six-stage multimedia development process.",
-        sections: [
-          {
-            heading: "Applications of Multimedia",
-            points: [
-              "Education — interactive tutorials, simulations, and enriched learning materials.",
-              "Entertainment — games, virtual experiences, and interactive storytelling.",
-              "Business — presentations, product demonstrations, and digital signage.",
-              "Communication — video conferencing, instant messaging, and collaborative platforms.",
-              "Training — simulation-based skill development in controlled environments.",
-              "Information kiosks — public access to multimedia content in physical spaces."
+              "Information present on a computer.",
+              "Links.",
+              "Navigation tools (e.g. icons, buttons).",
+              "Interactive presentation."
             ]
           },
           {
-            heading: "Development Process Overview",
+            heading: "Types of Multimedia Applications",
             points: [
-              "Multimedia projects follow a structured process from idea to delivery.",
-              "The process is iterative — stages may repeat as the project is refined.",
-              { t: "The six stages: Concept & Planning, Storyboarding, Content Creation, Authoring, Testing, Deployment.", important: true },
-              { t: "Know the correct ORDER of the six stages — planning always comes first, deployment last.", tip: true }
-            ]
-          },
-          {
-            heading: "1. Concept & Planning",
-            points: [
-              "Define objectives, target audience, and the core message.",
-              "Identify scope, budget, timeline and the team needed.",
-              "Research existing solutions and define success criteria."
-            ]
-          },
-          {
-            heading: "2. Storyboarding",
-            points: [
-              "Outline the sequence and structure of content elements.",
-              "Sketch each screen or scene before production begins.",
-              "Acts as a blueprint that guides the whole team.",
-              { t: "Storyboarding happens BEFORE content creation — it is the visual plan of the project.", tip: true }
-            ]
-          },
-          {
-            heading: "3. Content Creation",
-            points: [
-              "Produce text, capture images, record audio/video, and animate.",
-              "Create or source all the raw assets that will be combined.",
-              "Ensure assets are high quality and fit the project brief."
-            ]
-          },
-          {
-            heading: "4. Authoring",
-            points: [
-              "Combine all elements using multimedia software (e.g. Adobe Creative Suite, authoring tools).",
-              "Assemble content into a coherent, navigable product.",
-              "Add interactivity, navigation and user controls."
-            ]
-          },
-          {
-            heading: "5. Testing",
-            points: [
-              "Verify compatibility, performance, and accessibility across devices.",
-              "Test navigation, media playback and interactive features.",
-              "Fix bugs and refine based on user feedback.",
-              { t: "Testing must happen BEFORE deployment — a project is never deployed without being tested.", tip: true }
-            ]
-          },
-          {
-            heading: "6. Deployment",
-            points: [
-              "Publish to the web, intranet, or distribute via physical/media formats.",
-              "Deliver the final product to the target audience.",
-              "Maintain and update the product after launch."
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "Which stage comes FIRST in the multimedia development process?",
-            options: ["Storyboarding", "Content Creation", "Concept & Planning", "Deployment"],
-            answer: 2,
-            explain: "Concept & Planning always comes first — you define objectives, audience and message before anything else."
-          },
-          {
-            q: "Sketching each screen or scene before production is part of which stage?",
-            options: ["Testing", "Storyboarding", "Deployment", "Authoring"],
-            answer: 1,
-            explain: "Storyboarding outlines the sequence and structure of content elements before production begins."
-          },
-          {
-            q: "Combining all elements using multimedia software is called...",
-            options: ["Storyboarding", "Authoring", "Testing", "Planning"],
-            answer: 1,
-            explain: "Authoring is combining all elements using multimedia software into a coherent product."
-          },
-          {
-            q: "Simulation-based skill development is an application of multimedia in which field?",
-            options: ["Entertainment", "Training", "Kiosks", "Business"],
-            answer: 1,
-            explain: "Training uses simulation-based skill development in controlled environments."
-          },
-          {
-            q: "Interactive tutorials and simulations belong to which multimedia application?",
-            options: ["Education", "Communication", "Kiosks", "Entertainment"],
-            answer: 0,
-            explain: "Education uses interactive tutorials, simulations, and enriched learning materials."
-          },
-          {
-            q: "Which stage involves verifying compatibility and accessibility across devices?",
-            options: ["Authoring", "Deployment", "Testing", "Content Creation"],
-            answer: 2,
-            explain: "Testing verifies compatibility, performance and accessibility before deployment."
-          }
-        ],
-        takeaways: [
-          "Multimedia is applied in education, entertainment, business, communication, training and kiosks.",
-          "The six-stage process: Concept & Planning → Storyboarding → Content Creation → Authoring → Testing → Deployment.",
-          "Storyboarding is the visual plan created before production.",
-          "Testing always happens before deployment."
-        ]
-      },
-
-      /* ================= TOPIC 3: INTERNET, ISP, TLD, URL, WWW ================= */
-      {
-        id: "m3",
-        num: "03",
-        title: "Internet, ISP, TLD, URL & WWW",
-        summary: "How the internet works, what ISPs do, and the building blocks: TLD, URL, DNS and the WWW.",
-        sections: [
-          {
-            heading: "Internet Architecture",
-            points: [
-              "Client-Server model — clients request services/resources from central servers.",
-              "Peer-to-Peer (P2P) — each node can act as both client and server, sharing resources directly.",
-              "Network protocols — HTTP/HTTPS for web traffic, FTP for file transfer, SMTP/POP3/IMAP for email.",
-              { t: "DNS (Domain Name System) — resolves domain names to IP addresses so browsers can load resources.", important: true }
-            ]
-          },
-          {
-            heading: "ISP (Internet Service Provider)",
-            points: [
-              { t: "ISP = an organisation that provides individuals and businesses access to the internet.", important: true },
-              "Examples of Malaysian ISPs: Maxis, Unifi, Celcom, Streamyx.",
-              "ISPs offer connection plans with different speeds and prices.",
-              { t: "Remember the ISP examples — Maxis, Unifi, Celcom, Streamyx — these often appear in MCQs.", tip: true }
-            ]
-          },
-          {
-            heading: "TLD (Top-Level Domain)",
-            points: [
-              { t: "TLD = the suffix of a domain name (e.g. .my, .com, .org, .net, .edu) that indicates country or organisation type.", important: true },
-              ".my is the country-code TLD for Malaysia.",
-              ".com is a generic TLD for commercial organisations.",
-              ".org is a generic TLD for non-profit organisations.",
-              { t: "Remember: .my is a ccTLD (country code); .com, .org, .net are generic TLDs.", tip: true }
-            ]
-          },
-          {
-            heading: "URL (Uniform Resource Locator)",
-            points: [
-              { t: "URL = the address that specifies the location of a resource on the internet.", important: true },
-              "A URL consists of: protocol + domain + path.",
-              "Example: https://www.university.edu/course/page.html — https is the protocol, www.university.edu is the domain, /course/page.html is the path.",
-              { t: "Be able to identify the PROTOCOL, DOMAIN and PATH in a given URL.", tip: true }
-            ]
-          },
-          {
-            heading: "WWW (World Wide Web)",
-            points: [
-              { t: "WWW = the system of interlinked hyperdocuments accessed via the internet using HTTP/HTTPS and web browsers.", important: true },
-              "The Web runs ON TOP of the internet — the internet is the network, the Web is the content.",
-              "Web pages are linked through hyperlinks and accessed by URLs.",
-              { t: "The internet is the INFRASTRUCTURE; the WWW is the CONTENT accessed over it.", tip: true }
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "Which of the following is an example of a Malaysian ISP?",
-            options: ["Google", "Maxis", "Chrome", "YouTube"],
-            answer: 1,
-            explain: "Maxis, Unifi, Celcom and Streamyx are Malaysian ISPs."
-          },
-          {
-            q: "What does .my in a domain name indicate?",
-            options: ["A commercial site", "A non-profit", "The country code for Malaysia", "A government site"],
-            answer: 2,
-            explain: ".my is the country-code Top-Level Domain (ccTLD) for Malaysia."
-          },
-          {
-            q: "Which part of the URL is the protocol?",
-            options: ["https", "www.university.edu", "/course/page.html", "the dot in .edu"],
-            answer: 0,
-            explain: "In https://www.university.edu/course/page.html, https is the protocol."
-          },
-          {
-            q: "What does DNS do?",
-            options: ["Creates websites", "Resolves domain names to IP addresses", "Provides internet access", "Encodes video"],
-            answer: 1,
-            explain: "DNS (Domain Name System) resolves human-readable domain names to IP addresses."
-          },
-          {
-            q: "The system of interlinked hyperdocuments accessed via the internet is the...",
-            options: ["ISP", "DNS", "WWW", "HTML"],
-            answer: 2,
-            explain: "The World Wide Web (WWW) is the system of interlinked hyperdocuments accessed via browsers."
-          },
-          {
-            q: "HTTP/HTTPS, FTP and SMTP are examples of...",
-            options: ["ISPs", "Web browsers", "Network protocols", "Top-level domains"],
-            answer: 2,
-            explain: "They are network protocols used for web traffic, file transfer and email."
-          },
-          {
-            q: "Which statement about the internet and the WWW is TRUE?",
-            options: ["They are exactly the same thing", "The Web is the infrastructure, the internet is the content", "The internet is the infrastructure, the Web is the content", "The Web can work without the internet"],
-            answer: 2,
-            explain: "The internet is the network infrastructure; the WWW is the content accessed over it."
-          },
-          {
-            q: "In the model where clients request services from central servers, the model is called...",
-            options: ["Peer-to-Peer", "Client-Server", "Mesh", "Bus"],
-            answer: 1,
-            explain: "In the Client-Server model, clients request services and resources from central servers."
-          }
-        ],
-        takeaways: [
-          "ISPs (Maxis, Unifi, Celcom, Streamyx) provide internet access.",
-          "TLD = domain suffix (.my country code, .com/.org/.net generic).",
-          "URL = protocol + domain + path.",
-          "DNS resolves domain names to IP addresses.",
-          "Internet = infrastructure; WWW = content over it."
-        ]
-      },
-
-      /* ================= TOPIC 4: HTML FUNDAMENTALS ================= */
-      {
-        id: "m4",
-        num: "04",
-        title: "HTML Fundamentals",
-        summary: "Document structure, the essential HTML tags, and semantic HTML5 elements for accessible pages.",
-        sections: [
-          {
-            heading: "Document Structure",
-            points: [
-              { t: "<!DOCTYPE html> — declaration that tells the browser the document type and HTML version being used.", important: true },
-              { t: "<html> — the root element that wraps all other HTML content in a document.", important: true },
-              { t: "<head> — contains meta-information (character set, viewport, title, links to styles/scripts) not displayed directly in the browser window.", important: true },
-              { t: "<body> — the container for all visible content (text, images, forms, media) rendered in the browser window.", important: true },
-              { t: "<head> holds META data, <body> holds VISIBLE content — a classic MCQ.", tip: true }
-            ]
-          },
-          {
-            heading: "Headings & Paragraphs",
-            points: [
-              { t: "<h1>–<h6> — heading elements; <h1> is highest level (typically page title), <h6> is lowest, structuring content hierarchy.", important: true },
-              "<h1> is used for the main page title, <h2>–<h6> for subheadings.",
-              { t: "<p> — paragraph element for blocks of textual content.", important: true },
-              { t: "There are SIX heading levels, and only ONE <h1> should be used per page.", tip: true }
-            ]
-          },
-          {
-            heading: "Links & Images",
-            points: [
-              { t: "<a> — anchor element creating hyperlinks; uses the href attribute to target another page, section, or resource.", important: true },
-              { t: "<img> — image element; requires src (source file path/URL) and alt (text description for accessibility).", important: true },
-              { t: "<img> REQUIRES both src and alt — alt is for accessibility.", tip: true }
-            ]
-          },
-          {
-            heading: "Lists",
-            points: [
-              { t: "<ul> and <ol> — unordered (bulleted) and ordered (numbered) list elements.", important: true },
-              { t: "<li> — list item element; must be nested inside <ul> or <ol>.", important: true }
-            ]
-          },
-          {
-            heading: "Tables",
-            points: [
-              { t: "<table> — table element for tabular data; uses <tr>, <th>, <td> for rows, header cells, and data cells.", important: true },
-              "<tr> defines a table row, <th> a header cell, <td> a data cell."
-            ]
-          },
-          {
-            heading: "Forms & Input",
-            points: [
-              { t: "<form> — form element that groups input controls; uses action (destination) and method (GET/POST).", important: true },
-              { t: "<input> — flexible form control; type attribute defines kind (text, email, password, number, checkbox, radio, submit, button).", important: true },
-              { t: "<button> — clickable button, often used inside forms or for JavaScript interaction.", important: true },
-              { t: "The METHOD attribute of a form is usually GET or POST.", tip: true }
-            ]
-          },
-          {
-            heading: "Containers & Semantic Elements",
-            points: [
-              { t: "<div> and <span> — generic container elements for layout (div: block-level) and inline text (span).", important: true },
-              { t: "<header>, <nav>, <main>, <section>, <article>, <footer> — semantic HTML5 elements that describe the purpose of content sections.", important: true },
-              { t: "Semantic elements give MEANING — <main> is the main content, <nav> is navigation, <footer> is the page footer.", tip: true }
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "Which HTML element creates a hyperlink?",
-            options: ["<a>", "<link>", "<href>", "<url>"],
-            answer: 0,
-            explain: "The <a> (anchor) element creates hyperlinks using the href attribute."
-          },
-          {
-            q: "What does the <img> element require?",
-            options: ["src and alt attributes", "height and width", "title and border", "style and class"],
-            answer: 0,
-            explain: "<img> requires src (source) and alt (text description for accessibility)."
-          },
-          {
-            q: "Which element contains meta-information NOT displayed in the browser window?",
-            options: ["<body>", "<head>", "<main>", "<footer>"],
-            answer: 1,
-            explain: "<head> contains meta-information like character set, viewport, title and links."
-          },
-          {
-            q: "Which is the highest level heading in HTML?",
-            options: ["<h6>", "<h2>", "<h1>", "<h3>"],
-            answer: 2,
-            explain: "<h1> is the highest level heading, typically used for the page title."
-          },
-          {
-            q: "Which element is a semantic HTML5 element for the MAIN content of a page?",
-            options: ["<div>", "<span>", "<main>", "<b>"],
-            answer: 2,
-            explain: "<main> is a semantic element that identifies the main content of a document."
-          },
-          {
-            q: "What does the <ul> element create?",
-            options: ["An ordered (numbered) list", "An unordered (bulleted) list", "A definition list", "A table"],
-            answer: 1,
-            explain: "<ul> creates an unordered (bulleted) list; <ol> creates an ordered (numbered) list."
-          },
-          {
-            q: "Which tag pair defines rows, header cells and data cells in a table?",
-            options: ["<tr>, <th>, <td>", "<ul>, <ol>, <li>", "<a>, <img>, <p>", "<h1>, <h2>, <h3>"],
-            answer: 0,
-            explain: "A table uses <tr> (row), <th> (header cell) and <td> (data cell)."
-          },
-          {
-            q: "Which attribute of <input> defines the kind of control (text, email, password...)?",
-            options: ["name", "type", "value", "id"],
-            answer: 1,
-            explain: "The type attribute defines the kind of input control."
-          },
-          {
-            q: "Which element wraps all other HTML content in a document?",
-            options: ["<head>", "<html>", "<body>", "<main>"],
-            answer: 1,
-            explain: "<html> is the root element that wraps all other HTML content."
-          },
-          {
-            q: "Which is a semantic element used for page navigation?",
-            options: ["<nav>", "<div>", "<span>", "<p>"],
-            answer: 0,
-            explain: "<nav> is a semantic HTML5 element for navigation links."
-          },
-          {
-            q: "A <span> element is best described as...",
-            options: ["A block-level container", "An inline text container", "A heading", "A list item"],
-            answer: 1,
-            explain: "<span> is a generic inline container; <div> is a block-level container."
-          },
-          {
-            q: "Which declaration tells the browser the document type?",
-            options: ["<body>", "<!DOCTYPE html>", "<meta>", "<footer>"],
-            answer: 1,
-            explain: "<!DOCTYPE html> tells the browser the document type and HTML version."
-          }
-        ],
-        takeaways: [
-          "<head> holds meta data; <body> holds visible content.",
-          "<img> requires src and alt attributes.",
-          "Semantic elements: <header>, <nav>, <main>, <section>, <article>, <footer>.",
-          "<div> is block-level, <span> is inline.",
-          "Forms use action (destination) and method (GET/POST)."
-        ]
-      },
-
-      /* ================= TOPIC 5: LISTS ================= */
-      {
-        id: "m5",
-        num: "05",
-        title: "HTML Lists",
-        summary: "Ordered, unordered and definition lists — plus nesting, styling and accessibility.",
-        sections: [
-          {
-            heading: "Ordered Lists (<ol>)",
-            points: [
-              "Number-based list where each <li> is numbered sequentially.",
-              "The start attribute can set a custom starting number.",
-              "Use when the sequence or order matters (steps, rankings, instructions).",
-              { t: "<ol> = ORDERED = numbered list — use it for steps and rankings.", tip: true }
-            ]
-          },
-          {
-            heading: "Unordered Lists (<ul>)",
-            points: [
-              "Bullet-based list where each <li> is marked with a marker (disc, circle, square).",
-              "The type attribute can change the marker style.",
-              "Use when order does not matter (features, items, options).",
-              { t: "<ul> = UNORDERED = bulleted list — use it when order is not important.", tip: true }
-            ]
-          },
-          {
-            heading: "Definition Lists (<dl>)",
-            points: [
-              "Term-description pairs using <dt> (term) and <dd> (definition).",
-              "Useful for glossaries, metadata and Q&A pairs.",
-              "Each term <dt> is followed by one or more <dd> definitions.",
-              { t: "<dl> pairs <dt> (term) with <dd> (definition).", tip: true }
-            ]
-          },
-          {
-            heading: "Nested Lists",
-            points: [
-              "Lists inside lists — an outer list contains inner <ul> or <ol>.",
-              "Enables multi-level outlines and hierarchical structures.",
-              "Each nested list is placed inside an <li> of the parent list.",
-              { t: "Nested lists are placed INSIDE the <li> of the parent list.", tip: true }
-            ]
-          },
-          {
-            heading: "Accessibility",
-            points: [
-              "Use descriptive <label> elements associated with <input> via for/id.",
-              "Provide meaningful alt text for <img> in lists.",
-              "Ensure keyboard navigability.",
-              "Structure lists semantically so screen readers announce items correctly."
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "Which list type uses numbers in sequence?",
-            options: ["<ol>", "<ul>", "<dl>", "<li>"],
-            answer: 0,
-            explain: "<ol> (ordered list) numbers each <li> sequentially."
-          },
-          {
-            q: "Which element is used for term-description pairs?",
-            options: ["<ol>", "<ul>", "<dl>", "<table>"],
-            answer: 2,
-            explain: "<dl> (definition list) pairs <dt> terms with <dd> definitions."
-          },
-          {
-            q: "In a definition list, which tag holds the TERM?",
-            options: ["<dd>", "<dt>", "<li>", "<p>"],
-            answer: 1,
-            explain: "<dt> defines the term; <dd> defines its definition."
-          },
-          {
-            q: "Which attribute of <ol> sets a custom starting number?",
-            options: ["type", "start", "value", "begin"],
-            answer: 1,
-            explain: "The start attribute sets a custom start number for an ordered list."
-          },
-          {
-            q: "Which list is best for a set of steps that must be followed in order?",
-            options: ["<ul>", "<dl>", "<ol>", "<table>"],
-            answer: 2,
-            explain: "An ordered list <ol> is used when sequence or order matters, like steps."
-          },
-          {
-            q: "A nested list must be placed inside which element of the parent list?",
-            options: ["<ul>", "<ol>", "<li>", "<dl>"],
-            answer: 2,
-            explain: "A nested list is placed inside the <li> of the parent list."
-          }
-        ],
-        takeaways: [
-          "<ol> = ordered/numbered; <ul> = unordered/bulleted.",
-          "<dl> pairs <dt> (term) with <dd> (definition).",
-          "Nested lists go inside the <li> of the parent list.",
-          "Use labels, alt text and semantics for accessible lists."
-        ]
-      },
-
-      /* ================= TOPIC 6: NETWORKS, WIFI & ARCHITECTURE ================= */
-      {
-        id: "m6",
-        num: "06",
-        title: "Networks, WiFi & Network Architecture",
-        summary: "Network basics, wireless connectivity, and the two core architectures: Client-Server and Peer-to-Peer.",
-        sections: [
-          {
-            heading: "What is a Network",
-            points: [
-              "A network connects two or more devices so they can share data and resources.",
-              "Networks allow sharing of files, printers, internet and applications.",
-              "Networks are built from nodes (devices) and links (connections)."
-            ]
-          },
-          {
-            heading: "WiFi (Wireless Fidelity)",
-            points: [
-              { t: "WiFi = wireless LAN using radio waves; devices connect via access points (routers).", important: true },
-              "Common in homes, offices and public spaces (hotspots).",
-              "WiFi frees users from physical cables within range of the router.",
-              { t: "WiFi uses RADIO WAVES and connects through an access point/router.", tip: true }
-            ]
-          },
-          {
-            heading: "Client-Server Architecture",
-            points: [
-              { t: "Client-Server — clients (computers, mobile devices) request services/resources from a central server.", important: true },
-              "The server manages storage, security and responses.",
-              "Common in web browsing (browser → web server), email and file sharing.",
-              "Centralised control makes it easier to secure and administer.",
-              { t: "In Client-Server, the SERVER provides and the CLIENT requests; one central server can serve many clients.", tip: true }
-            ]
-          },
-          {
-            heading: "Peer-to-Peer (P2P) Architecture",
-            points: [
-              { t: "P2P — each node (peer) can act as both client and server; resources are shared directly between peers.", important: true },
-              "No central server is required.",
-              "Used in file sharing (BitTorrent), decentralised messaging and some games.",
-              "Resilient — if one peer fails, others continue working.",
-              { t: "P2P has NO central server — every peer is both client and server.", tip: true }
-            ]
-          },
-          {
-            heading: "Client-Server vs P2P",
-            table: {
-              caption: "Client-Server vs Peer-to-Peer",
-              headers: ["Feature", "Client-Server", "Peer-to-Peer (P2P)"],
-              rows: [
-                ["Central server", "Yes — centralised", "No — decentralised"],
-                ["Management", "Centralised, easy to administer", "Distributed, harder to control"],
-                ["Failure impact", "Single point of failure", "Resilient — peers keep working"],
-                ["Security", "Centralised security & control", "Harder to secure"],
-                ["Example", "Web browsing, email, file servers", "BitTorrent, decentralised messaging"]
-              ]
-            }
-          }
-        ],
-        quiz: [
-          {
-            q: "Which model do clients use to request services from central servers?",
-            options: ["Peer-to-Peer", "Client-Server", "Mesh", "Bus"],
-            answer: 1,
-            explain: "In the Client-Server model, clients request services from central servers."
-          },
-          {
-            q: "In a Peer-to-Peer network, each node can act as...",
-            options: ["Only a client", "Only a server", "Both client and server", "Neither"],
-            answer: 2,
-            explain: "In P2P, every peer can act as both client and server, sharing resources directly."
-          },
-          {
-            q: "WiFi transmits data using...",
-            options: ["Copper cables", "Radio waves", "Light pulses", "Infrared only"],
-            answer: 1,
-            explain: "WiFi is a wireless LAN that uses radio waves through an access point/router."
-          },
-          {
-            q: "Which architecture has a single point of failure?",
-            options: ["Peer-to-Peer", "Client-Server", "Both equally", "Neither"],
-            answer: 1,
-            explain: "Client-Server is centralised — if the central server fails, the service stops."
-          },
-          {
-            q: "BitTorrent file sharing is an example of which architecture?",
-            options: ["Client-Server", "Peer-to-Peer", "Star", "Bus"],
-            answer: 1,
-            explain: "BitTorrent is a P2P system where peers share files directly without a central server."
-          },
-          {
-            q: "Web browsing (browser → web server) is an example of which architecture?",
-            options: ["Peer-to-Peer", "Client-Server", "Mesh", "Ring"],
-            answer: 1,
-            explain: "A browser (client) requests pages from a web server — the Client-Server model."
-          }
-        ],
-        takeaways: [
-          "WiFi uses radio waves via a router/access point.",
-          "Client-Server: server provides, clients request — centralised, single point of failure.",
-          "P2P: every peer is client and server — decentralised and resilient.",
-          "Examples: Client-Server = web/email; P2P = BitTorrent."
-        ]
-      },
-
-      /* ================= TOPIC 7: E-COMMERCE, RFID, HDLC, CRM ================= */
-      {
-        id: "m7",
-        num: "07",
-        title: "E-commerce, RFID, HDLC & CRM",
-        summary: "Online business models, radio-frequency tracking, data-link protocols, and customer management.",
-        sections: [
-          {
-            heading: "E-commerce (Electronic Commerce)",
-            points: [
-              { t: "E-commerce = buying and selling of goods/services using the internet.", important: true },
-              "Models: B2B (business-to-business), B2C (business-to-consumer), C2C (consumer-to-consumer), D2C (direct-to-consumer).",
-              "Enables online payments, digital catalogs and home delivery scheduling.",
-              { t: "Know the abbreviations — B2B, B2C, C2C, D2C.", tip: true }
-            ]
-          },
-          {
-            heading: "RFID (Radio Frequency Identification)",
-            points: [
-              { t: "RFID = technology that uses radio waves to identify and track tags attached to objects.", important: true },
-              "Consists of RFID tags (with chip and antenna) and RFID readers.",
-              "Applications: inventory management, access control, supply chain tracking, contactless payment.",
-              "Examples: EZ-Link, Touch 'n Go.",
-              { t: "RFID = Radio Frequency Identification — used for tracking and contactless payment.", tip: true }
-            ]
-          },
-          {
-            heading: "HDLC (High-Level Data Link Layer)",
-            points: [
-              { t: "HDLC = a bit-oriented communication protocol for data transfer over point-to-point and multipoint links.", important: true },
-              "Features: frame synchronisation, error detection (CRC), flow control.",
-              "Commonly used in wide-area networks (WAN) and leased-line connections.",
-              { t: "HDLC is a DATA LINK layer protocol — bit-oriented, used on WAN links.", tip: true }
-            ]
-          },
-          {
-            heading: "CRM (Customer Relationship Management)",
-            points: [
-              { t: "CRM = software and strategies for managing interactions with current and potential customers.", important: true },
-              "Centralises customer data: contact info, purchase history, preferences.",
-              "Supports sales tracking, marketing campaigns, customer service and analytics.",
-              "Goal: improve retention and customer satisfaction.",
-              { t: "CRM = Customer Relationship Management — managing customer interactions and data.", tip: true }
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "What does RFID stand for?",
-            options: ["Radio Frequency Identification", "Remote File Identification", "Radio Frequency Integration", "Remote File Integration"],
-            answer: 0,
-            explain: "RFID = Radio Frequency Identification — uses radio waves to track tags on objects."
-          },
-          {
-            q: "Which e-commerce model involves businesses selling to consumers?",
-            options: ["B2B", "B2C", "C2C", "D2C"],
-            answer: 1,
-            explain: "B2C (Business-to-Consumer) involves businesses selling to individual consumers."
-          },
-          {
-            q: "What does HDLC stand for?",
-            options: ["High-Level Data Link Layer", "High-Speed Data Link Control", "Hyperlink Data Link Configuration", "High-Level Data Link Connection"],
-            answer: 0,
-            explain: "HDLC = High-Level Data Link Layer — a bit-oriented data link protocol."
-          },
-          {
-            q: "Which technology is used in EZ-Link and Touch 'n Go contactless payment?",
-            options: ["HDLC", "RFID", "CRM", "DNS"],
-            answer: 1,
-            explain: "RFID is used in contactless payment systems like EZ-Link and Touch 'n Go."
-          },
-          {
-            q: "What does CRM centralise to improve customer relationships?",
-            options: ["Server passwords", "Customer data (contact, history, preferences)", "Domain names", "IP addresses"],
-            answer: 1,
-            explain: "CRM centralises customer data like contact info, purchase history and preferences."
-          },
-          {
-            q: "Which is a feature of HDLC?",
-            options: ["Radio tracking", "Frame synchronisation and CRC error detection", "Customer analytics", "Web page rendering"],
-            answer: 1,
-            explain: "HDLC features frame synchronisation, error detection (CRC) and flow control."
-          },
-          {
-            q: "C2C e-commerce means...",
-            options: ["Business to business", "Consumer to consumer", "Consumer to government", "Direct to consumer"],
-            answer: 1,
-            explain: "C2C (Consumer-to-Consumer) involves consumers selling directly to other consumers."
-          }
-        ],
-        takeaways: [
-          "E-commerce models: B2B, B2C, C2C, D2C.",
-          "RFID tracks objects via radio waves; used in contactless payment.",
-          "HDLC is a bit-oriented data link protocol for WAN links.",
-          "CRM centralises customer data for sales, marketing and service."
-        ]
-      },
-
-      /* ================= TOPIC 8: NETWORK TYPES, TOPOLOGY, ROUTER, UTP, MEDIUM ================= */
-      {
-        id: "m8",
-        num: "08",
-        title: "Network Types, Topology, Router, UTP & Medium",
-        summary: "LAN/WAN, the five topologies, router functions, UTP cabling and transmission media.",
-        sections: [
-          {
-            heading: "Types of Network",
-            points: [
-              { t: "LAN (Local Area Network) — covers a small geographic area (building, campus); high speed, private ownership.", important: true },
-              { t: "WAN (Wide Area Network) — spans large geographic regions (city, country, global); uses public infrastructure or leased lines.", important: true },
-              { t: "LAN covers a small area (school, office); WAN covers a large area (country, world).", tip: true }
-            ]
-          },
-          {
-            heading: "Network Topology",
-            points: [
-              { t: "Topology = the layout or arrangement of nodes and connections in a network.", important: true },
-              "Types: bus, star, ring, mesh, tree.",
-              { t: "The FIVE topologies to remember are bus, star, ring, mesh and tree.", tip: true }
-            ]
-          },
-          {
-            heading: "Bus Topology",
-            points: [
-              "All devices share a single communication line (backbone).",
-              "Easy to install and cheap, but a break in the cable stops all traffic.",
-              "Terminators are required at both ends of the cable."
-            ]
-          },
-          {
-            heading: "Star Topology",
-            points: [
-              "All devices connect to a central hub or switch.",
-              "Failure of one node does not affect the others.",
-              "The central device is a single point of failure.",
-              { t: "Star topology connects all nodes to a central hub; if the hub dies, the whole network stops.", tip: true }
-            ]
-          },
-          {
-            heading: "Ring Topology",
-            points: [
-              "Each node connects to two neighbours forming a circle.",
-              "Data travels in one direction around the ring.",
-              "Each node regenerates the signal; a break can disrupt the whole ring."
-            ]
-          },
-          {
-            heading: "Mesh Topology",
-            points: [
-              "Every node connects to multiple other nodes (redundant paths).",
-              "Provides high redundancy and reliability.",
-              "Commonly used in wireless networks and critical infrastructure."
-            ]
-          },
-          {
-            heading: "Tree Topology",
-            points: [
-              "A hierarchical combination of star and bus topologies.",
-              "Groups of star networks are connected to a main bus backbone.",
-              "Scalable for large campus networks."
-            ]
-          },
-          {
-            heading: "Functions of a Router",
-            points: [
-              { t: "Router = a networking device that forwards data packets between computer networks.", important: true },
-              "Uses routing tables and IP addresses to determine the best path.",
-              "Connects different network types (LAN to WAN, internal to internet).",
-              "Performs NAT (Network Address Translation) and firewall functions.",
-              { t: "A router works at the NETWORK layer, using IP addresses to forward packets between networks.", tip: true }
-            ]
-          },
-          {
-            heading: "UTP (Unshielded Twisted Pair)",
-            points: [
-              { t: "UTP = copper cabling standard for Ethernet networks.", important: true },
-              "Four pairs of twisted copper wires reduce electromagnetic interference (EMI) and crosstalk.",
-              "Categorised by performance: Cat5e, Cat6, Cat6a, Cat7.",
-              "Supports data rates up to 10 Gbps and beyond.",
-              { t: "UTP = Unshielded Twisted Pair — the twisting cancels EMI/crosstalk.", tip: true }
-            ]
-          },
-          {
-            heading: "Transformation / Transmission Medium",
-            points: [
-              { t: "Transmission medium = the physical or wireless channel that carries signals.", important: true },
-              "Types: UTP copper cable (electrical signals), fibre-optic cable (light pulses), wireless media (radio waves, infrared).",
-              "Fibre-optic uses total internal reflection, is highly resistant to EMI and has the highest speed.",
-              "Signal conversion: transmitter converts data into signals; receiver converts them back.",
-              { t: "Fibre-optic uses light pulses (fastest, immune to EMI); copper uses electrical signals; wireless uses radio waves.", tip: true }
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "A network covering a building or campus is a...",
-            options: ["WAN", "LAN", "MAN", "VPN"],
-            answer: 1,
-            explain: "LAN (Local Area Network) covers a small geographic area like a building or campus."
-          },
-          {
-            q: "A network spanning large geographic regions is a...",
-            options: ["LAN", "WAN", "PAN", "WiFi"],
-            answer: 1,
-            explain: "WAN (Wide Area Network) spans large regions like a country or the world."
-          },
-          {
-            q: "Which topology connects all devices to a central hub?",
-            options: ["Bus", "Ring", "Star", "Mesh"],
-            answer: 2,
-            explain: "Star topology connects all devices to a central hub or switch."
-          },
-          {
-            q: "Which topology has a single break in the backbone stopping all traffic?",
-            options: ["Star", "Ring", "Bus", "Mesh"],
-            answer: 2,
-            explain: "In bus topology, a break in the cable stops all traffic."
-          },
-          {
-            q: "Which topology provides the highest redundancy and reliability?",
-            options: ["Bus", "Star", "Ring", "Mesh"],
-            answer: 3,
-            explain: "Mesh topology has multiple redundant paths, giving high reliability."
-          },
-          {
-            q: "What does a router primarily do?",
-            options: ["Amplify signals", "Forward data packets between networks using IP addresses", "Connect a single computer's components", "Store websites"],
-            answer: 1,
-            explain: "A router forwards data packets between computer networks using routing tables and IP addresses."
-          },
-          {
-            q: "Which cabling uses four pairs of twisted copper wires to reduce interference?",
-            options: ["Fibre-optic", "UTP", "Coaxial", "WiFi"],
-            answer: 1,
-            explain: "UTP (Unshielded Twisted Pair) uses twisted copper pairs to reduce EMI and crosstalk."
-          },
-          {
-            q: "Which transmission medium uses light pulses and is fastest?",
-            options: ["UTP copper", "Coaxial", "Fibre-optic", "Radio waves"],
-            answer: 2,
-            explain: "Fibre-optic cable transmits light pulses via total internal reflection — fastest and EMI-resistant."
-          },
-          {
-            q: "Which topology is a hierarchical combination of star and bus?",
-            options: ["Ring", "Mesh", "Tree", "Bus"],
-            answer: 2,
-            explain: "Tree topology combines star networks connected to a main bus backbone."
-          },
-          {
-            q: "NAT (Network Address Translation) and firewall functions are performed by a...",
-            options: ["Hub", "Switch", "Router", "Repeater"],
-            answer: 2,
-            explain: "Routers perform NAT and firewall functions in addition to forwarding packets."
-          }
-        ],
-        takeaways: [
-          "LAN = small area; WAN = large region.",
-          "Five topologies: bus, star, ring, mesh, tree.",
-          "Router forwards packets using IP addresses; does NAT + firewall.",
-          "UTP = twisted copper pairs that reduce EMI/crosstalk.",
-          "Fibre-optic = light pulses, fastest, EMI-resistant; wireless = radio waves."
-        ]
-      },
-
-      /* ================= TOPIC 9: AR & VR (MEDICAL) + WEBSITE DEVELOPMENT ================= */
-      {
-        id: "m9",
-        num: "09",
-        title: "AR & VR in Medicine & Website Development",
-        summary: "Augmented and virtual reality in healthcare, and the six stages of website development.",
-        sections: [
-          {
-            heading: "AR (Augmented Reality)",
-            points: [
-              { t: "AR = overlays digital information (graphics, text, data) onto the real-world view.", important: true },
-              "Used via smartphones, tablets or AR glasses.",
-              "Adds digital layers to reality — it does NOT replace it.",
-              { t: "AR ADDS to the real world; VR REPLACES it.", tip: true }
-            ]
-          },
-          {
-            heading: "VR (Virtual Reality)",
-            points: [
-              { t: "VR = creates a fully immersive digital environment that replaces the real world.", important: true },
-              "Users wear headsets (Oculus Quest, HTC Vive) that track head and hand movements.",
-              "Replaces reality with a simulated environment.",
-              { t: "VR requires a HEADSET and fully immerses the user in a simulated world.", tip: true }
-            ]
-          },
-          {
-            heading: "AR Medical Usage",
-            points: [
-              "Superimposing anatomy scans onto a patient's body during surgery for improved precision.",
-              "Guiding minimally invasive procedures with real-time navigation.",
-              "Medical education with 3D anatomy models visible on cadavers or manikins."
-            ]
-          },
-          {
-            heading: "VR Medical Usage",
-            points: [
-              "Surgical simulation and practice for trainees.",
-              "Exposure therapy for phobias and PTSD in controlled settings.",
-              "Pain management and rehabilitation through immersive environments.",
-              "Medical student training with realistic 3D patient scenarios.",
-              { t: "VR medical uses include surgical simulation, exposure therapy and pain management.", tip: true }
-            ]
-          },
-          {
-            heading: "Benefits in Healthcare",
-            points: [
-              "Risk-free practice on virtual patients before real procedures.",
-              "Improved surgical planning with 3D visualisation.",
-              "Enhanced patient education and informed consent.",
-              "Remote expert guidance during procedures.",
-              "Accessibility to specialised training in underserved regions."
-            ]
-          },
-          {
-            heading: "Website Development Process Stages",
-            points: [
-              { t: "The six stages: Planning, Design, Development, Testing, Deployment, Maintenance.", important: true },
-              { t: "Remember the order — P-D-D-T-D-M: Planning, Design, Development, Testing, Deployment, Maintenance.", tip: true }
-            ]
-          },
-          {
-            heading: "1. Planning",
-            points: [
-              "Define purpose, target audience, key features, content strategy and information architecture.",
-              "Set the project timeline, technical requirements and constraints."
-            ]
-          },
-          {
-            heading: "2. Design",
-            points: [
-              "Create visual mockups (UI design), wireframes (layout) and UX flowcharts.",
-              "Define branding, colour palette, typography and interactive elements."
-            ]
-          },
-          {
-            heading: "3. Development",
-            points: [
-              "Code the website: HTML (structure), CSS (styling/layout), JavaScript (interactivity).",
-              "Integrate back-end functionality (databases, auth, CMS) if needed."
-            ]
-          },
-          {
-            heading: "4. Testing",
-            points: [
-              "Verify cross-browser compatibility and responsive design.",
-              "Check accessibility (WCAG), forms, links, media and performance.",
-              "Fix bugs before launch."
-            ]
-          },
-          {
-            heading: "5. Deployment",
-            points: [
-              "Upload files to a web server or hosting platform.",
-              "Configure the domain name (DNS) and set up an SSL certificate for HTTPS.",
-              "Launch the live site."
-            ]
-          },
-          {
-            heading: "6. Maintenance",
-            points: [
-              "Monitor performance and security.",
-              "Update content, software and frameworks.",
-              "Fix bugs, add features and back up data regularly."
-            ]
-          }
-        ],
-        quiz: [
-          {
-            q: "What does AR do?",
-            options: ["Replaces the real world", "Overlays digital information onto the real world", "Plays audio only", "Displays 2D images only"],
-            answer: 1,
-            explain: "AR overlays digital information onto the real-world view — it adds to reality."
-          },
-          {
-            q: "What does VR create for the user?",
-            options: ["A fully immersive digital environment that replaces the real world", "Overlays digital info onto the real world", "A 2D image overlay", "A text-only page"],
-            answer: 0,
-            explain: "VR creates a fully immersive digital environment that replaces the real world."
-          },
-          {
-            q: "Which VR application helps with phobias and PTSD?",
-            options: ["Surgical planning", "Exposure therapy", "Patient education", "Remote guidance"],
-            answer: 1,
-            explain: "VR exposure therapy treats phobias and PTSD in controlled settings."
-          },
-          {
-            q: "Which AR use superimposes anatomy scans onto a patient during surgery?",
-            options: ["Pain management", "Surgical precision guidance", "Student training", "Rehabilitation"],
-            answer: 1,
-            explain: "AR can superimpose anatomy scans onto a patient's body during surgery for precision."
-          },
-          {
-            q: "What is the FIRST stage of website development?",
-            options: ["Design", "Development", "Planning", "Testing"],
-            answer: 2,
-            explain: "Planning — defining purpose, audience, features and timeline — comes first."
-          },
-          {
-            q: "Which stage uploads files to a web server and configures DNS?",
-            options: ["Testing", "Deployment", "Design", "Maintenance"],
-            answer: 1,
-            explain: "Deployment uploads files, configures the domain (DNS) and SSL, and launches the site."
-          },
-          {
-            q: "Which stage involves cross-browser and responsive testing?",
-            options: ["Planning", "Design", "Testing", "Deployment"],
-            answer: 2,
-            explain: "Testing verifies cross-browser compatibility, responsiveness, accessibility and performance."
-          },
-          {
-            q: "HTML, CSS and JavaScript map to which website development stage?",
-            options: ["Design", "Development", "Planning", "Maintenance"],
-            answer: 1,
-            explain: "Development codes the site: HTML (structure), CSS (styling), JavaScript (interactivity)."
-          },
-          {
-            q: "Monitoring security and updating content happens in which stage?",
-            options: ["Deployment", "Testing", "Development", "Maintenance"],
-            answer: 3,
-            explain: "Maintenance monitors performance/security and updates content after launch."
-          },
-          {
-            q: "Which is a benefit of VR in healthcare?",
-            options: ["Risk-free practice on virtual patients", "Slower surgery", "No need for training", "Replacing all doctors"],
-            answer: 0,
-            explain: "VR allows risk-free practice on virtual patients before real procedures."
-          }
-        ],
-        takeaways: [
-          "AR adds to the real world; VR replaces it.",
-          "VR medical: surgical simulation, exposure therapy, pain management.",
-          "AR medical: surgical precision guidance, real-time navigation, education.",
-          "Website stages: Planning → Design → Development → Testing → Deployment → Maintenance."
-        ]
-      }
-    ],
-chapters: [
-      /* ================= CHAPTER 1: INTERNET & MULTIMEDIA ================= */
-      {
-        id: "c1",
-        num: "01",
-        title: "Internet and Multimedia",
-        summary: "Definitions of multimedia, multimedia systems and elements, the development process, design considerations, and the basics of the Internet — ISP, IP/DNS, URL, WWW and awareness issues.",
-        sections: [
-          {
-            heading: "Definitions of Multimedia",
-            points: [
-              { t: "Multimedia (Tay Vaughan) — the combination of text, graphics, animation, audio, still images and video into a single digital presentation.", important: true },
-              { t: "Multimedia (Stephen McGloughin) — a computer-based presentation or application that integrates two or more of these media: graphic, video, sound, text, animation and virtual reality.", important: true },
-              "The core idea of multimedia is that it uses MORE than one medium at the same time to communicate information effectively.",
-              "It is delivered through digital devices such as computers, smartphones, tablets and interactive kiosks.",
-              { t: "Expect the classic six elements in exam definitions — text, graphics, animation, audio, still images and video.", tip: true }
-            ]
-          },
-          {
-            heading: "Multimedia Systems & Elements",
-            points: [
-              { t: "Multimedia system — a computer system that is computer-controlled, integrates at least two media types, handles digitally represented data, and provides an interactive interface.", important: true },
-              { t: "Text — words and symbols; the fundamental medium for conveying information.", important: true },
-              { t: "Graphics — still images such as drawings, charts, clip art and photographs.", important: true },
-              { t: "Audio — sound such as speech, music and effects; it stimulates the sense of hearing.", important: true },
-              { t: "Video — moving images, often combined with audio; stimulates the sense of sight.", important: true },
-              { t: "Animation — a sequence of images displayed quickly to simulate movement; stimulates the sense of sight.", important: true },
-              { t: "Seeing (graphics, video, animation) vs hearing (audio) — a classic exam contrast for which sense each element stimulates.", tip: true }
-            ]
-          },
-          {
-            heading: "Multimedia Product & System Characteristics",
-            points: [
-              "Four major characteristics of a multimedia system: it is computer-controlled, integrated (handles multiple media), digitally represented, and interactive.",
-              "Multimedia products can be classified as linear or interactive.",
-              { t: "Linear application — the user has no control over the sequence (e.g. a movie).", important: true },
-              { t: "Interactive application — the user can navigate and control the experience (e.g. games, e-learning).", important: true }
+              "Linear multimedia — plays from a start position to an end position with little or no intervention; the user has very little control (e.g. a movie).",
+              "Interactive multimedia — allows the viewer to jump around the material; the user controls what and when; useful for information archives, education, training and entertainment."
             ]
           },
           {
             heading: "Multimedia Development Process",
             points: [
-              "A structured, iterative sequence of stages from idea to delivery — stages may repeat as the project is refined.",
-              { t: "The six stages — Concept & Planning, Storyboarding, Content Creation, Authoring, Testing, Deployment.", important: true },
-              { t: "Know the correct ORDER — planning always comes first, deployment last.", tip: true },
-              "Multimedia Application Design Considerations: target audience, goals and objectives, program content, building blocks, interactivity, and Internet delivery."
+              "The stages are: Content Definition → Storyboard Design → Building Blocks → Authoring → Testing and Revision → Delivery."
             ]
           },
           {
-            heading: "The Internet: Basics",
+            heading: "Design Considerations",
             points: [
-              { t: "Internet — the largest network in the world; a worldwide network of networks that connects millions of computers.", important: true },
-              "Cyberspace and the Information Highway are common metaphors used to describe the online world.",
-              "Internet uses include communication, information search, business, entertainment and education.",
-              { t: "ISP — Internet Service Provider; a company that provides access to the Internet (regional or national ISPs).", important: true },
-              { t: "WSP — Wireless Service Provider; supplies wireless Internet access.", important: true }
-            ]
-          },
-          {
-            heading: "Internet Addresses & the WWW",
-            points: [
-              { t: "IP address — a numeric address that uniquely identifies a device on a network.", important: true },
-              { t: "DNS — Domain Name System; translates domain names into IP addresses.", important: true },
-              { t: "Domain name — the text name of an Internet site (e.g. google.com).", important: true },
-              { t: "TLD — Top-Level Domain; the last part of a domain name (.com, .org, .edu). ccTLD is a country-code TLD (.my); generic TLDs include .com, .org, .net.", important: true },
-              { t: "URL — Uniform Resource Locator; the address of a resource on the Web (e.g. http://www.example.com/page).", important: true },
-              { t: "WWW — World Wide Web; a service built on the Internet consisting of hypertext and hypermedia documents linked together.", important: true },
-              "Hypertext is text that contains hyperlinks; a hyperlink is a connection you click to jump to another document or location.",
-              "A web page is a single document; a web site is a collection of related pages; a web server stores and serves pages; a web browser displays them; a home page is the first page of a site.",
-              { t: "HTML — HyperText Markup Language; the markup language used to build web pages.", important: true },
-              "Types of web pages include static pages (fixed content) and dynamic pages (content generated on request)."
-            ]
-          },
-          {
-            heading: "Awareness Issues",
-            points: [
-              "Censorship — restricting access to certain online content by authorities.",
-              "Copyright — legal protection of an author's work against unauthorized use.",
-              "Plagiarism — using someone else's work or ideas without giving proper credit.",
-              { t: "Censorship restricts content; copyright protects work; plagiarism steals credit — know the difference.", tip: true }
+              "Target Audience — know age, educational level, learning styles, culture, needs, expertise, preferred colours, equipment and psychological profile.",
+              "Goals & Objectives — the purpose of the application, what you are trying to accomplish, and the expected result.",
+              "Program Content — the specific message/data provided by a Content Specialist; the Multimedia Architect presents and displays it to the audience.",
+              "MM Building Blocks — elements are produced with various software and imported into an authoring application, considering budget, time, expertise and distribution.",
+              "Interactivity Level — how much control the user has (important in education, training and direct-sales).",
+              "Internet Applications — developing for the Web is now the norm; developers need multimedia authoring, animation, compression and browser-playback knowledge."
             ]
           }
         ],
-        quiz: [],
+        quiz: [
+          { q: "Which element is described as the most complicated and having the most impact on the audience?", options: ["Text", "Graphics", "Video", "Animation"], answer: 2, explain: "Video is the most complicated multimedia element and gives the most impact, combining full motion, graphics, audio and animation." },
+          { q: "Which characteristic means all components are controlled so you see and hear them at the same time?", options: ["Computer-controlled", "Integration", "Digitized data", "Interactivity"], answer: 1, explain: "Integration means all multimedia components are controlled by software so text, audio, video, graphics and animation play together." },
+          { q: "A movie is an example of which type of multimedia?", options: ["Interactive", "Linear", "Hypermedia", "Distributed"], answer: 1, explain: "Linear multimedia plays start to end with little user control; a movie is the classic example." },
+          { q: "Who is responsible for presenting and displaying the content to the audience?", options: ["Content Specialist", "Multimedia Architect", "End user", "ISP"], answer: 1, explain: "The Multimedia Architect presents and displays the content; the Content Specialist provides the research/content." }
+        ],
         takeaways: [
-          "Multimedia = combination of text, graphics, animation, audio, still images and video in one presentation.",
-          "Six development stages in order: Concept & Planning, Storyboarding, Content Creation, Authoring, Testing, Deployment.",
-          "The Internet is the network of networks; the WWW is a hypertext service built on it.",
-          "URL is the address of a web resource; IP/DNS address the devices; TLD/ccTLD classify domain names."
+          "Multimedia = text + graphics + sound + animation + video to communicate ideas.",
+          "Four system characteristics: computer-controlled, integration, digitized data, interactivity.",
+          "Linear = little control (movie); Interactive = user controls what & when.",
+          "Development process: Content Definition → Storyboard → Building Blocks → Authoring → Testing → Delivery."
         ]
       },
 
-      /* ================= CHAPTER 2: COMMUNICATIONS & NETWORKS ================= */
+      /* ================= TOPIC 2: INTERNET & WWW (CH 1) ================= */
       {
-        id: "c2",
+        id: "w2",
         num: "02",
-        title: "Communications & Networks",
-        summary: "Components of communication, transmission media (physical and wireless), networks (LAN/MAN/WAN/PAN), internetworks, network topologies and Internet connections.",
+        title: "Internet & WWW",
+        summary: "What the Internet and cyberspace are, how to access it via ISPs, internet addresses, TLDs, URLs and the World Wide Web.",
         sections: [
           {
-            heading: "Computer Communications",
+            heading: "What is the Internet?",
             points: [
-              { t: "Computer communications — the process in which a computer transfers data, instructions and information to other computers.", important: true },
-              "Four components needed for successful communications: a sending device, a communications device, a communications channel, and a receiving device.",
-              "Sending/receiving devices include personal computers, notebook computers, web-enabled cell phones, web-enabled handhelds, WebTV and GPS receivers.",
-              "Requirements: hardware (computers, communication lines, a modem) and software (an operating system and application software such as web browsers)."
+              "A large collection of computers all over the world connected to one another in various ways; also called 'the Net' — a worldwide system of computer networks.",
+              "It enables you to acquire a file or document from anywhere in the world.",
+              "Cyberspace — an environment where people communicate among themselves using computers.",
+              "Information Highway — the largest computer network; the borderless marketplace; an information distribution system; the largest human communication system; a technology platform."
             ]
           },
           {
-            heading: "System & Application Software",
+            heading: "Internet Uses",
             points: [
-              { t: "Operating system — essential software, consisting of programs and data, that manages computer hardware resources and provides common services for application software (Windows, Linux, Mac).", important: true },
-              { t: "Application software — programs designed to perform specific tasks for users.", important: true },
-              "Examples of application software: web browsers (Internet Explorer, Firefox, Chrome), email software, FTP clients, antivirus, multimedia players (Real Player, Windows Media Player), and PDF readers (Adobe Reader)."
+              "Information resources — news, weather, economics, sports.",
+              "E-mail; software downloads; discussions (forums, chat).",
+              "Entertainment; business & advertisement (electronic commerce).",
+              "Education — courseware, lecture notes, quizzes, exercises.",
+              "Miscellaneous — politics, gossip and negative elements."
             ]
           },
           {
-            heading: "Modems & Signals",
+            heading: "The Birth of the Internet",
             points: [
-              { t: "Modem — a communications device that lets your computer communicate over a standard telephone line by converting data between analog and digital form.", important: true },
-              { t: "Analog signal — consists of a continuous electrical wave.", important: true },
-              { t: "Digital signal — consists of individual electrical pulses representing bits grouped as bytes.", important: true },
-              { t: "Analog = continuous wave; Digital = individual pulses — a common exam contrast.", tip: true }
+              "1960 — Advanced Research Projects Agency (ARPA) was formed and initiated network research in universities and labs.",
+              "January 1, 1983 — the Internet was born, with 562 connected computers.",
+              "1992 — the Web was used to publish research materials.",
+              "1997 — the Web was used to create dynamic, interactive sites."
             ]
           },
           {
-            heading: "Communication Channel",
+            heading: "How to Access the Internet (ISP)",
             points: [
-              { t: "Channel — the communications path between two devices.", important: true },
-              { t: "Bandwidth — the amount of data that can travel through a communications channel.", important: true },
-              "Channels make use of transmission media, which are either physical (guided) or wireless."
+              "Internet access is provided by ISPs (Internet Service Providers) — a business with a permanent Internet connection that offers temporary connection to individuals and companies, free or for a fee.",
+              "Types of ISP: Regional ISP, National ISP, Wireless Service Provider (WSP).",
+              "National ISP serves a country; Regional ISP serves a region/part of a continent; both provide domain-name registration, web-site building and hosting.",
+              "Malaysian local ISPs: TmNet, Jaring, P1. International: America Online, MindSpring, GTE-Net.",
+              "Wireless Service Provider — provides wireless Internet to users with wireless modems or web-enabled handheld devices; examples: Maxis, Digi, Celcom, P1."
             ]
           },
           {
-            heading: "Physical Transmission Media",
+            heading: "Internet Address",
             points: [
-              { t: "Twisted pair cable — two insulated copper wires twisted together; low cost, up to 100 m, susceptible to EMI unless shielded; used for LANs and telephone lines.", important: true },
-              { t: "Coaxial cable — a central conductor surrounded by insulation and shielding; medium cost, up to 500 m; used for cable TV and legacy Ethernet.", important: true },
-              { t: "Fiber optic cable — transmits data using light through glass or plastic fibers; very high speed, immune to EMI; used for backbone and long-distance networks.", important: true },
-              { t: "STP — Shielded Twisted Pair: like UTP but with shielding to reduce EMI.", important: true },
-              { t: "UTP — Unshielded Twisted Pair: the most common LAN cable, no shielding, high susceptibility to interference.", important: true },
-              { t: "Fiber optic is IMMUNE to electromagnetic interference; twisted pair is susceptible — know this contrast.", tip: true }
-            ],
-            table: {
-              caption: "Physical transmission media at a glance",
-              headers: ["Medium", "Speed / Bandwidth", "Distance", "Interference", "Usage"],
-              rows: [
-                ["Twisted pair", "Up to 1-10 Gbps (Cat 5e/6)", "Up to 100 m", "Susceptible to EMI", "LAN, telephone lines"],
-                ["Coaxial", "Up to 10 Mbps-1 Gbps", "Up to 500 m", "Better than twisted pair", "Cable TV, legacy Ethernet"],
-                ["Fiber optic", "Very high (up to Tbps)", "Several km", "Immune to EMI", "Backbone, high-speed networks"],
-                ["STP", "Slightly better than UTP", "Up to 100 m", "Less than UTP", "Industrial networks"],
-                ["UTP", "10 Mbps-10 Gbps", "Up to 100 m", "High susceptibility", "Common in LANs"]
-              ]
-            }
-          },
-          {
-            heading: "Wireless Transmission Media",
-            points: [
-              "Wireless media send signals through air or space, used when it is inconvenient or impossible to install cables.",
-              { t: "Cellular radio — a form of broadcast radio used widely for mobile communications (wireless modems, cellular telephones).", important: true },
-              { t: "Communications satellite — a space station that receives microwave signals from an earth-based station, amplifies them, and broadcasts them back over a wide area.", important: true },
-              { t: "Microwave — waves that provide high-speed signal transmission; uses line-of-sight transmission with no obstructions between antennas.", important: true },
-              { t: "Infrared (IR) — wireless transmission using infrared light waves; requires line-of-sight; many devices have an IrDA port for infrared data transfer.", important: true },
-              { t: "Both microwave and infrared need LINE-OF-SIGHT transmission — a classic exam point.", tip: true }
+              "IP (Internet Protocol) address — the number that uniquely identifies each computer on the Internet.",
+              "Domain Name Server (DNS) — a host computer that coordinates the IP addresses and domain names for the computers it is responsible for.",
+              "Domain name — a unique name associated with an IP address; easier to use than an IP address (e.g. IP 172.17.19.124 vs domain www.unirazak.edu.my).",
+              "Format: hostname.subdomain.top-level-domain. The first part identifies the network; the last part identifies the specific computer."
             ]
           },
           {
-            heading: "Networks",
+            heading: "Top-Level Domain (TLD)",
             points: [
-              { t: "Network — a collection of computers and devices connected by communications channels that facilitates communication and lets users share resources (data, software, hardware).", important: true },
-              "Networks connect through network cables, hubs, communication channels and special software.",
-              { t: "LAN — Local Area Network: covers a small geographic area (building, campus).", important: true },
-              { t: "MAN — Metropolitan Area Network: covers a city or metropolitan area.", important: true },
-              { t: "WAN — Wide Area Network: spans large geographic regions (country, world); the Internet is the largest WAN.", important: true },
-              { t: "PAN — Personal Area Network: connects devices around one person.", important: true },
-              { t: "LAN = small area, MAN = city, WAN = country/world, PAN = personal — match the scale to the name.", tip: true }
+              "An abbreviation that identifies the type of organisation associated with the domain.",
+              "'country-code' TLDs (ccTLDs) — two-letter codes for more than 240 countries.",
+              "Generic TLDs — three or more letters: .edu, .gov, .biz, .com, .info, .name, .net, .org, .pro; others include .asia, .aero, .coop, .jobs, .mobi, .museum, .travel.",
+              "Example http://fit.unirazak.edu.my — 'fit' is the subdomain, 'edu' is the generic TLD, 'my' is the country-code TLD, and the computer name is fit.unirazak."
             ]
           },
           {
-            heading: "Internetworks: Intranet, Extranet, Internet",
+            heading: "Uniform Resource Locator (URL)",
             points: [
-              { t: "Intranet — an internal network that makes company information accessible to employees and facilitates group work (telephone directories, event calendars, manuals, job postings).", important: true },
-              { t: "Extranet — a network that extends to authorized users outside the company (customers, suppliers); a firewall restricts access to its data.", important: true },
-              { t: "Internet — the largest WAN; connects intranets and extranets around the world.", important: true }
+              "An addressing scheme that tells the web browser: the transfer protocol to use, the domain name of the computer, the pathname where the file resides, and the file name.",
+              "Example: http://fit.unirazak.edu.my/program/bit.htm — protocol = http, domain name = fit.unirazak.edu.my, pathname = /program, filename = bit.htm."
             ]
           },
           {
-            heading: "Network Topology",
+            heading: "World Wide Web (WWW)",
             points: [
-              { t: "Topology — the configuration or physical arrangement of devices in a communications network.", important: true },
-              { t: "Bus network — a single central cable (backbone) to which all computers and devices connect; inexpensive and easy to install.", important: true },
-              { t: "Ring network — a cable forms a closed ring with all devices arranged along it; data travels from device to device around the ring in one direction.", important: true },
-              { t: "Star network — all devices connect to a central computer called the hub; all data passes through the hub.", important: true },
-              { t: "Hybrid network — a combination of star, ring and bus networks.", important: true },
-              { t: "Star = central hub; Ring = circular loop; Bus = single backbone; Hybrid = mix — know which is which.", tip: true }
+              "WWW = World Wide Web; a software application that makes it easy for nearly anyone to publish and browse hypertext documents on the Internet.",
+              "Hypertext — web pages that have hyperlinks to other pages.",
+              "Hyperlinks — a string of clickable text or a clickable graphic that points to another web page or document.",
+              "Web page — a file that can be read over the WWW.",
+              "Web browser — software to view web pages, read email and read newsgroups; also called a Web client (e.g. Mozilla Firefox, Google Chrome).",
+              "Web site — a set of pages of information on the Internet about a particular subject (e.g. www.icann.org).",
+              "Web server — a computer that satisfies user requests for web pages.",
+              "Home page — the web page loaded when a browser is first activated; the first page in a set of related pages.",
+              "HTML — HyperText Markup Language; the programming language most web pages are written in."
             ]
           },
           {
-            heading: "Internet Connection",
+            heading: "Types of Web Pages",
             points: [
-              { t: "Dial-up connection — uses an ordinary telephone line for Internet access.", important: true },
-              { t: "Wireless connection — access from mobile computers via Wi-Fi hotspots or wireless LANs.", important: true },
-              { t: "Leased line — a fixed or dedicated Internet connection, typically used in offices.", important: true }
+              "Portal — provides access to other web sites and services.",
+              "Advocacy — describes a cause, opinion or idea (usually a particular group's view).",
+              "News; Informational; Business/Marketing; Personal."
             ]
           }
         ],
-        quiz: [],
+        quiz: [
+          { q: "Which of these is a Malaysian local ISP?", options: ["America Online", "TmNet", "MindSpring", "GTE-Net"], answer: 1, explain: "TmNet, Jaring and P1 are Malaysian local ISPs; AOL, MindSpring and GTE-Net are international." },
+          { q: "A two-letter TLD such as .my is called a...", options: ["Generic TLD", "Country-code TLD (ccTLD)", "Subdomain", "Protocol"], answer: 1, explain: ".my is a country-code TLD; generic TLDs like .com/.org use three or more letters." },
+          { q: "What does DNS coordinate?", options: ["IP addresses and domain names", "Web page colours", "Browser plugins", "Video quality"], answer: 0, explain: "The Domain Name Server coordinates IP addresses and domain names for the computers it manages." },
+          { q: "In http://fit.unirazak.edu.my, what is 'edu'?", options: ["Subdomain", "Computer name", "Generic TLD", "Country-code TLD"], answer: 2, explain: "'edu' is the generic TLD; 'my' is the ccTLD and 'fit' is the subdomain." },
+          { q: "The software used to view web pages is called a...", options: ["Web server", "Web client / browser", "DNS", "Modem"], answer: 1, explain: "A web browser (web client) such as Firefox or Chrome is used to view web pages." }
+        ],
         takeaways: [
-          "Communications needs a sending device, communications devices, a channel, and a receiving device.",
-          "Physical media: twisted pair, coaxial, fiber optic (immune to EMI); wireless: cellular radio, satellite, microwave, infrared.",
-          "LAN small, MAN city, WAN world, PAN personal; the Internet is the largest WAN.",
-          "Topologies: bus (backbone), ring (loop), star (hub), hybrid (mix)."
+          "Internet = worldwide network of computers; ISPs (TmNet, Jaring, P1) provide access.",
+          "IP address uniquely identifies a computer; DNS maps IP ↔ domain name.",
+          "TLD types: ccTLD (2-letter, e.g. .my) and generic (3+ letters, e.g. .com, .edu).",
+          "URL = protocol + domain + pathname + filename. WWW uses hypertext/hyperlinks; HTML is the language."
         ]
       },
 
-      /* ================= CHAPTER 3: COMMUNICATION & INFORMATION SERVICES ================= */
+      /* ================= TOPIC 3: HTML (CH 9) ================= */
       {
-        id: "c3",
+        id: "w3",
         num: "03",
-        title: "Communication & Information Services",
-        summary: "Communication services (email, newsgroups, forums, chat, conferencing), information retrieval (browsers, FTP, search engines) and browsing services (Gopher, Archie, Veronica, WAIS).",
-        sections: [
-          {
-            heading: "Internet Services Overview",
-            points: [
-              "Internet services fall into groups: communications (email, telnet, bulletin boards, newsgroups, IRC), information search and retrieval (search engines, file transfer, browsing), multimedia/WWW, and business/marketing services (web portals, e-commerce).",
-              { t: "Synchronous communication — real-time chatting or calling, where the response is immediate.", important: true },
-              { t: "Asynchronous communication — where the response does not have to be instant (e.g. email).", important: true }
-            ]
-          },
-          {
-            heading: "E-Mail",
-            points: [
-              { t: "E-mail — the exchange of text messages and computer files transmitted via a communications network.", important: true },
-              "Advantages: fast, inexpensive, sent and received at any time, can attach files (text, graphics, images, audio), paperless, cheaper than long-distance calls.",
-              { t: "E-mail server — the host computer that handles and saves emails until the recipient requests them.", important: true },
-              { t: "E-mail client software — the software that enables a user to read emails (Microsoft Outlook, Mozilla Thunderbird).", important: true },
-              { t: "E-mail address — consists of a user name, '@' and a host name, e.g. name@mail.pintar.edu.my.", important: true },
-              "Spam — unwanted messages posted to newsgroups or sent to a list of users through email.",
-              { t: "An email address always contains the @ symbol separating the user name from the host.", tip: true }
-            ],
-            table: {
-              caption: "E-mail protocols",
-              headers: ["Protocol", "Full name", "Role"],
-              rows: [
-                ["SMTP", "Simple Mail Transfer Protocol", "Decides the route an email will take (sending)"],
-                ["POP", "Post Office Protocol", "Handles incoming email; downloads to the client's computer"],
-                ["IMAP", "Internet Message Access Protocol", "Organizes email on the server; email stays on the server"],
-                ["MIME", "Multipurpose Internet Mail Extensions", "Formats messages so nontext data (graphics, sound) can travel between email systems"]
-              ]
-            }
-          },
-          {
-            heading: "Mailing Lists, Newsgroups & Usenet",
-            points: [
-              { t: "Mailing list — a list of names and email addresses for a group of people with a common interest; a way to share information.", important: true },
-              "List moderator moderates a mailing list; a list administrator accepts/rejects membership requests; an unmoderated list has no moderator; a closed list admits only certain people.",
-              "Message digest — a single email containing a collection of messages posted by group members.",
-              { t: "Newsgroup — an online area where users conduct written discussions about a particular subject; a continuous public discussion group.", important: true },
-              "Newsgroups are decentralized — messages are replicated to hundreds of servers worldwide; news servers store and distribute messages; a newsreader is needed to participate.",
-              { t: "Thread / threaded discussion — a post and the series of messages replying to it.", important: true },
-              { t: "Usenet — the entire collection of Internet newsgroups.", important: true },
-              { t: "Big Eight — Usenet's original eight newsgroup categories: comp, humanities, misc, news, rec, sci, soc, talk (plus alt for alternate).", important: true },
-              { t: "Memorize the Big Eight — comp, humanities, misc, news, rec, sci, soc, talk.", tip: true }
-            ]
-          },
-          {
-            heading: "Forums, Listserv & Chat",
-            points: [
-              { t: "Forum / message board / discussion board — like newsgroups but kept on a single server maintained by the owner; does not require a newsreader.", important: true },
-              { t: "Listserv — a type of broadcast email where messages are sent to everyone on the list; not interactive (e.g. newsletters).", important: true },
-              { t: "Chat — a conversation between two or more people that takes place in a chat room; chat room software lets a group type messages seen by everyone in the room.", important: true },
-              "Chat can be public or private; lurking is participating without responding; emoticons display expressions/emotion; netiquette is Internet etiquette.",
-              { t: "IRC — Internet Relay Chat: a multiuser program for chatting that uses a client-server network model.", important: true }
-            ]
-          },
-          {
-            heading: "Instant Messaging, Conferencing & More",
-            points: [
-              { t: "Instant messaging — a real-time communications service that notifies a user when people are online and lets them exchange messages/files or join a private chat room.", important: true },
-              { t: "Collaboration / conferencing — working with other users connected to a server; enables online meetings, real-time chat and shared documents; a whiteboard shares a common screen across the network (e.g. Microsoft NetMeeting).", important: true },
-              { t: "Video conferencing — requires a faster Internet connection; each person's PC has a web camera and microphone.", important: true },
-              { t: "IP telephony — uses the Internet in much the same way a regular telephone uses a phone line (e.g. Net2Phone).", important: true },
-              { t: "Telnet — a program that provides log-in to a remote computer to access its resources; a text-oriented program for legacy systems.", important: true },
-              "Virtual worlds let game players interact (MUD - multiuser dungeons, MUSH); they can be text-based or GUI-based.",
-              { t: "Blog — short for 'Web log'; a log written by individuals chronicling activity on a topic, with reader comments.", important: true },
-              { t: "Social network — a social structure made up of individuals connected by interdependence such as friendship or common interest (Facebook, Twitter, LinkedIn, Flickr, Foursquare).", important: true },
-              { t: "RSS — Rich Site Summary: a Web service that syndicates website content (blog entries, news, audio, video) in a standardized format; users subscribe to RSS feeds.", important: true },
-              { t: "Netiquette — 'Internet etiquette'; e.g. write professionally, proofread, include a subject line.", important: true }
-            ]
-          },
-          {
-            heading: "Browsers & Browser Extensions",
-            points: [
-              "A web client runs browser software (Internet Explorer, Chrome, Firefox) to make it work as a web client.",
-              { t: "Web browser — a software application used to locate and display web pages; modern browsers present graphics, text and multimedia, sometimes needing plug-ins.", important: true },
-              { t: "Plug-in — a program that allows a browser to display or play a specific file; works inside the browser.", important: true },
-              { t: "Helper application — an independent program, stored on the computer, activated automatically when needed to help the browser display or play a file.", important: true },
-              "Categories of browser extensions: document, image viewer, multimedia, sound player, video player, VRML and 3-D."
-            ]
-          },
-          {
-            heading: "FTP — File Transfer Protocol",
-            points: [
-              { t: "FTP — File Transfer Protocol: permits a user to transfer a copy of a data file across the Internet from one computer to another.", important: true },
-              "FTP transfers files in binary format (nontext: audio, video, image) or ASCII format (text: html, MS Word documents).",
-              { t: "FTP site / remote computer — the computer we send files to or receive files from.", important: true },
-              { t: "Local computer — our own computer, connected to an FTP site.", important: true },
-              { t: "Upload — sending a file to an FTP site; Download — receiving a file from an FTP site.", important: true },
-              { t: "FTP server — a server that receives and handles file transfer requests.", important: true },
-              "FTP requires logging in (user name + password, or anonymous login). Common FTP commands: open (connect), get (retrieve a file), bye (terminate).",
-              "Types of FTP: command-line FTP (legacy systems), web-browser FTP (hierarchical sites), and FTP client software (FileZilla, SmartFTP)."
-            ]
-          },
-          {
-            heading: "Information Search & Browsing Services",
-            points: [
-              { t: "Gopher — the earliest browsing service; a menu-driven program that brings text files from all over the world to your computer.", important: true },
-              { t: "Archie — the first Internet search engine; an indexing spider that indexes anonymous FTP site directory and file names.", important: true },
-              { t: "Veronica — an indexing tool used to find Gopher-based resources (Gopher space) by searching titles.", important: true },
-              { t: "WAIS — Wide Area Information Server: a search tool that uses keywords to search the full contents of text documents.", important: true },
-              { t: "Web search engine — a special website that finds other web pages matching a search expression or query (Google, Bing).", important: true },
-              { t: "Web robot / spider — a program that searches the Web and updates the search engine's database.", important: true },
-              "A page hit is a web page indexed in the engine's database that matches the query; results pages contain hyperlinks to matching pages.",
-              { t: "Meta-search engine — a tool that combines results from multiple search engines (MetaCrawler, Dogpile).", important: true },
-              { t: "Web directory — a listing of hyperlinks to websites organized into categories (Google Directory).", important: true },
-              "Web search strategy: formulate the query, select the search tool, evaluate results, repeat until satisfied.",
-              "Query operators: Boolean searching (AND, OR, NOT), wildcard searching, proximity searching, and phrases."
-            ]
-          },
-          {
-            heading: "Online / Cloud Storage & Wikipedia",
-            points: [
-              { t: "Online / cloud storage — a Web service that provides storage to computer users; files can be accessed from any device with Internet access and allow remote backup (IDrive, Picasa, Google Docs).", important: true },
-              { t: "Wikipedia — a free encyclopedia on the Web, written collaboratively by volunteers; almost all content can be edited by anyone.", important: true }
-            ]
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "Synchronous = instant (chat); asynchronous = delayed (email).",
-          "SMTP sends email; POP downloads it; IMAP keeps it on the server; MIME encodes nontext data.",
-          "Usenet Big Eight: comp, humanities, misc, news, rec, sci, soc, talk.",
-          "Archie (FTP), Veronica (Gopher), WAIS (full-text), search engines (web)."
-        ]
-      },
-/* ================= CHAPTER 4: BUSINESS / MARKETING SERVICES ================= */
-      {
-        id: "c4",
-        num: "04",
-        title: "Business / Marketing Services",
-        summary: "E-commerce definitions, models (B2B, B2C, C2C, B2E), mechanisms, payment models, advantages and disadvantages, creating an online store, the e-retail process, and e-government.",
-        sections: [
-          {
-            heading: "Definitions & Concepts",
-            points: [
-              { t: "E-commerce — the process of buying, selling, transferring or exchanging products, information or services via computer networks.", important: true },
-              "Examples include electronic fund transfers among banks and electronic data interchange between businesses.",
-              "Roles in business/commerce: buyers; sellers (retailers, wholesalers, distributors); and producers."
-            ]
-          },
-          {
-            heading: "E-commerce Models",
-            points: [
-              { t: "B2C — business-to-consumer: sale of products or services from a business to the general public (books, software).", important: true },
-              { t: "C2C — consumer-to-consumer: individuals use the Internet to sell products to other individuals (online auctions such as eBay).", important: true },
-              { t: "B2B — business-to-business: sale and exchange of products and services between businesses; a supply chain creates and distributes products.", important: true },
-              { t: "B2E — business-to-employee: use of intranet technology for activities within a business (collaboration, file exchange); increases profits by reducing internal expenses.", important: true },
-              { t: "Know the four models — B2B, B2C, C2C, B2E — and which parties are involved in each.", tip: true }
-            ]
-          },
-          {
-            heading: "E-commerce Mechanisms & Payments",
-            points: [
-              "Mechanisms for buying and selling on the Internet: electronic catalogs, electronic auctions, e-storefronts, e-malls, and e-marketplaces.",
-              "Payment models: cash, cheque, credit cards, e-wallet, and BNPL (Buy Now Pay Later)."
-            ]
-          },
-          {
-            heading: "Advantages of E-commerce",
-            points: [
-              "Lower transaction costs — manufacturers buy and sell directly, avoiding the middleman.",
-              "Distribution costs for information are reduced or eliminated; larger purchases per transaction.",
-              "Customers can get more information and compare prices from multiple vendors easily.",
-              "Alternative way of shopping with custom orders; buyers have more time to shop.",
-              "Easy to search large catalogs; new approaches to generating revenue.",
-              "Options to create a paperless environment; improved customer interactions.",
-              "Global market available 24/7; FAQ pages provide easy access to customer support."
-            ]
-          },
-          {
-            heading: "Disadvantages of E-commerce",
-            points: [
-              "Exposure of personal information.",
-              "Products may not meet expectations or differ from the catalog.",
-              "Products can go missing during shipping."
-            ]
-          },
-          {
-            heading: "E-commerce Sectors & Creating an Online Store",
-            points: [
-              "Sectors: banking, health, travel, retailing, trading, learning, entertainment, auctions, recruiting, government, advertising, and market research.",
-              "To provide e-commerce you must: build a storefront, manage payment, manage product delivery, design a website that attracts/retains customers, manage and promote the website.",
-              { t: "Elements needed for e-commerce — a product, a website to sell it, a way to attract visitors, a way to accept orders (online form), a way to accept money (merchant account), a fulfillment facility to ship products, a way to accept returns, warranty handling, and customer service.", important: true }
-            ]
-          },
-          {
-            heading: "E-commerce Store Implementation",
-            points: [
-              { t: "Enterprise computing — the company buys hardware/software and hires staff to create the website (big companies like Amazon, Dell).", important: true },
-              { t: "Virtual hosting services — a vendor sells and maintains the hardware/software while the company hires staff to create the website.", important: true },
-              { t: "Simplified e-commerce — the vendor provides a simplified system; the store owner fills in forms online and the vendor's software generates all web pages (Yahoo! Merchant Solutions).", important: true },
-              "Factors that attract and retain customers: price, selection, website appearance, ease of use/navigation, availability of information, ease of ordering, privacy policies, product representation, shipping, on-time delivery, and quality of customer support.",
-              "Promoting e-commerce sites: a good domain name, search engine registration, advertising in press, customer newsletters, newsgroups, online classifieds, articles for e-zines, more inbound links, and word-of-mouth."
-            ]
-          },
-          {
-            heading: "The E-retail Process",
-            points: [
-              "1. The customer displays the e-retailer's electronic storefront.",
-              "2. The customer collects purchases in an electronic shopping cart.",
-              "3. The customer enters payment information on a secure website; the e-retailer sends financial information to a bank.",
-              "4. The bank performs security checks and sends authorization back to the e-retailer.",
-              "5. The web server sends confirmation, processes the order and sends it to the fulfillment center.",
-              "6. The fulfillment center packages the order for shipment and reports back; records are updated on the server.",
-              "7. The order is sent to the customer; shipping information is posted on the web.",
-              "8. Packages are delivered to the customer.",
-              { t: "Remember the flow: storefront → shopping cart → secure payment → bank authorization → confirmation → fulfillment → shipment → delivery.", tip: true }
-            ]
-          },
-          {
-            heading: "E-Government",
-            points: [
-              { t: "E-government — the use of IT to provide access to government information and the delivery of public services to citizens, business partners and government servants.", important: true },
-              "Example: myGovernment (www.malaysia.gov.my) — apply for jobs and make various payments online.",
-              "Sample e-commerce stores: amazon.com, barnesandnoble.com, airasia.com."
-            ]
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "E-commerce = buying, selling, transferring or exchanging products/info/services via computer networks.",
-          "Models: B2B (business-business), B2C (business-consumer), C2C (consumer-consumer), B2E (business-employee).",
-          "E-retail flow: storefront → cart → payment → authorization → order → fulfillment → shipment → delivery.",
-          "E-government delivers public services online (e.g. malaysia.gov.my)."
-        ]
-      },
-
-      /* ================= CHAPTER 5: MULTIMEDIA ON THE WEB — MULTIMEDIA ELEMENTS ================= */
-      {
-        id: "c5",
-        num: "05",
-        title: "Multimedia on the Web — Elements",
-        summary: "Multimedia and the WWW, graphics, animation, web audio/video applications, virtual reality, and augmented reality.",
-        sections: [
-          {
-            heading: "Multimedia & the World Wide Web",
-            points: [
-              { t: "WWW — World Wide Web or Web: consists of hypertext and may or may not include hypermedia documents; a large subset of the Internet that supports multimedia.", important: true },
-              { t: "Multimedia — any computer-based presentation software or application that integrates at least two or more of: graphic, video, sound, text, animation and virtual reality.", important: true },
-              { t: "Interactive multimedia — accepts input from the user by means of the keyboard or a pointing device.", important: true }
-            ]
-          },
-          {
-            heading: "Graphic",
-            points: [
-              { t: "Graphic — a digital representation of information; includes drawings, charts, clip art and photographs.", important: true },
-              "Graphics formats used on the Internet: BMP, GIF, JPEG, PCX, PNG, TIFF.",
-              { t: "Thumbnail — a small version of a larger image that you can usually click to display the full-size image.", important: true },
-              "Websites use thumbnails because graphic files can be time-consuming to display.",
-              "Graphic applications: paint programs (bitmap), illustration/design programs (vector), presentation graphics software, animation software, CAD software (for architects/engineers), and desktop publishing."
-            ]
-          },
-          {
-            heading: "Animation",
-            points: [
-              { t: "Animation — a simulation of movement created by displaying a series of pictures (frames); e.g. a cartoon on TV.", important: true },
-              { t: "Animated GIFs — created by combining several images into a single GIF file; supported by almost all browsers.", important: true },
-              { t: "Dynamic HTML — a combination of HTML tags and options that creates more animated and responsive web pages.", important: true },
-              { t: "Java applets — small Java applications downloaded onto the client's browser to run.", important: true },
-              { t: "Shockwave — needs Shockwave plug-ins to run in a browser; supports audio, animation, video, etc.", important: true },
-              { t: "Flash — browser independent but needs the necessary plug-ins.", important: true }
-            ]
-          },
-          {
-            heading: "Web Audio & Video Applications",
-            points: [
-              { t: "Download-and-play — the user clicks a link, the file is saved locally, and playback starts only after the complete download (MP4/MP3 downloads; offline access).", important: true },
-              { t: "Streaming — no need to store the full file locally; playback starts almost immediately; requires a stable high-speed connection (YouTube, Netflix, Spotify, Facebook Live).", important: true },
-              { t: "Progressive download — data is cached or temporarily stored and can often be replayed offline (embedded videos on e-learning platforms).", important: true },
-              { t: "MP3 and audio-only applications — music, podcasts, language learning; low bandwidth consumption, convenient for mobile users (Spotify, SoundCloud, Audible).", important: true },
-              { t: "WebRTC — Web Real-Time Communication: enables real-time audio/video communication in the browser.", important: true },
-              { t: "Streaming plays immediately without full download; download-and-play needs the whole file first.", tip: true }
-            ]
-          },
-          {
-            heading: "Virtual Reality",
-            points: [
-              { t: "VR — Virtual Reality: a simulation of a real or imagined environment that can be experienced visually in 3D (width, height and depth).", important: true },
-              "Features: interactive and immersive, with real-time motion and sound.",
-              "Purpose: enhancing learning, gaming, design and exploration.",
-              { t: "Type 1 — simulation of real environments: used for training and education (interior design walkthroughs, space mission or aircraft cockpit simulation).", important: true },
-              { t: "Type 2 — development of imagined environments: used for games, storytelling or educational adventures (3D fantasy game worlds, interactive history/science modules).", important: true },
-              { t: "VRML — Virtual Reality Modeling Language: a standard language for creating interactive 3D objects on the Web; it specifies how 3D images look and behave and defines user interactions (move, zoom).", important: true }
-            ]
-          },
-          {
-            heading: "Augmented Reality",
-            points: [
-              { t: "AR — Augmented Reality: enhances the real world by overlaying digital information (images, sounds, 3D objects) through devices such as smartphones, tablets or AR glasses.", important: true },
-              "How AR works — components: sensors, camera, processor, display; process: real-world input → digital processing → AR output.",
-              "Applications: education (interactive learning), healthcare (surgery simulations and diagnostics), retail (virtual try-ons and product previews), gaming & entertainment (Pokémon Go).",
-              "Benefits of AR include enriched experiences and improved visualization.",
-              "Challenges in AR: high development costs, privacy and data security, hardware limitations.",
-              { t: "AR ADDS digital elements to the real world; VR creates a fully immersive digital environment. AR = add, VR = replace.", tip: true }
-            ],
-            table: {
-              caption: "AR vs VR comparison",
-              headers: ["Feature", "Augmented Reality (AR)", "Virtual Reality (VR)"],
-              rows: [
-                ["Environment", "Adds digital elements to the real world", "Fully immersive digital environment"],
-                ["Device", "Smartphone, tablet, AR glasses", "VR headset (Oculus, HTC Vive)"],
-                ["User interaction", "Interacts with real and virtual elements", "Interacts only within a virtual space"],
-                ["Mobility", "Free movement in real space", "Often stationary or boundary-limited"]
-              ]
-            }
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "Multimedia integrates at least two of: graphic, video, sound, text, animation, virtual reality.",
-          "Streaming plays immediately; download-and-play requires the full download first.",
-          "VR = fully immersive 3D simulation; AR = overlays digital info on the real world.",
-          "VRML is the standard language for interactive 3D objects on the Web."
-        ]
-      },
-
-      /* ================= CHAPTER 6: SECURITY, PRIVACY & ETHICAL ISSUES ================= */
-      {
-        id: "c6",
-        num: "06",
-        title: "Security, Privacy & Ethical Issues",
-        summary: "Security types, copyright and intellectual property, computer threats, malicious codes, viruses, encryption, firewalls, and unauthorized access.",
-        sections: [
-          {
-            heading: "Security",
-            points: [
-              { t: "Security — the protection of assets from unauthorized access, use, alteration or destruction.", important: true },
-              { t: "Physical security — protection of people, property and physical assets from actions or events that could cause damage or loss.", important: true },
-              { t: "Logical security — specific controls put in place to manage access to computer systems and physical spaces within the data center.", important: true },
-              { t: "Information security policy — a set of rules developed to protect an organization's assets.", important: true }
-            ]
-          },
-          {
-            heading: "Copyright & Intellectual Property",
-            points: [
-              { t: "Intellectual property — the ownership of ideas and control over the tangible or virtual representation of those ideas (art, writings, processes, company and product names, logos).", important: true },
-              { t: "Copyright — the protection of expression (someone's intellectual property); covers literary and musical works, pictorial/graphic/sculptural works, motion pictures, sound recordings and architectural works.", important: true }
-            ]
-          },
-          {
-            heading: "Computer Threats & Malicious Codes",
-            points: [
-              { t: "Threat — an object, person or other entity that represents a constant danger to an asset.", important: true },
-              "The three points of threats: the end-user site, the communication channel/Internet, and the server site.",
-              { t: "Malicious code — the general name for unanticipated or undesired effects in programs or program parts, caused by an agent intent on damage.", important: true },
-              "Types of malicious code: virus, logic bomb, worm, Trojan horse, rabbit, and trapdoor (backdoor).",
-              { t: "Know the six types of malicious code — virus, logic bomb, worm, Trojan horse, rabbit, trapdoor/backdoor.", tip: true }
-            ]
-          },
-          {
-            heading: "Computer Virus",
-            points: [
-              { t: "Virus — a code segment that replicates by attaching copies to existing executables.", important: true },
-              "Types of virus: boot sector, file, and macro.",
-              "Characteristics: replication; requires a host program as a carrier; activated by an external action; replication is limited to the (virtual) system.",
-              "Signs of virus infection: screen displays unusual messages/images, music or unusual sounds play randomly, available memory is less than expected, files become corrupted.",
-              "Prevention: do not start the computer with removable media in the drives; never open an email attachment from an unknown source; install antivirus software and update it frequently.",
-              "Detection/removal: upon detection, clean the infected media immediately."
-            ]
-          },
-          {
-            heading: "Encryption",
-            points: [
-              { t: "Encryption — the process of converting readable data (plaintext) into unreadable characters (ciphertext) to prevent unauthorized access.", important: true },
-              { t: "Decryption — the reverse process: transforming ciphertext back into its normal form (plaintext).", important: true },
-              { t: "Asymmetric or public-key encryption — uses two keys: a public key known to everyone and a private/secret key known only to the recipient. The sender encrypts with the recipient's public key; the recipient decrypts with their private key.", important: true },
-              { t: "Symmetric or private-key encryption — uses one key only, copied on both the sender and receiver sites; the same key encrypts and decrypts.", important: true },
-              { t: "Asymmetric = two keys (public + private); Symmetric = one shared key.", tip: true }
-            ]
-          },
-          {
-            heading: "Firewalls & Unauthorized Access",
-            points: [
-              { t: "Firewall — a program or hardware that filters the information coming through the Internet connection into a private network or computer system.", important: true },
-              { t: "Unauthorized access — the use of a computer or network without permission.", important: true },
-              { t: "Unauthorized use — the use of a computer or its data for unapproved or possibly illegal activities.", important: true },
-              { t: "Access control — a security measure that defines who can access a computer, when they can access it, and what actions they can take.", important: true },
-              { t: "Identification — verifies that an individual is a valid user.", important: true },
-              { t: "Authentication — verifies that the individual is the person he or she claims to be.", important: true },
-              "The three methods of identification/authentication: user names and passwords, possessed objects, and biometric devices.",
-              { t: "Identification checks WHO you are (a valid user); authentication PROVES you are who you claim to be.", tip: true }
-            ]
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "Security protects assets from unauthorized access, use, alteration or destruction.",
-          "Malicious codes: virus, logic bomb, worm, Trojan horse, rabbit, trapdoor/backdoor.",
-          "Encryption: plaintext → ciphertext; asymmetric = 2 keys, symmetric = 1 key.",
-          "Identification verifies a valid user; authentication verifies identity; firewall filters incoming traffic."
-        ]
-      },
-/* ================= CHAPTER 7: WEB DESIGN & DEVELOPMENT ================= */
-      {
-        id: "c7",
-        num: "07",
-        title: "Web Design & Development",
-        summary: "The three-stage website development process: pre-production, production, and post-production — with each step explained.",
-        sections: [
-          {
-            heading: "Website Development Process",
-            points: [
-              "The website development process has 3 stages: pre-production, production, and post-production (site updates and additions).",
-              { t: "The 3 stages — Pre-production, Production, Post-production — know the order.", tip: true }
-            ]
-          },
-          {
-            heading: "Stage 1 — Pre-production",
-            points: [
-              "Pre-production gives focus to the website and streamlines the production process.",
-              "It determines the text content, website structure, visual style/layout, and technical specifications.",
-              "It helps define the purpose of the website and lets the developer set technical specifications based on the projected audience's capability and browsing habits.",
-              "Steps: 1.1 Profile of Target Audience, 1.2 Content Map and Navigation, 1.3 Visual Elements, 1.4 Alpha Text Version, 1.5 Beta Text Version, 1.6 Alpha Visual Version, 1.7 Beta Visual Version."
-            ]
-          },
-          {
-            heading: "Pre-production Steps in Detail",
-            points: [
-              { t: "1.1 Profile of Target Audience — determine the objective (sales/marketing, communication, revenue generation), define the target audience, and set the technical specifications (browser version, frames, JavaScript support, forms, HTML4/DHTML, plug-ins, search engine registration) and create a technical document.", important: true },
-              { t: "1.2 Content Map and Navigation — develop the text content, categorize content to organize the website, divide content by category ('Contact Us' is common), and use a flowchart to outline categories/subcategories.", important: true },
-              { t: "1.3 Visual Elements — consider the visual design: static graphics, animated GIFs/Flash, buttons, font (type/size/color) and background (image/colour).", important: true },
-              { t: "1.4 Alpha Text Version — text-only home page and basic navigation structure; link main categories to dummy pages; tested by a small group; adjust based on critiques.", important: true },
-              { t: "1.5 Beta Text Version — the adjusted version of the Alpha Text Version after critique; tested with a larger audience.", important: true },
-              { t: "1.6 Alpha Visual Version — build the standard visual design: button style, type appearance, layout; present to a small group and adjust.", important: true },
-              { t: "1.7 Beta Visual Version — the adjusted version of the Alpha Visual Version; test with a larger audience; make adjustments or develop/update the style.", important: true }
-            ]
-          },
-          {
-            heading: "Stage 2 — Production",
-            points: [
-              "Production produces the actual web pages that make up the website.",
-              "Steps: 2.1 Content Creation, 2.2 Content Approval, 2.3 Page Editing, 2.4 Staging and Publishing.",
-              { t: "2.1 Content Creation — text, images and other media content are created; the website is built.", important: true },
-              { t: "2.2 Content Approval — content is produced and previewed locally (staging the website); an approval team analyzes to ensure no errors and deadlines are met.", important: true },
-              { t: "2.3 Page Editing — check that content is within technical specifications and that all links function properly.", important: true },
-              { t: "2.4 Staging and Publishing — after all links are tested and content is approved, place the website on the public server.", important: true }
-            ]
-          },
-          {
-            heading: "Staging vs Public Server",
-            points: [
-              { t: "Staging server — where the website is placed during production; the public has NO access; used to test links, verify content and test functionality.", important: true },
-              { t: "Public server — where the website is placed after all links are tested and content approved; the server the audience can access.", important: true },
-              "Register with search engines and use tracking services to collect data about those viewing the website."
-            ]
-          },
-          {
-            heading: "Stage 3 — Post-production",
-            points: [
-              { t: "Post-production — site updates (depending on the nature of the business/practice) and measuring.", important: true },
-              "Measuring: use tracking services to measure traffic, see which pages are viewed more, and monitor search engine performance.",
-              "Based on results, you may perform minor revisions or reconsider the entire site structure and design."
-            ]
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "3 stages: Pre-production → Production → Post-production.",
-          "Pre-production: 1.1-1.7 (audience profile, content map, visual elements, alpha/beta text & visual versions).",
-          "Production: content creation, approval, page editing, staging & publishing.",
-          "Staging server = private test server; public server = the audience-facing site."
-        ]
-      },
-
-      /* ================= CHAPTER 8: WEB AUTHORING & PUBLISHING ================= */
-      {
-        id: "c8",
-        num: "08",
-        title: "Web Authoring & Publishing",
-        summary: "Linear media vs hypermedia, HTML markup, screen resolution and colour depth, download time factors, and tools for developing web pages.",
-        sections: [
-          {
-            heading: "Linear Media vs Hypermedia",
-            points: [
-              { t: "Linear media — media with a defined beginning and a linear progression to the end (film, audio, videotape, books).", important: true },
-              { t: "Hypermedia — media where users can choose their own path (e.g. audio CD); the concept applied to text is called hypertext.", important: true },
-              { t: "Hypertext — text with links; clicking a link or hotspot brings you to a new location (same page or new page).", important: true },
-              "The World Wide Web contains hypertext and is built using HTML (Hypertext Markup Language)."
-            ]
-          },
-          {
-            heading: "HTML Markup",
-            points: [
-              { t: "HTML markup — a set of logical codes/markup in parentheses that describe the appearance of a web document and the information it contains; enclosed in '<' and '>'.", important: true },
-              { t: "Opening and closing tags — e.g. opening <strong> and closing </strong>; the closing tag needs a '/' before the element name.", important: true },
-              { t: "Element — the first word/character inside '< >'; it specifies a document structure.", important: true },
-              { t: "Attribute — describes the element; e.g. in <table width='50%'>, 'table' is the element, 'width' is the attribute, and '50%' is the attribute value.", important: true }
-            ]
-          },
-          {
-            heading: "Terms You Need to Know",
-            points: [
-              { t: "Screen resolution — how many pixels make up your view on the monitor (640x480, 800x600, 1024x768, 1280x1024).", important: true },
-              { t: "Colour depth — how many colours are supported by computers (16 colours, 256 colours, 216 colours).", important: true }
-            ]
-          },
-          {
-            heading: "Factors That Affect Download Time",
-            points: [
-              "Speed of the user's connection to the Internet.",
-              "Document size — html + graphics + audio + applets + ActiveX objects.",
-              { t: "Download time depends on connection speed AND document size.", tip: true }
-            ]
-          },
-          {
-            heading: "Tools for Developing Web Pages",
-            points: [
-              "Tools include HTML, scripts, applets, servlets, ActiveX controls, CGI, JavaScript, etc.",
-              "JavaScript is the most common client-side scripting language for adding interactivity."
-            ]
-          }
-        ],
-        quiz: [],
-        takeaways: [
-          "Linear media = fixed sequence; hypermedia = user chooses (hypertext applies it to text).",
-          "HTML markup: opening/closing tags; element = structure; attribute = describes it.",
-          "Screen resolution = pixels on the monitor; colour depth = number of colours.",
-          "Download time depends on connection speed and document size."
-        ]
-      },
-
-      /* ================= CHAPTER 9: HTML ================= */
-      {
-        id: "c9",
-        num: "09",
         title: "HTML",
-        summary: "The full HTML toolkit from the chapter: basic structure, formatting, links, lists, images, sound, video, forms, frames and tables.",
+        summary: "Basic HTML structure, text formatting, links, lists, images, sound/video, forms, frames and tables.",
         sections: [
           {
             heading: "Basic HTML Structure",
             points: [
-              "Basic HTML code has 2 main sections: the heading (containing the title of the page) and the body (the actual information displayed).",
-              { t: "<html>…</html> — labels the beginning and end of an HTML file.", important: true },
-              { t: "<head>…</head> — placed between the <html> tags, preferably at the top of the page.", important: true },
-              { t: "<title>…</title> — specifies the title of the page; placed between the <head> tags.", important: true },
-              { t: "<body>…</body> — the actual content of the page.", important: true },
-              "Body attributes: bgcolor (background), background (load a picture as background), text (text colour), link (link colour), vlink (colour of clicked links).",
-              { t: "<!-- comment --> — does not show up when loading and viewing the page.", important: true }
+              "An HTML file has 2 main sections: the Head (containing the title of the page) and the Body (the actual information displayed).",
+              "<html>...</html> marks the beginning and end of an HTML file.",
+              "<head>...</head> is placed between the <html> tags, preferably at the top.",
+              "<title>...</title> specifies the page title and is placed between the <head> tags.",
+              "<body>...</body> holds the actual content of the page; attributes: bgcolor (background colour), background (picture background), text (text colour), link (link colour), vlink (visited-link colour).",
+              "<!--comment--> does not show up when the page loads.",
+              "Minimal example: <html><body>The content of the body element is displayed in your browser.</body></html>"
             ]
           },
           {
-            heading: "Paragraphs, Headings, Breaks & Fonts",
+            heading: "Text Formatting & Layout",
             points: [
-              "<p>…</p> — paragraph; HTML automatically adds a blank line before and after a paragraph.",
-              "<p align='right'>…</p> — paragraph alignment (left, center, right); <center>…</center> centers content.",
-              "<br> — line break; <hr> — horizontal rule.",
-              "<b>…</b> — bold; <i>…</i> — italic.",
-              "<font>…</font> — font size (+3 to -3), color (name or #hex) and face (e.g. arial).",
-              "<h1>…</h1> to <h6>…</h6> — six heading levels, <h1> highest, <h6> lowest."
+              "<p>...</p> defines a paragraph (HTML adds a blank line before and after); <p align='right'> aligns it.",
+              "<center>...</center> centres content; <br> is a line break; <hr> is a horizontal rule.",
+              "<b>...</b> bold, <i>...</i> italic; <font size='+1' color='yellow' style='arial'> sets font size/colour/face.",
+              "Headings: <h1> to <h6> (h1 largest, h6 smallest).",
+              "Other formatting: <strong> (strong), <big> (big), <small> (small), <sub> (subscript), <sup> (superscript)."
             ]
           },
           {
-            heading: "Text Formatting",
+            heading: "Links",
             points: [
-              "<strong> — strong text; <big> — bigger text; <small> — smaller text.",
-              "<sub> — subscript; <sup> — superscript."
+              "<a href='http://www.netscape.com'>TRIPOD</a> creates a hyperlink to another or the same page.",
+              "Link using an image: <a href='http://www.mdc.com.my'><img src='mdc.jpeg'></a>.",
+              "Email link: <a href='mailto:abc@unitar.edu.my'>abc@unitar.edu.my</a> opens an email message to that address."
             ]
           },
           {
-            heading: "Hyperlinks",
+            heading: "Lists",
             points: [
-              { t: "<a href>…</a> — the anchor tag; href is the address to be sent to another or the same page.", important: true },
-              "Example: <a href='http://www.netscape.com'>TRIPOD</a>.",
-              "Images can be links too: <a href='http://www.mdc.com.my'><img src='mdc.jpeg'></a>.",
-              "Mailto links: <a href='mailto:abc@unitar.edu.my'> — clicking opens an email message with the address filled in."
-            ]
-          },
-          {
-            heading: "Numbered & Unnumbered Lists",
-            points: [
-              { t: "<ol>…</ol> — ordered (numbered) list; <li> precedes each item.", important: true },
-              { t: "<ul>…</ul> — unordered (bulleted) list; <li> precedes each item.", important: true },
-              { t: "<ol> = numbered, <ul> = bulleted, <li> = list item.", tip: true }
+              "Ordered (numbered) list: <ol> surrounds the whole list; <li> precedes each item.",
+              "Unordered (bulleted) list: <ul> surrounds the list; <li> for each item."
             ]
           },
           {
             heading: "Images",
             points: [
-              { t: "<img> — places an image on a page.", important: true },
-              "Attributes: src (address of the image), alt (description shown before the image loads), width/height (pixels), border (link images get a default border of 1; 0 means no border), align (left, center, right; default left), hspace (horizontal space around the image), vspace (vertical space around the image).",
-              "Tag ending: none (the <img> tag has no closing tag)."
+              "<img> places an image on a page.",
+              "Attributes: src (where to get the image), alt (description shown before load), width / height (in pixels), border (0 = no border), align (left, center, right; default left), hspace (horizontal space around image), vspace (vertical space).",
+              "Example: <img src='welcomeimage.gif' alt='welcome to my pages' width='200' height='50' border='0' align='right' hspace='5' vspace='5'>"
             ]
           },
           {
             heading: "Sound & Video",
             points: [
-              "<embed> — embeds documents of any type; attributes include width, height, border, hspace, vspace.",
-              "Sound example: <embed src='jazz1.mid' autostart='yes' width=145 height=60> or <bgsound src='jazz1.mid' loop=infinite delay=5>.",
-              "Video example: <embed src='dragdrop.avi' autostart=false> or <img dynsrc='dragdrop.avi' loop=infinite>."
+              "Sound: <embed src='jazz1.mid' autostart='yes' width='145' height='60'> or <bgsound src='jazz1.mid' loop='infinite' delay='5'>.",
+              "Video: <embed src='dragdrop.avi' autostart='false'> or <img dynsrc='dragdrop.avi' loop='infinite'>."
             ]
           },
           {
             heading: "Forms",
             points: [
-              { t: "<form>…</form> — collects user input; attributes: ACTION (the CGI on the server that collects/processes the form data) and METHOD ('POST' or 'GET').", important: true },
-              { t: "<input> — defines an input field where the user may enter information; no end tag needed; attributes: NAME, TYPE, VALUE, CHECKED, SIZE, MAXLENGTH.", important: true },
-              "Input types: text box, checkbox, radio button, password, submit button, reset button.",
-              "Other form elements: <textarea> (multi-line comments) and <select> with <option> (drop-down lists).",
-              "Mailto forms use ACTION='mailto:...' with METHOD='POST/GET' and ENCTYPE='text/plain'.",
-              { t: "FORM attributes are ACTION and METHOD; INPUT types include text, checkbox, radio, password, submit, reset.", tip: true }
+              "<form>...</form> with attributes ACTION (CGI on the server collects/processes the data) and METHOD ('POST' or 'GET').",
+              "<input> defines an input field (no end tag); attributes: NAME, TYPE, VALUE, CHECKED, SIZE, MAXLENGTH.",
+              "Input types: Text field, Checkbox, Radio button, Password, Submit button, Reset button.",
+              "Mailto form: <form action='mailto:halim@unitar.my' method='POST' enctype='text/plain'>. Tip: tables are useful for laying out forms."
             ]
           },
           {
             heading: "Frames",
             points: [
-              "With frames you can display more than one HTML document in the same browser window; each HTML document is a frame, independent of the others.",
-              { t: "<frameset> — defines how to divide the window into frames; each frameset defines a set of rows or columns (e.g. <frameset cols='25%,75%'>).", important: true },
-              { t: "<frame> — defines what HTML document to put into each frame (e.g. <frame src='frame_a.htm'>).", important: true },
-              { t: "<noframes>…</noframes> — for browsers that do not support frames.", important: true },
-              "Disadvantages of frames: the developer must keep track of more HTML documents, and it is difficult to print the entire page."
+              "Frames let you display more than one HTML document in the same browser window; each frame is independent.",
+              "<frameset> defines how to divide the window into rows or columns; <frame src='...'> puts a document into each frame.",
+              "Disadvantages: the developer must track more HTML documents, and it is difficult to print the entire page.",
+              "Add <noframes>...</noframes> for browsers that do not support frames.",
+              "Example: <frameset cols='25%,75%'><frame src='frame_a.htm'><frame src='frame_b.htm'></frameset>"
             ]
           },
           {
             heading: "Tables",
             points: [
-              { t: "<table>…</table> — presents information in a tabular format (e.g. price lists); can contain a <caption> tag for the title.", important: true },
-              { t: "<tr> — table row; each line of the table contains one or more <th> (table heading) or <td> (table data) tags.", important: true },
-              "<table> attributes: ALIGN (left, center, right), WIDTH (pixels or %), BORDER, CELLSPACING (spacing between cells), CELLPADDING (gap between border and cell content), BGCOLOR.",
-              "<tr> attributes: ALIGN, VALIGN, BGCOLOR.",
-              "Cell tags (<th>/<td>) attributes: NOWRAP, ROWSPAN, COLSPAN, ALIGN, VALIGN, WIDTH, HEIGHT, BGCOLOR.",
-              { t: "Table = <table>, rows = <tr>, headings = <th>, data = <td>, title = <caption>.", tip: true }
+              "A table is enclosed in <table>...</table>; it may contain an optional <caption>.",
+              "<tr> defines a table row (attributes: ALIGN, VALIGN, BGCOLOR).",
+              "<th> is a table heading cell; <td> is a data cell (attributes: NOWRAP, ROWSPAN, COLSPAN, ALIGN, VALIGN, WIDTH, HEIGHT, BGCOLOR).",
+              "<table> attributes: ALIGN (left/center/right), WIDTH (pixels or %), BORDER, CELLSPACING (space between cells), CELLPADDING (gap between border and cell content), BGCOLOR.",
+              "Example: <table border='1'><tr><th>Heading</th><th>Another Heading</th></tr><tr><td>row 1 cell 1</td><td>row 1 cell 2</td></tr></table>"
             ]
           }
         ],
-        quiz: [],
+        quiz: [
+          { q: "Which tag specifies the title of an HTML page?", options: ["<body>", "<title>", "<head>", "<meta>"], answer: 1, explain: "The <title> tag (inside <head>) sets the page title." },
+          { q: "Which tag creates a numbered list?", options: ["<ul>", "<li>", "<ol>", "<dl>"], answer: 2, explain: "<ol> is an ordered (numbered) list; <ul> is unordered (bulleted)." },
+          { q: "Which attribute of <img> gives a description shown before the image loads?", options: ["src", "alt", "href", "width"], answer: 1, explain: "alt provides a text description shown before/if the image does not load." },
+          { q: "In a form, which attribute tells the server where to send the data?", options: ["METHOD", "ACTION", "INPUT", "VALUE"], answer: 1, explain: "ACTION specifies the CGI/script that collects and processes the form data." },
+          { q: "Which table tag defines a single row?", options: ["<td>", "<th>", "<tr>", "<caption>"], answer: 2, explain: "<tr> is a table row; <th>/<td> are cells inside it." },
+          { q: "What does <frameset cols='25%,75%'> do?", options: ["Splits the window into two columns", "Creates a bullet list", "Sets the page title", "Adds a border"], answer: 0, explain: "It divides the browser window into two columns (25% and 75%)." }
+        ],
         takeaways: [
-          "Basic structure: <html> → <head><title></title></head> → <body>…</body>.",
-          "<ol> numbered, <ul> bulleted, <li> list items; <a href> hyperlinks; <img src alt> images.",
+          "Structure: <html> → <head><title></title></head> → <body>…</body>.",
+          "<ol> numbered, <ul> bulleted, <li> items; <a href> links; <img src alt> images.",
           "Forms: <form action method> + <input type>; frames: <frameset> <frame> <noframes>.",
-          "Tables: <table> <tr> <th> <td> <caption>; formatting tags <b> <i> <font> <h1>-<h6>."
+          "Tables: <table><tr><th><td><caption>; formatting tags <b> <i> <font> <h1>-<h6>."
+        ]
+      },
+
+      /* ================= TOPIC 4: COMMUNICATIONS & NETWORKS (CH 2) ================= */
+      {
+        id: "w4",
+        num: "04",
+        title: "Communications & Networks",
+        summary: "How computers communicate, the hardware/software needed, transmission media, types of networks, internetworks, topology and internet connections.",
+        sections: [
+          {
+            heading: "Computer Communications",
+            points: [
+              "Computer communications is the process in which a computer transfers data, instructions and information to other computer(s).",
+              "For successful communications you need: a sending device, a communications device, a communications channel, a receiving device, and another communications device."
+            ]
+          },
+          {
+            heading: "Software Requirements",
+            points: [
+              "Operating System — essential software that manages computer hardware resources and provides common services for application software (e.g. Windows, Linux, Mac).",
+              "Application Software — programs designed to perform specific tasks for users.",
+              "Web browser — a special program to access files on the WWW (e.g. Internet Explorer, Firefox, Chrome); its three functions: send/receive e-mail, read newsgroup messages, and browse the WWW.",
+              "Other Internet-support software: e-mail software, FTP clients, anti-virus, multimedia players (Real Player, Windows Media Player), Adobe Reader."
+            ]
+          },
+          {
+            heading: "Communication Devices & Signals",
+            points: [
+              "Modem — lets your computer communicate with other computers over a standard telephone line; it converts data between analog and digital form.",
+              "Analog signal — a continuous electrical wave.",
+              "Digital signal — individual electrical pulses that represent bits grouped as bytes."
+            ]
+          },
+          {
+            heading: "Communication Channel & Transmission Media",
+            points: [
+              "A channel is the communications path between two devices; bandwidth is the amount of data that can travel through it.",
+              "Physical media: Twisted Pair Cable (two insulated copper wires twisted; up to 1 Gbps Cat5e / 10 Gbps Cat6; low cost; up to 100 m; susceptible to EMI; used in LAN/phone lines).",
+              "Coaxial Cable (central conductor with insulation/shielding; up to 1 Gbps; medium cost; up to 500 m; cable TV, legacy Ethernet).",
+              "Fiber Optic Cable (data as light through glass/plastic; very high speed up to Tbps; high cost; several km; immune to EMI; backbone/long-distance).",
+              "Shielded Twisted Pair (STP) — like UTP with shielding to reduce EMI; industrial networks.",
+              "Unshielded Twisted Pair (UTP) — most common, no shielding; 10 Mbps–10 Gbps; up to 100 m; common in LANs.",
+              "Wireless media: cellular radio, communications satellite (receives, amplifies and rebroadcasts microwave signals), microwave (high-speed, line-of-sight, no obstructions), infrared (IR; line-of-sight; IrDA port)."
+            ]
+          },
+          {
+            heading: "Networks",
+            points: [
+              "A network is a collection of computers and devices connected by communication channels that allows users to share resources (data, software, hardware).",
+              "Connected using network cables, hubs, communication channels and special software.",
+              "Types of network: LAN (Local Area Network), MAN (Metropolitan), WAN (Wide Area), PAN (Personal Area Network)."
+            ]
+          },
+          {
+            heading: "Internetworks",
+            points: [
+              "Intranet — makes company information accessible to employees and facilitates group work (e.g. directories, calendars, manuals, job postings).",
+              "Extranet — extends to authorised users outside the company (customers/suppliers); a firewall restricts access.",
+              "Internet — the largest WAN."
+            ]
+          },
+          {
+            heading: "Network Topology",
+            points: [
+              "Topology is the physical arrangement of devices in a network; networks usually combine three basic types.",
+              "Bus — a single central cable (backbone) to which all computers connect; inexpensive and easy to install.",
+              "Ring — cable forms a closed loop; data travels around the ring in one direction.",
+              "Star — all devices connect to a central hub; all data passes through the hub.",
+              "Hybrid — a combination of star/ring/bus (e.g. star+bus, star+ring)."
+            ]
+          },
+          {
+            heading: "Internet Connection",
+            points: [
+              "Dial-up — Internet over a standard phone line.",
+              "Wireless — Internet from mobile computers (e.g. WiFi hotspots, wireless LANs).",
+              "Leased Line — a fixed/dedicated connection (e.g. in offices)."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "Which cable transmits data as light and is immune to EMI?", options: ["Twisted Pair", "Coaxial", "Fiber Optic", "UTP"], answer: 2, explain: "Fiber optic uses light through glass/plastic and is immune to electromagnetic interference." },
+          { q: "A network covering a single building or home is a...", options: ["WAN", "MAN", "LAN", "PAN"], answer: 2, explain: "LAN = Local Area Network (local area such as a building)." },
+          { q: "Which topology connects all devices to a central hub?", options: ["Bus", "Ring", "Star", "Hybrid"], answer: 2, explain: "Star topology connects every device to a central hub." },
+          { q: "What converts between analog and digital signals?", options: ["Modem", "Hub", "Router", "Browser"], answer: 0, explain: "A modem converts data between analog and digital form for transmission." },
+          { q: "An extranet is restricted by a...", options: ["Modem", "Firewall", "Browser", "Satellite"], answer: 1, explain: "A firewall restricts access to data on an extranet." }
+        ],
+        takeaways: [
+          "Communications need: sender → comms device → channel → comms device → receiver.",
+          "Media: UTP/STP, coaxial, fiber optic (physical); cellular, satellite, microwave, IR (wireless).",
+          "Networks: LAN / MAN / WAN / PAN. Internetworks: intranet, extranet (firewall), Internet.",
+          "Topologies: bus, ring, star, hybrid."
+        ]
+      },
+
+      /* ================= TOPIC 5: COMMUNICATION & INFORMATION SERVICES (CH 3) ================= */
+      {
+        id: "w5",
+        num: "05",
+        title: "Communication & Information Services",
+        summary: "E-mail and its protocols, newsgroups, chat/IM, conferencing, blogs, social networks, RSS, browsers, FTP and web search.",
+        sections: [
+          {
+            heading: "E-Mail",
+            points: [
+              "E-mail is the exchange of text messages and computer files transmitted via a communications network; it is fast, inexpensive, sent/received anytime, and can attach files (text, graphics, images, audio).",
+              "E-mail server — the host computer that handles and saves e-mails until the recipient requests them.",
+              "E-mail client software — lets a user read e-mails (e.g. Microsoft Outlook, Mozilla Thunderbird).",
+              "E-mail address: user name + '@' + host name (e.g. KJC01234567@mail.pintar.edu.my).",
+              "Spam = unwanted messages posted to newsgroups or sent to a list of users through e-mail."
+            ]
+          },
+          {
+            heading: "How E-mail Works & Protocols",
+            points: [
+              "Flow: user creates/sends → software contacts ISP mail server → SMTP server decides the best route → message transferred to POP3 server → when user checks mail, it transfers to the recipient's computer.",
+              "SMTP (Simple Mail Transfer Protocol) — decides the route an e-mail takes.",
+              "POP (Post Office Protocol) — handles incoming e-mails; they are downloaded to the client's computer.",
+              "IMAP (Internet Message Access Protocol) — organises e-mails on the server; they stay on the server.",
+              "MIME (Multipurpose Internet Mail Extensions) — specifies how non-text data (graphics, sound) is formatted to travel."
+            ]
+          },
+          {
+            heading: "E-mail Features",
+            points: [
+              "To, Cc, Bcc, Subject, Attach, Message body, Signature, Message header."
+            ]
+          },
+          {
+            heading: "Mailing Lists, Newsgroups & Forums",
+            points: [
+              "Mailing List — a list of names/addresses for a group with a common interest; a way to share information. Roles: list moderator (checks postings), list administrator (approves members), unmoderated list (no moderator), closed list (invitation only), message digest (one e-mail collecting many posts). Provider: Yahoo.",
+              "Newsgroups — an online area for written discussions about a subject; decentralised (messages replicated across many servers); read with a newsreader (e.g. Easynews). A thread is a post plus its replies. Hierarchies show category from general to specific (e.g. comp.lang.java.programmer).",
+              "Usenet — the entire collection of Internet newsgroups; original categories: comp, humanities, misc, news, rec, sci, soc, talk, plus alt.",
+              "Forums / Discussion Boards — like newsgroups but kept on a single server and need no newsreader (e.g. cari.com.my, forum.lowyat.net).",
+              "Listserv — a type of broadcast e-mail to a list; not interactive."
+            ]
+          },
+          {
+            heading: "Real-Time Communication",
+            points: [
+              "Chat — a conversation in a chat room; public or private; lurking = watching without replying; emoticons show emotion; netiquette = Internet etiquette; IRC (Internet Relay Chat) is a multiuser, client-server chat program.",
+              "Instant Messaging — real-time service that notifies you when people are online and lets you exchange messages/files or join a private chat.",
+              "Collaboration/Conferencing — working with connected users; share an electronic whiteboard; includes text, audio and video (e.g. Microsoft NetMeeting).",
+              "Video Conferencing — needs a webcam, microphone and a fast connection.",
+              "IP Telephony — uses the Internet like a telephone (e.g. Net2Phone).",
+              "Telnet — a text-oriented program providing login to a remote computer (legacy systems)."
+            ]
+          },
+          {
+            heading: "Blogs, Social Networks & RSS",
+            points: [
+              "Blog — short for 'Web log'; a log written by individuals, often personal; readers can comment (e.g. blogger.com).",
+              "Social Network — a structure of individuals/organisations linked by friendship, interest, etc. Examples: Facebook/Twitter (general), LinkedIn (professional), Flickr (photo), Foursquare (location).",
+              "RSS (Rich Site Summary) — a web service that syndicates site content in a standard format (blog entries, news, audio, video); read with an RSS Reader (e.g. Google Reader, FeedDemon)."
+            ]
+          },
+          {
+            heading: "Netiquette",
+            points: [
+              "Internet etiquette — use professional business language in work messages, remember messages may be printed/forwarded, proofread before sending, and always include an appropriate subject line."
+            ]
+          },
+          {
+            heading: "Information Retrieval: Browsers & FTP",
+            points: [
+              "Web browser (web client) — software that locates and displays web pages; a web server satisfies requests. Plug-ins run inside the browser; helper applications are independent programs activated when needed.",
+              "FTP (File Transfer Protocol) — transfers a copy of a file across the Internet in binary or ASCII format.",
+              "Upload = send a file to an FTP site; download = receive a file from it; an FTP server handles the requests.",
+              "FTP access types: command-line (legacy/Telnet), web-browser FTP, and FTP client software (e.g. FileZilla, SmartFTP)."
+            ]
+          },
+          {
+            heading: "Information Search",
+            points: [
+              "Web Search Engine — a site that finds pages matching a query; a page hit is an indexed page containing the text; web robots/spiders update the engine's database (e.g. Google, Bing).",
+              "Meta-search engine — combines results from multiple engines (e.g. MetaCrawler, DogPile).",
+              "Web directories — listings of hyperlinks organised into categories (e.g. Google Directory).",
+              "Earlier tools: Archie (first search engine; locates files obtained via FTP), Veronica (finds Gopher titles), WAIS (keyword search of documents), Gopher (earliest menu-driven browsing service).",
+              "Search strategy: formulate the query → select the tool → evaluate results → repeat.",
+              "Query operators: Boolean, Wildcard, Proximity, Phrases."
+            ]
+          },
+          {
+            heading: "Online/Cloud Storage & Wikipedia",
+            points: [
+              "Online/Cloud Storage — web storage for any computer user; many are free (revenue from ads). Examples: IDrive/XDrive (backup), Picasa/Flickr (photos), Google Docs (documents). Advantages: access from any device, remote backup.",
+              "Wikipedia — a free, collaboratively written encyclopedia; almost all content can be edited by anyone; available in many languages."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "Which protocol decides the route an e-mail takes?", options: ["POP", "IMAP", "SMTP", "MIME"], answer: 2, explain: "SMTP (Simple Mail Transfer Protocol) decides the route an e-mail will take." },
+          { q: "Which protocol keeps e-mails on the server rather than downloading them?", options: ["POP", "IMAP", "SMTP", "FTP"], answer: 1, explain: "IMAP organises e-mails on the server so they stay there." },
+          { q: "Archie was the first...", options: ["Web browser", "Search engine", "Chat program", "FTP client"], answer: 1, explain: "Archie was the first Internet search engine; it located files you later get via FTP." },
+          { q: "A 'thread' in a newsgroup is...", options: ["A single server", "A post plus its replies", "A type of virus", "An email list"], answer: 1, explain: "A thread (or threaded discussion) is a post and the series of messages replying to it." },
+          { q: "Which is a professional social network?", options: ["Flickr", "LinkedIn", "Foursquare", "Twitter"], answer: 1, explain: "LinkedIn is the business/professional social network." }
+        ],
+        takeaways: [
+          "E-mail protocols: SMTP (route), POP (download), IMAP (stays on server), MIME (non-text format).",
+          "Real-time: chat/IRC, IM, conferencing, video conferencing, IP telephony, Telnet.",
+          "Search: web engines (Google/Bing), meta-search, directories, Archie/Veronica/WAIS/Gopher.",
+          "FTP transfers files (upload/download); cloud storage & Wikipedia are web information services."
+        ]
+      },
+
+      /* ================= TOPIC 6: E-COMMERCE (CH 4) ================= */
+      {
+        id: "w6",
+        num: "06",
+        title: "E-Commerce",
+        summary: "What e-commerce is, its models, mechanisms, payment models, advantages/disadvantages, sectors, building an online store and e-government.",
+        sections: [
+          {
+            heading: "Definitions & Roles",
+            points: [
+              "E-Commerce — the process of buying, selling, transferring or exchanging products, information or services via computer networks.",
+              "Roles in commerce: Buyers; Sellers/retailers/wholesalers/distributors; Producers.",
+              "Examples: electronic fund transfers among banks; electronic data interchange between businesses."
+            ]
+          },
+          {
+            heading: "E-Commerce Models",
+            points: [
+              "B2C (business-to-consumer) — sale of products/services from a business to the public (e.g. books, software).",
+              "C2C (consumer-to-consumer) — individuals using the Internet to sell to other individuals (e.g. online auctions like eBay).",
+              "B2B (business-to-business) — sale/exchange between businesses; many engage in both B2B and B2C; the supply chain creates and distributes products.",
+              "B2E (business-to-employee) — uses intranet technology for activities within a business (collaboration, file exchange); increases profit by reducing internal expenses (intrabusiness)."
+            ]
+          },
+          {
+            heading: "Mechanism & Payment Models",
+            points: [
+              "Mechanisms: electronic catalogs, electronic auctions, e-storefronts, e-malls, e-marketplaces.",
+              "Payment models: Cash, Cheque, Credit cards, E-wallet, BNPL (Buy Now Pay Later)."
+            ]
+          },
+          {
+            heading: "Advantages & Disadvantages",
+            points: [
+              "Advantages: lower transaction cost (no middleman), reduced distribution cost, larger purchases per transaction, 24/7 global market, easy price comparison, larger catalogues, paperless environment, improved customer interaction, FAQ support.",
+              "Disadvantages: exposure of personal information, products not as expected or different from the catalogue, products missing during shipping."
+            ]
+          },
+          {
+            heading: "E-Commerce Sectors",
+            points: [
+              "Banking, Health, Travel, Retailing, Trading, Learning, Entertainment, Auctions, Recruiting, Government, Advertising, Market research."
+            ]
+          },
+          {
+            heading: "Creating an Online Store",
+            points: [
+              "A company/individual must: build a storefront, manage payment, manage product delivery, design a website that attracts/retains customers, manage the website, and promote it (sometimes integrating order tracking).",
+              "Elements needed: a product; a website to sell it; a way to get people to the site; a way to accept orders (online form); a way to accept money (merchant account + secure page + bank link); a fulfillment facility to ship; a way to accept returns; warranty handling; customer service (email, forms, FAQs)."
+            ]
+          },
+          {
+            heading: "Store Implementation & What Retains Customers",
+            points: [
+              "Three implementation ways: Enterprise computing (buy hardware/software, hire staff; e.g. Amazon, Dell); Virtual hosting (vendor sells/maintains, company creates the site); Simplified e-commerce (vendor generates all pages from online forms; e.g. Yahoo! Merchant Solutions).",
+              "What attracts/retains customers: price, selection, website appearance, ease of use/navigation, availability of information, ease of ordering, posted privacy policies, quality of product representation, shipping, on-time delivery, quality of customer support."
+            ]
+          },
+          {
+            heading: "Promotion, E-retail Process & E-Government",
+            points: [
+              "Promoting: good domain name, search engines, press, customer newsletter, newsgroups/expertise, classified ads, informative articles, more links, word-of-mouth.",
+              "E-retail process: display storefront → collect items in shopping cart → enter payment on a secure site (e-retailer sends info to bank) → bank security check returns authorisation → confirmation sent, order processed to fulfillment → packaged, shipped, records updated, shipping info posted → delivered.",
+              "E-Government — using IT to provide government information and services to citizens, business partners and civil servants (e.g. myGovernment at www.malaysia.gov.my for jobs and payments)."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "eBay is an example of which e-commerce model?", options: ["B2B", "B2C", "C2C", "B2E"], answer: 2, explain: "eBay is consumer-to-consumer (C2C) — individuals selling to other individuals." },
+          { q: "Which model uses intranet technology within a business?", options: ["B2B", "B2C", "C2C", "B2E"], answer: 3, explain: "B2E (business-to-employee) uses intranet for internal collaboration (intrabusiness)." },
+          { q: "Which is a disadvantage of e-commerce?", options: ["24/7 global market", "Lower transaction cost", "Exposure of personal information", "Easy price comparison"], answer: 2, explain: "Exposure of personal information is a listed disadvantage; the others are advantages." },
+          { q: "Amazon is an example of which implementation approach?", options: ["Simplified e-commerce", "Virtual hosting", "Enterprise computing", "Mail order"], answer: 2, explain: "Amazon/Dell use enterprise computing — they buy hardware/software and hire staff to build the site." }
+        ],
+        takeaways: [
+          "E-commerce = buy/sell/exchange via networks. Models: B2C, C2C, B2B, B2E.",
+          "Payments: cash, cheque, credit card, e-wallet, BNPL.",
+          "Pros: lower cost, 24/7 global, easy comparison. Cons: privacy, wrong/missing items.",
+          "Build store: storefront + payment + delivery + site + promotion. E-gov = myGovernment."
+        ]
+      },
+
+      /* ================= TOPIC 7: SECURITY, PRIVACY & ETHICAL ISSUES (CH 6) ================= */
+      {
+        id: "w7",
+        num: "07",
+        title: "Security, Privacy & Ethical Issues",
+        summary: "Security types, intellectual property/copyright, threats, malicious code, viruses, encryption, firewalls and unauthorized access.",
+        sections: [
+          {
+            heading: "Security",
+            points: [
+              "Security refers to the protection of assets from unauthorized access, use, alteration or destruction.",
+              "Two types: Physical security (protection of people, property and physical assets — attackers may steal/damage servers, steal via USB, or upload malware) and Logical security (controls put in place to manage access to computer systems and physical spaces).",
+              "An information security policy is a set of rules developed to protect an organisation's assets."
+            ]
+          },
+          {
+            heading: "Copyright & Intellectual Property",
+            points: [
+              "Intellectual property is the ownership of ideas and control over their tangible or virtual representation (art, writings, processes, company/product names and logos).",
+              "Copyright protects expression (someone's intellectual property) and typically covers: literary and musical works; pantomimes and choreographic works; pictorial, graphic and sculptural works; motion pictures and other audio-visual works; sound recordings; and architectural works."
+            ]
+          },
+          {
+            heading: "Computer Threats & Malicious Code",
+            points: [
+              "A threat is an object, person or entity that represents a constant danger to an asset; the 3 points of threat are: End-user site, Communication channel/Internet, and Server site.",
+              "Malicious code is the general name for unanticipated/undesired effects in programs caused by an agent intent on damage.",
+              "Types of malicious code: Virus, Logic bomb, Worm, Trojan horse, Rabbit, Trapdoor/backdoor."
+            ]
+          },
+          {
+            heading: "Computer Virus",
+            points: [
+              "A virus is a code segment that replicates by attaching copies to existing executables.",
+              "Types: Boot sector, File, Macro.",
+              "Characteristics: Replication; requires a host program as a carrier; activated by external action; replication limited to the (virtual) system.",
+              "Signs of infection: unusual message/image on screen, random music/sound, less available memory than expected, corrupted files.",
+              "Prevention: do not start the computer with removable media in the drives; never open e-mail attachments from unknown sources; install and frequently update an antivirus program.",
+              "Detection/removal: upon detection, try to clean the infected media immediately."
+            ]
+          },
+          {
+            heading: "Encryption",
+            points: [
+              "Encryption converts readable data (plaintext) into unreadable characters (ciphertext) to prevent unauthorized access; decryption is the reverse process.",
+              "Asymmetric (public-key) encryption uses two keys — a public key known to everyone and a private key known only to the recipient. Jane encrypts with John's public key; John decrypts with his private key.",
+              "Symmetric (private-key) encryption uses one key copied on both the sender's and receiver's site; the same key encrypts and decrypts."
+            ]
+          },
+          {
+            heading: "Firewall & Unauthorized Access",
+            points: [
+              "A firewall is a program/hardware that filters information coming through the Internet connection into a private network or computer system.",
+              "Unauthorized access = use of a computer/network without permission; unauthorized use = use for unapproved or possibly illegal activities.",
+              "Access control defines who can access a computer, when, and what actions they can take.",
+              "A two-phase process: Identification (verifies an individual is a valid user) and Authentication (verifies the individual is who they claim to be).",
+              "Three methods of identification/authentication: user names and passwords, possessed objects, and biometric devices."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "Which encryption uses a public key and a private key?", options: ["Symmetric", "Asymmetric", "Plaintext", "Logical"], answer: 1, explain: "Asymmetric (public-key) encryption uses a public key for everyone and a private key for the recipient." },
+          { q: "A virus is a code segment that replicates by attaching to...", options: ["Other viruses", "Existing executables", "The firewall", "The DNS"], answer: 1, explain: "A virus replicates by attaching copies to existing executable files." },
+          { q: "Which is NOT one of the three threat points?", options: ["End-user site", "Communication channel", "Server site", "Power supply"], answer: 3, explain: "The three points are end-user site, communication channel/Internet, and server site." },
+          { q: "Authentication verifies that the individual...", options: ["Is a valid user", "Is who they claim to be", "Has a password", "Owns the server"], answer: 1, explain: "Identification verifies a valid user; authentication verifies they are who they claim to be." }
+        ],
+        takeaways: [
+          "Security = protect assets. Physical + Logical. Info security policy = rules.",
+          "Malicious code: virus, logic bomb, worm, Trojan, rabbit, trapdoor.",
+          "Encryption: asymmetric (public/private key) vs symmetric (one shared key).",
+          "Firewall filters incoming traffic; access control = identification + authentication."
+        ]
+      },
+
+      /* ================= TOPIC 8: MULTIMEDIA ON THE WEB (CH 5) ================= */
+      {
+        id: "w8",
+        num: "08",
+        title: "Multimedia on the Web",
+        summary: "Graphics, animation, web audio/video applications, virtual reality and augmented reality on the web.",
+        sections: [
+          {
+            heading: "Graphics, Animation & Web Media",
+            points: [
+              "Multimedia elements used on the Web include graphics (often shown as small preview thumbnails), animation, audio and video.",
+              "Various technologies are used to create animation for the Web."
+            ]
+          },
+          {
+            heading: "Web Audio & Video Applications",
+            points: [
+              "Types of web audio/video applications: Download-and-Play; Streaming; Progressive Download; MP3 and Audio-Only; Podcast Platforms; WebRTC-Based Audio/Video (Web Real-Time Communication)."
+            ]
+          },
+          {
+            heading: "Virtual Reality (VR)",
+            points: [
+              "VR provides a fully immersive digital environment; the simplest form can be a basic simulated space.",
+              "Types of VR and the technologies used vary; VRML (Virtual Reality Modeling Language) is a language for describing 3D virtual worlds on the Web."
+            ]
+          },
+          {
+            heading: "Augmented Reality (AR)",
+            points: [
+              "Augmented Reality enhances the real world by overlaying digital information — images, sounds or 3D objects — through devices such as smartphones, tablets or AR glasses.",
+              "AR vs VR: Environment — AR adds digital elements to the real world, VR is a fully immersive digital environment. Device — AR uses smartphone/tablet/AR glasses, VR uses a headset (e.g. Oculus, HTC Vive). Interaction — AR interacts with both real and virtual elements, VR only within a virtual space. Mobility — AR typically allows free movement in real space, VR often requires stationary use or boundaries.",
+              "How AR works, its applications, benefits, challenges and future are active areas of development (e.g. medical training, navigation, retail previews)."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "Augmented Reality enhances the real world by overlaying...", options: ["A fully virtual world", "Digital information (images, sound, 3D)", "Only text", "A firewall"], answer: 1, explain: "AR overlays digital information such as images, sounds or 3D objects onto the real world." },
+          { q: "Which device is typical for Virtual Reality rather than AR?", options: ["Smartphone", "AR glasses", "VR headset (Oculus)", "Tablet"], answer: 2, explain: "VR uses a headset such as Oculus or HTC Vive; AR uses phones/tablets/AR glasses." },
+          { q: "VRML stands for...", options: ["Virtual Reality Markup Language", "Virtual Reality Modeling Language", "Video Rendering ML", "Visible Reality ML"], answer: 1, explain: "VRML = Virtual Reality Modeling Language, used to describe 3D virtual worlds on the Web." },
+          { q: "Streaming is a type of...", options: ["Web audio/video application", "Network topology", "Encryption method", "Malicious code"], answer: 0, explain: "Streaming is one of the web audio/video application types (alongside download-and-play, progressive download, etc.)." }
+        ],
+        takeaways: [
+          "Web media: graphics (thumbnails), animation, audio, video.",
+          "Audio/video apps: download-and-play, streaming, progressive download, MP3, podcasts, WebRTC.",
+          "VR = fully immersive digital environment (VRML for 3D web worlds).",
+          "AR = overlays digital info on the real world via phone/tablet/AR glasses."
+        ]
+      },
+
+      /* ================= TOPIC 9: WEB AUTHORING & PUBLISHING (CH 8) ================= */
+      {
+        id: "w9",
+        num: "09",
+        title: "Web Authoring & Publishing",
+        summary: "Linear vs hypermedia, HTML markup terms, screen resolution/colour depth, download-time factors and web development tools.",
+        sections: [
+          {
+            heading: "Linear Media vs Hypermedia",
+            points: [
+              "Linear media has a defined beginning and a linear progression to the end (e.g. film, audio, videotape, books).",
+              "Hypermedia lets users choose (e.g. audio CD); applied to text this becomes hypertext — clicking a link or hotspot takes you to a new location (same or new page).",
+              "The World Wide Web contains hypertext and is built using HTML (Hypertext Markup Language)."
+            ]
+          },
+          {
+            heading: "HTML Markup Terms",
+            points: [
+              "HTML markup is a set of logical codes in angle brackets that describe the appearance of a web document and the information it contains; tags are enclosed in '<' and '>'.",
+              "Opening and closing tags: opening e.g. <strong>, closing needs a '/' before the element e.g. </strong>.",
+              "An element specifies a document structure — it is the first word/character inside '< >' (e.g. 'table').",
+              "Attributes describe the element, e.g. <table width='50%'> — 'table' is the element, 'width' is the attribute, '50%' is the attribute value."
+            ]
+          },
+          {
+            heading: "Screen Resolution & Colour Depth",
+            points: [
+              "Screen resolution = how many pixels make up your view on the monitor (e.g. 640×480, 800×600, 1024×768, 1280×1024).",
+              "Colour Depth = how many colours the computer supports (e.g. 16 colours, 256 colours, 216 colours)."
+            ]
+          },
+          {
+            heading: "Download Time & Development Tools",
+            points: [
+              "Factors affecting download time: the speed of the user's connection to the Internet, and the document size (HTML + graphics + audio + applets + ActiveX objects).",
+              "Tools for developing web pages: HTML, Scripts, Applets, Servlets, ActiveX Controls, CGI, JavaScript, and others."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "A film is an example of...", options: ["Hypermedia", "Linear media", "Hypertext", "A network"], answer: 1, explain: "Film has a defined beginning and linear progression to the end — it is linear media." },
+          { q: "In <table width='50%'>, what is 'width'?", options: ["Element", "Attribute", "Value", "Tag"], answer: 1, explain: "'table' is the element, 'width' is the attribute, '50%' is the value." },
+          { q: "Which is NOT a factor in download time?", options: ["Connection speed", "Document size", "Colour depth", "Graphics/audio/applets"], answer: 2, explain: "Download time depends on connection speed and total document size, not colour depth." },
+          { q: "The World Wide Web is built using...", options: ["FTP", "HTML", "DNS", "SMTP"], answer: 1, explain: "The WWW contains hypertext and is built using HTML." }
+        ],
+        takeaways: [
+          "Linear = fixed start→end (film); hypermedia/hypertext = user chooses (WWW uses HTML).",
+          "Element = first word in < >; attributes describe it (e.g. width='50%').",
+          "Resolution = pixels; colour depth = number of colours.",
+          "Download time = connection speed × document size (HTML+graphics+audio+applets)."
+        ]
+      },
+
+      /* ================= TOPIC 10: WEBSITE DEVELOPMENT PROCESS (CH 7) ================= */
+      {
+        id: "w10",
+        num: "10",
+        title: "Website Development Process",
+        summary: "The three stages (pre-production, production, post-production) and the 12 detailed steps used to build a website.",
+        sections: [
+          {
+            heading: "The Three Stages",
+            points: [
+              "Pre-production — gives focus to the website and streamlines production; determines text content, website structure, visual style/layout and technical specifications.",
+              "Production — produces the actual web pages that make up the website.",
+              "Post-production — Site Updates and Additions."
+            ]
+          },
+          {
+            heading: "Stage 1: Pre-production (steps 1.1-1.7)",
+            points: [
+              "1.1 Profile of Target Audience — determine the objective (sales/marketing, communication, revenue); define the audience; set technical specs (browser version/type, frames?, JavaScript?, forms?, HTML4/DHTML, non-standard media, search-engine registration) and create a technical document.",
+              "1.2 Content Map and Navigation — develop text content; categorize it (e.g. a common 'Contact Us'); use a flowchart for categories/subcategories.",
+              "1.3 Visual Elements — static graphics, animated gifs/Flash, buttons, font (type/size/colour), background (image/colour).",
+              "1.4 Alpha Text Version — text-only home page + basic navigation with dummy pages; tested by a small group; adjust from critiques.",
+              "1.5 Beta Text Version — the adjusted Alpha after critique; tested with a larger audience.",
+              "1.6 Alpha Visual Version — build a standard visual design (button style, type, layout); present to a small group; adjust.",
+              "1.7 Beta Visual Version — adjusted Alpha Visual after critique; test with a larger audience; update/develop the style."
+            ]
+          },
+          {
+            heading: "Stage 2: Production (steps 2.1-2.4)",
+            points: [
+              "2.1 Content Creation — text, images and other media are created; the website is built.",
+              "2.2 Content Approval — content is previewed locally (staging the website); an approval team checks for errors and deadlines.",
+              "2.3 Page Editing — check content is within technical specs and all links function properly.",
+              "2.4 Staging and Publishing — the Staging Server holds the site during production (no public access; used to test links/content/functionality); the Public Server holds the approved site (audience can access); register with search engines and use tracking services to collect viewing data."
+            ]
+          },
+          {
+            heading: "Stage 3: Post-production",
+            points: [
+              "Site updates — depending on the nature of the business/practice.",
+              "Measuring — based on tracking services, measure traffic, which pages are viewed most, and search-engine performance; then make minor revisions or reconsider the entire structure/design."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "During which stage is the site tested on a Staging Server with no public access?", options: ["Pre-production", "Production (Staging & Publishing)", "Post-production", "Design"], answer: 1, explain: "Step 2.4 (Production) places the site on a Staging Server for testing before the Public Server release." },
+          { q: "The Beta Text Version is tested with...", options: ["A small group", "A larger audience", "Only developers", "The public server"], answer: 1, explain: "The Beta Text Version (after Alpha critique) is tested with a larger audience." },
+          { q: "Which pre-production step defines the audience and technical specs?", options: ["1.2 Content Map", "1.1 Profile of Target Audience", "1.3 Visual Elements", "2.1 Content Creation"], answer: 1, explain: "Step 1.1 Profile of Target Audience sets the objective, audience and technical specifications." },
+          { q: "Post-production involves...", options: ["Only building pages", "Site updates and measuring traffic", "Writing HTML", "Setting up DNS"], answer: 1, explain: "Post-production covers site updates and measuring (traffic, popular pages, search performance)." }
+        ],
+        takeaways: [
+          "3 stages: Pre-production → Production → Post-production.",
+          "Pre-production = 1.1 audience profile … 1.7 beta visual (alpha then beta, small then large groups).",
+          "Production = 2.1 content, 2.2 approval, 2.3 page editing, 2.4 staging→public + search engines.",
+          "Post-production = updates + measuring/tracking, then revise."
+        ]
+      },
+
+      /* ================= TOPIC 11: HTML & CSS (WEEK 8) ================= */
+      {
+        id: "w11",
+        num: "11",
+        title: "HTML & CSS (Week 8)",
+        summary: "Introduction to HTML layout with CSS, the three types of CSS, CSS borders, links (target attribute) and absolute vs relative URLs.",
+        sections: [
+          {
+            heading: "Introduction to HTML Layout & CSS",
+            points: [
+              "Week 8 explores HTML codes together with CSS to design and develop a basic HTML application.",
+              "Table of content: Introduction to HTML Layout and CSS; Type of CSS; Create Links using Image, Button, Colour, Email; Tutorial & Exercise."
+            ]
+          },
+          {
+            heading: "Types of CSS",
+            points: [
+              "Inline CSS — styles applied directly to a single element.",
+              "Internal CSS — styles defined within a <style> block in the page's <head>.",
+              "External CSS — styles kept in a separate .css file linked to the page."
+            ]
+          },
+          {
+            heading: "CSS Border & With/Without CSS",
+            points: [
+              "CSS can add borders (style, width, colour) to elements.",
+              "A website with CSS looks styled and consistent; a website without CSS shows only plain default browser formatting."
+            ]
+          },
+          {
+            heading: "HTML Links — Target Attribute & URLs",
+            points: [
+              "The target attribute of a link controls where the linked page opens (e.g. a new tab/window vs the same frame).",
+              "Absolute URLs give the full address including the domain (e.g. http://www.example.com/page.html).",
+              "Relative URLs give the path relative to the current page (e.g. page.html or /folder/page.html) and are used to link within the same site."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "Which CSS type is kept in a separate .css file?", options: ["Inline", "Internal", "External", "Embedded"], answer: 2, explain: "External CSS lives in a separate stylesheet file linked to the page." },
+          { q: "A link written as 'http://www.example.com/page.html' is a...", options: ["Relative URL", "Absolute URL", "Anchor", "Protocol"], answer: 1, explain: "An absolute URL includes the full domain; relative URLs are paths within the same site." },
+          { q: "The target attribute of a link controls...", options: ["Its colour", "Where the page opens", "Its font size", "Its width"], answer: 1, explain: "The target attribute controls where the linked page opens (e.g. new tab vs same frame)." },
+          { q: "Inline CSS is applied...", options: ["To the whole site", "Directly to a single element", "In a separate file", "By the server only"], answer: 1, explain: "Inline CSS is applied directly to one element via its style attribute." }
+        ],
+        takeaways: [
+          "CSS + HTML builds styled pages. Three types: inline, internal, external.",
+          "CSS borders style elements; without CSS the page is plain/default.",
+          "target attribute = where a link opens.",
+          "Absolute URL = full address; Relative URL = path within the site."
         ]
       }
     ]
   },
-
-  
-/* ============================================================
-     HCI SUBJECT — Human-Computer Interaction
-     ============================================================ */
   {
     id: "hci",
     name: "HCI",
