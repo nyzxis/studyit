@@ -1630,6 +1630,7 @@ const SUBJECTS = [
         id: "w1",
         num: "01",
         title: "Multimedia Fundamentals",
+        examTip: true,
         summary: "What multimedia is, its five elements, system & product characteristics, types of applications, the development process and design considerations.",
         sections: [
           {
@@ -1714,6 +1715,7 @@ const SUBJECTS = [
         id: "w2",
         num: "02",
         title: "Internet & WWW",
+        examTip: true,
         summary: "What the Internet and cyberspace are, how to access it via ISPs, internet addresses, TLDs, URLs and the World Wide Web.",
         sections: [
           {
@@ -1822,6 +1824,7 @@ const SUBJECTS = [
         id: "w3",
         num: "03",
         title: "HTML",
+        examTip: true,
         summary: "Basic HTML structure, text formatting, links, lists, images, sound/video, forms, frames and tables.",
         sections: [
           {
@@ -1912,7 +1915,13 @@ const SUBJECTS = [
           { q: "Which attribute of <img> gives a description shown before the image loads?", options: ["src", "alt", "href", "width"], answer: 1, explain: "alt provides a text description shown before/if the image does not load." },
           { q: "In a form, which attribute tells the server where to send the data?", options: ["METHOD", "ACTION", "INPUT", "VALUE"], answer: 1, explain: "ACTION specifies the CGI/script that collects and processes the form data." },
           { q: "Which table tag defines a single row?", options: ["<td>", "<th>", "<tr>", "<caption>"], answer: 2, explain: "<tr> is a table row; <th>/<td> are cells inside it." },
-          { q: "What does <frameset cols='25%,75%'> do?", options: ["Splits the window into two columns", "Creates a bullet list", "Sets the page title", "Adds a border"], answer: 0, explain: "It divides the browser window into two columns (25% and 75%)." }
+          { q: "What does <frameset cols='25%,75%'> do?", options: ["Splits the window into two columns", "Creates a bullet list", "Sets the page title", "Adds a border"], answer: 0, explain: "It divides the browser window into two columns (25% and 75%)." },
+          { q: "Which tag defines the largest heading?", options: ["<h6>", "<h1>", "<head>", "<hr>"], answer: 1, explain: "<h1> is the largest heading; <h6> is the smallest." },
+          { q: "<a href='http://x.com'>...</a> creates a...", options: ["Table", "Hyperlink", "Image", "Comment"], answer: 1, explain: "The <a href> tag creates a hyperlink to another page or site." },
+          { q: "Which input type hides what you type?", options: ["text", "checkbox", "password", "radio"], answer: 2, explain: "A password input masks the characters you type." },
+          { q: "In a form, the METHOD attribute can be...", options: ["GET or POST", "LEFT or RIGHT", "TOP or BOTTOM", "OPEN or CLOSE"], answer: 0, explain: "METHOD is either GET or POST." },
+          { q: "What does the <hr> tag insert?", options: ["A line break", "A horizontal rule", "A heading", "A comment"], answer: 1, explain: "<hr> inserts a horizontal rule (a divider line)." },
+          { q: "An HTML comment <!-- note --> ...", options: ["Shows as visible text", "Does not show when the page loads", "Creates a link", "Adds an image"], answer: 1, explain: "Comments are not displayed when the page loads." }
         ],
         takeaways: [
           "Structure: <html> → <head><title></title></head> → <body>…</body>.",
@@ -1927,6 +1936,7 @@ const SUBJECTS = [
         id: "w4",
         num: "04",
         title: "Communications & Networks",
+        examTip: true,
         summary: "How computers communicate, the hardware/software needed, transmission media, types of networks, internetworks, topology and internet connections.",
         sections: [
           {
@@ -1997,6 +2007,31 @@ const SUBJECTS = [
               "Dial-up — Internet over a standard phone line.",
               "Wireless — Internet from mobile computers (e.g. WiFi hotspots, wireless LANs).",
               "Leased Line — a fixed/dedicated connection (e.g. in offices)."
+            ]
+          },
+          {
+            heading: "Network Architecture: Client/Server & Peer-to-Peer",
+            points: [
+              "Client/Server — every computer (client) connects to a central, powerful server that provides resources, files and services; clients request and the server responds (e.g. a company file server or web server).",
+              "Peer-to-Peer (P2P) — computers connect directly to each other with no central server; each computer is both a client and a server, sharing its own resources (e.g. file-sharing, small office/home networks).",
+              "Key difference — Client/Server has central control and is easier to manage and secure; P2P is cheaper and simpler but harder to secure and back up."
+            ]
+          },
+          {
+            heading: "Functions of a Router",
+            points: [
+              "A router connects two or more networks and forwards data packets between them (e.g. your home router connects the LAN to the Internet).",
+              "It reads the destination IP address of each packet and chooses the best path/route to send it.",
+              "It assigns local IP addresses (via DHCP) and shares one public IP among many devices (NAT).",
+              "It can filter traffic (basic firewall) and connect different network types (wired, wireless, fibre)."
+            ]
+          },
+          {
+            heading: "Transmission / Transformation Medium",
+            points: [
+              "A transmission medium is the physical path (cable or wireless) that carries the signal between devices.",
+              "A transformation medium converts the signal from one form to another — e.g. a transmitter turns electrical data into light (fibre) or radio waves (wireless), and a receiver converts it back.",
+              "UTP (Unshielded Twisted Pair) — the most common network cable; no shielding; 10 Mbps–10 Gbps; up to 100 m; used in LANs."
             ]
           }
         ],
@@ -2131,6 +2166,7 @@ const SUBJECTS = [
         id: "w6",
         num: "06",
         title: "E-Commerce",
+        examTip: true,
         summary: "What e-commerce is, its models, mechanisms, payment models, advantages/disadvantages, sectors, building an online store and e-government.",
         sections: [
           {
@@ -2190,6 +2226,14 @@ const SUBJECTS = [
               "Promoting: good domain name, search engines, press, customer newsletter, newsgroups/expertise, classified ads, informative articles, more links, word-of-mouth.",
               "E-retail process: display storefront → collect items in shopping cart → enter payment on a secure site (e-retailer sends info to bank) → bank security check returns authorisation → confirmation sent, order processed to fulfillment → packaged, shipped, records updated, shipping info posted → delivered.",
               "E-Government — using IT to provide government information and services to citizens, business partners and civil servants (e.g. myGovernment at www.malaysia.gov.my for jobs and payments)."
+            ]
+          },
+          {
+            heading: "CRM — Customer Relationship Management",
+            points: [
+              "CRM is a strategy and set of tools used to manage a company's interactions and relationships with current and potential customers.",
+              "It stores customer data, purchase history and communications so a business can improve service, target offers and retain customers.",
+              "E-commerce uses CRM to personalise recommendations, track orders and run loyalty and marketing campaigns."
             ]
           }
         ],
@@ -2286,6 +2330,7 @@ const SUBJECTS = [
         id: "w8",
         num: "08",
         title: "Multimedia on the Web",
+        examTip: true,
         summary: "Graphics, animation, web audio/video applications, virtual reality and augmented reality on the web.",
         sections: [
           {
@@ -2314,6 +2359,15 @@ const SUBJECTS = [
               "Augmented Reality enhances the real world by overlaying digital information — images, sounds or 3D objects — through devices such as smartphones, tablets or AR glasses.",
               "AR vs VR: Environment — AR adds digital elements to the real world, VR is a fully immersive digital environment. Device — AR uses smartphone/tablet/AR glasses, VR uses a headset (e.g. Oculus, HTC Vive). Interaction — AR interacts with both real and virtual elements, VR only within a virtual space. Mobility — AR typically allows free movement in real space, VR often requires stationary use or boundaries.",
               "How AR works, its applications, benefits, challenges and future are active areas of development (e.g. medical training, navigation, retail previews)."
+            ]
+          },
+          {
+            heading: "How AR & VR Are Used Medically",
+            points: [
+              "Medical training — AR/VR lets students and doctors practise procedures (e.g. surgery) in a safe, repeatable virtual environment with no risk to real patients.",
+              "Surgery assistance — AR overlays 3D scans, veins or vital signs onto the patient's body during an operation, helping the surgeon see beneath the skin.",
+              "Diagnosis & therapy — VR is used for pain distraction, physiotherapy and treating phobias; AR helps visualise tumours and plan treatment.",
+              "Remote care — AR can guide a distant specialist to advise a local clinician in real time."
             ]
           }
         ],
@@ -2389,6 +2443,7 @@ const SUBJECTS = [
         id: "w10",
         num: "10",
         title: "Website Development Process",
+        examTip: true,
         summary: "The three stages (pre-production, production, post-production) and the 12 detailed steps used to build a website.",
         sections: [
           {
@@ -2491,6 +2546,45 @@ const SUBJECTS = [
           "CSS borders style elements; without CSS the page is plain/default.",
           "target attribute = where a link opens.",
           "Absolute URL = full address; Relative URL = path within the site."
+        ]
+      },
+      /* ================= TOPIC 12: RFID & HDLC (exam tips) ================= */
+      {
+        id: "w12",
+        num: "12",
+        title: "RFID & HDLC",
+        summary: "RFID (radio-frequency identification) tags and readers, and HDLC (High-level Data Link Control) — a bit-oriented link-layer protocol.",
+        examTip: true,
+        sections: [
+          {
+            heading: "RFID — Radio-Frequency Identification",
+            points: [
+              "RFID uses radio waves to automatically identify and track tags attached to objects without needing direct line of sight.",
+              "A tag (transponder) holds data and is powered passively by the reader's signal or by its own battery (active tag).",
+              "A reader (interrogator) sends a radio signal and reads the tag's response; tags can be read through packaging, skin or weather.",
+              "Uses: inventory and logistics, contactless payment and access cards, toll roads, library books, pet microchips, supply-chain tracking."
+            ]
+          },
+          {
+            heading: "HDLC — High-level Data Link Control",
+            points: [
+              "HDLC is a bit-oriented data-link-layer protocol used to transmit data reliably between two points on a network.",
+              "It provides framing, error detection and flow control so data arrives complete and in the correct order.",
+              "Data is sent in frames; common station types are primary (controls the link) and secondary (responds to the primary).",
+              "It is the basis for later protocols such as PPP and is widely used on leased-line and WAN links."
+            ]
+          }
+        ],
+        quiz: [
+          { q: "RFID identifies objects using...", options: ["Barcodes only", "Radio waves", "Infrared light", "Manual scanning"], answer: 1, explain: "RFID uses radio waves to read tags without line of sight." },
+          { q: "An active RFID tag is powered by...", options: ["The reader's signal only", "Its own battery", "Sunlight", "A wired connection"], answer: 1, explain: "Active tags have their own battery; passive tags are powered by the reader's signal." },
+          { q: "HDLC operates at which layer?", options: ["Application", "Data link", "Physical", "Transport"], answer: 1, explain: "HDLC is a data-link-layer (layer 2) protocol." },
+          { q: "HDLC provides...", options: ["Only encryption", "Framing, error detection and flow control", "Web hosting", "IP addressing"], answer: 1, explain: "HDLC gives framing, error detection and flow control for reliable links." }
+        ],
+        takeaways: [
+          "RFID = radio-wave identification, no line of sight; tags passive (reader-powered) or active (battery).",
+          "RFID uses: logistics, contactless pay, tolls, libraries, pet chips.",
+          "HDLC = bit-oriented data-link protocol; framing + error/flow control; basis for PPP."
         ]
       }
     ]

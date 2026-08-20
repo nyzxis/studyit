@@ -7,9 +7,11 @@ function buildCardLink(subject, item, label){
   const quiz = bestQuizScore(subject.id, item.id);
   const passed = quiz && quiz.score/quiz.total >= 0.6;
 
-  const card = el("a","topic-card");
+  const card = el("a","topic-card" + (item.examTip ? " exam-tip" : ""));
   card.href = "topic.html?subject=" + encodeURIComponent(subject.id) + "&topic=" + encodeURIComponent(item.id);
+  card.dataset.examTip = item.examTip ? "1" : "";
   card.innerHTML = `
+    ${item.examTip ? '<span class="exam-tip-badge" title="Highlighted exam tip">★ Exam Tip</span>' : ""}
     ${iconMarkup(item.id, 44)}
     <div class="topic-card-body">
       <div class="topic-card-num">${label} ${item.num}</div>
@@ -58,6 +60,28 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   const grid = document.getElementById("topicGrid");
+
+  /* ---------- Exam Tips filter ---------- */
+  const tipTopics = subject.topics.filter(t => t.examTip);
+  if (tipTopics.length) {
+    const head = document.querySelector(".section-head");
+    const filter = el("div", "exam-tip-filter");
+    filter.innerHTML = `
+      <button type="button" class="exam-tip-toggle" aria-pressed="false">
+        <span class="star">★</span> Exam Tips only <span class="count">(${tipTopics.length})</span>
+      </button>`;
+    const btn = filter.querySelector(".exam-tip-toggle");
+    btn.addEventListener("click", () => {
+      const on = btn.classList.toggle("active");
+      btn.setAttribute("aria-pressed", String(on));
+      grid.querySelectorAll(".topic-card").forEach(c => {
+        const isTip = c.dataset.examTip === "1";
+        c.style.display = (on && !isTip) ? "none" : "";
+      });
+    });
+    if (head) head.appendChild(filter);
+  }
+
   const hasTabs = !!(subject.chapters && subject.chapters.length) || !!(subject.simple && subject.simple.length);
   const simpleSet = (subject.simple && subject.simple.length) ? subject.simple : subject.topics;
   const detailedSet = (subject.chapters && subject.chapters.length) ? subject.chapters : subject.topics;

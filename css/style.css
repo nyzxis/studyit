@@ -1060,4 +1060,40 @@ footer{
   .notes-main li.important{ padding:10px 12px 10px 26px; }
 }
 
+/* ---------- Exam Tips highlight (subject dock) ---------- */
+.topic-card.exam-tip{
+  border-color: var(--warn);
+  box-shadow: 0 0 0 1px var(--warn) inset, 0 18px 40px -28px rgba(154,106,0,.55);
+}
+.topic-card.exam-tip:hover{ box-shadow: 0 0 0 1px var(--warn) inset, 0 22px 48px -26px rgba(154,106,0,.7); }
+.topic-card{ position:relative; }
+.exam-tip-badge{
+  position:absolute; top:10px; right:10px;
+  display:inline-flex; align-items:center; gap:4px;
+  font:600 11px/1 "Sora",system-ui,sans-serif;
+  letter-spacing:.02em;
+  color:#fff; background:var(--warn);
+  padding:4px 8px; border-radius:999px;
+  box-shadow:0 4px 12px -4px rgba(154,106,0,.6);
+}
+.exam-tip-filter{ margin-top:14px; }
+.exam-tip-toggle{
+  display:inline-flex; align-items:center; gap:7px;
+  font:600 13px/1 "Sora",system-ui,sans-serif;
+  color:var(--ink-2);
+  background:var(--bg-raised);
+  border:1px solid var(--ink-4);
+  padding:9px 14px; border-radius:999px;
+  cursor:pointer; transition:all .18s ease;
+}
+.exam-tip-toggle .star{ color:var(--warn); font-size:14px; }
+.exam-tip-toggle .count{ color:var(--ink-3); font-weight:500; }
+.exam-tip-toggle:hover{ border-color:var(--warn); color:var(--ink); }
+.exam-tip-toggle.active{
+  background:var(--warn); border-color:var(--warn); color:#fff;
+  box-shadow:0 8px 22px -10px rgba(154,106,0,.7);
+}
+.exam-tip-toggle.active .star,
+.exam-tip-toggle.active .count{ color:#fff; }
+
 
