@@ -1636,7 +1636,7 @@ const SUBJECTS = [
           {
             heading: "What is Multimedia",
             points: [
-              "Multimedia is any combination of text, graphics, sound, animation and video used to communicate ideas to users effectively.",
+              { t: "Multimedia is any combination of text, graphics, sound, animation and video used to communicate ideas to users effectively.", tip: true },
               "Tay Vaughan: 'Multimedia is any combination of text, graphic art, sound, animation and video delivered to you by computer or other electronic means.'",
               "Stephen Mc Gloughin: 'Multimedia is the presentation of a computer application, incorporating media elements such as text, graphics, video, animation and sound on computer.'",
               "A multimedia system encompasses the computer and software systems used in multimedia environments — it has interactive control, and distributed multimedia systems operate over a network infrastructure."
@@ -1645,21 +1645,21 @@ const SUBJECTS = [
           {
             heading: "The Five Multimedia Elements",
             points: [
-              "Text — the most common element; delivers a message in the most straightforward way as characters; used as labels, prompts and simple directions; should grab attention through size and colour.",
+              { t: "Text — the most common element; delivers a message in the most straightforward way as characters; used as labels, prompts and simple directions; should grab attention through size and colour.", tip: true },
               "Audio — gives the impact of hearing: music (enhances emotion — sadness, happiness, patriotism, love), and sound effects (used for a specific point, not just background noise, e.g. an explosion to show anger).",
               "Graphics — pictures, photos, slides, illustrations, drawings and still images; show meaning quicker than text (showing a photo of an apple is faster than describing its shape, colour and size).",
               "Animation — shows movement; objects appear to move because a series of slightly different pictures are displayed rapidly in sequence (like flipping a book).",
-              "Video — the most complicated element and the one with the most impact; includes full motion, still graphics, audio and animation; conveys a great deal of information in the least time.",
+              { t: "Video — the most complicated element and the one with the most impact; includes full motion, still graphics, audio and animation; conveys a great deal of information in the least time.", tip: true },
               "Note: video is used for realistic events (e.g. a birthday party); animation is used for unrealistic events that are hard to film (e.g. blood flow in the human body)."
             ]
           },
           {
             heading: "Multimedia System Characteristics (4)",
             points: [
-              "Computer-controlled — a computer produces, stores, transmits and presents the information to the end user.",
-              "Integration — all components (text, graphics, audio, video, animation) are controlled by software/computer so you can read, hear and see them at the same time.",
-              "Use of digitized data — text, sound, pictures, video and numbers must be converted into digital data the computer can recognise.",
-              "Interactivity — users navigate a presentation using a mouse, keyboard or touch screen; interactivity can be feedback or navigation control."
+              { t: "Computer-controlled — a computer produces, stores, transmits and presents the information to the end user.", tip: true },
+              { t: "Integration — all components (text, graphics, audio, video, animation) are controlled by software/computer so you can read, hear and see them at the same time.", tip: true },
+              { t: "Use of digitized data — text, sound, pictures, video and numbers must be converted into digital data the computer can recognise.", tip: true },
+              { t: "Interactivity — users navigate a presentation using a mouse, keyboard or touch screen; interactivity can be feedback or navigation control.", tip: true }
             ]
           },
           {
@@ -1674,14 +1674,14 @@ const SUBJECTS = [
           {
             heading: "Types of Multimedia Applications",
             points: [
-              "Linear multimedia — plays from a start position to an end position with little or no intervention; the user has very little control (e.g. a movie).",
-              "Interactive multimedia — allows the viewer to jump around the material; the user controls what and when; useful for information archives, education, training and entertainment."
+              { t: "Linear multimedia — plays from a start position to an end position with little or no intervention; the user has very little control (e.g. a movie).", tip: true },
+              { t: "Interactive multimedia — allows the viewer to jump around the material; the user controls what and when; useful for information archives, education, training and entertainment.", tip: true }
             ]
           },
           {
             heading: "Multimedia Development Process",
             points: [
-              "The stages are: Content Definition → Storyboard Design → Building Blocks → Authoring → Testing and Revision → Delivery."
+              { t: "The stages are: Content Definition → Storyboard Design → Building Blocks → Authoring → Testing and Revision → Delivery.", tip: true }
             ]
           },
           {
@@ -1721,7 +1721,7 @@ const SUBJECTS = [
           {
             heading: "What is the Internet?",
             points: [
-              "A large collection of computers all over the world connected to one another in various ways; also called 'the Net' — a worldwide system of computer networks.",
+              { t: "A large collection of computers all over the world connected to one another in various ways; also called 'the Net' — a worldwide system of computer networks.", tip: true },
               "It enables you to acquire a file or document from anywhere in the world.",
               "Cyberspace — an environment where people communicate among themselves using computers.",
               "Information Highway — the largest computer network; the borderless marketplace; an information distribution system; the largest human communication system; a technology platform."
@@ -1749,7 +1749,7 @@ const SUBJECTS = [
           {
             heading: "How to Access the Internet (ISP)",
             points: [
-              "Internet access is provided by ISPs (Internet Service Providers) — a business with a permanent Internet connection that offers temporary connection to individuals and companies, free or for a fee.",
+              { t: "Internet access is provided by ISPs (Internet Service Providers) — a business with a permanent Internet connection that offers temporary connection to individuals and companies, free or for a fee.", tip: true },
               "Types of ISP: Regional ISP, National ISP, Wireless Service Provider (WSP).",
               "National ISP serves a country; Regional ISP serves a region/part of a continent; both provide domain-name registration, web-site building and hosting.",
               "Malaysian local ISPs: TmNet, Jaring, P1. International: America Online, MindSpring, GTE-Net.",
@@ -1759,9 +1759,9 @@ const SUBJECTS = [
           {
             heading: "Internet Address",
             points: [
-              "IP (Internet Protocol) address — the number that uniquely identifies each computer on the Internet.",
-              "Domain Name Server (DNS) — a host computer that coordinates the IP addresses and domain names for the computers it is responsible for.",
-              "Domain name — a unique name associated with an IP address; easier to use than an IP address (e.g. IP 172.17.19.124 vs domain www.unirazak.edu.my).",
+              { t: "IP (Internet Protocol) address — the number that uniquely identifies each computer on the Internet.", tip: true },
+              { t: "Domain Name Server (DNS) — a host computer that coordinates the IP addresses and domain names for the computers it is responsible for.", tip: true },
+              { t: "Domain name — a unique name associated with an IP address; easier to use than an IP address (e.g. IP 172.17.19.124 vs domain www.unirazak.edu.my).", tip: true },
               "Format: hostname.subdomain.top-level-domain. The first part identifies the network; the last part identifies the specific computer."
             ]
           },
@@ -1777,20 +1777,20 @@ const SUBJECTS = [
           {
             heading: "Uniform Resource Locator (URL)",
             points: [
-              "An addressing scheme that tells the web browser: the transfer protocol to use, the domain name of the computer, the pathname where the file resides, and the file name.",
+              { t: "An addressing scheme that tells the web browser: the transfer protocol to use, the domain name of the computer, the pathname where the file resides, and the file name.", tip: true },
               "Example: http://fit.unirazak.edu.my/program/bit.htm — protocol = http, domain name = fit.unirazak.edu.my, pathname = /program, filename = bit.htm."
             ]
           },
           {
             heading: "World Wide Web (WWW)",
             points: [
-              "WWW = World Wide Web; a software application that makes it easy for nearly anyone to publish and browse hypertext documents on the Internet.",
-              "Hypertext — web pages that have hyperlinks to other pages.",
-              "Hyperlinks — a string of clickable text or a clickable graphic that points to another web page or document.",
+              { t: "WWW = World Wide Web; a software application that makes it easy for nearly anyone to publish and browse hypertext documents on the Internet.", tip: true },
+              { t: "Hypertext — web pages that have hyperlinks to other pages.", tip: true },
+              { t: "Hyperlinks — a string of clickable text or a clickable graphic that points to another web page or document.", tip: true },
               "Web page — a file that can be read over the WWW.",
-              "Web browser — software to view web pages, read email and read newsgroups; also called a Web client (e.g. Mozilla Firefox, Google Chrome).",
+              { t: "Web browser — software to view web pages, read email and read newsgroups; also called a Web client (e.g. Mozilla Firefox, Google Chrome).", tip: true },
               "Web site — a set of pages of information on the Internet about a particular subject (e.g. www.icann.org).",
-              "Web server — a computer that satisfies user requests for web pages.",
+              { t: "Web server — a computer that satisfies user requests for web pages.", tip: true },
               "Home page — the web page loaded when a browser is first activated; the first page in a set of related pages.",
               "HTML — HyperText Markup Language; the programming language most web pages are written in."
             ]
@@ -1830,11 +1830,11 @@ const SUBJECTS = [
           {
             heading: "Basic HTML Structure",
             points: [
-              "An HTML file has 2 main sections: the Head (containing the title of the page) and the Body (the actual information displayed).",
+              { t: "An HTML file has 2 main sections: the Head (containing the title of the page) and the Body (the actual information displayed).", tip: true },
               "<html>...</html> marks the beginning and end of an HTML file.",
               "<head>...</head> is placed between the <html> tags, preferably at the top.",
-              "<title>...</title> specifies the page title and is placed between the <head> tags.",
-              "<body>...</body> holds the actual content of the page; attributes: bgcolor (background colour), background (picture background), text (text colour), link (link colour), vlink (visited-link colour).",
+              { t: "<title>...</title> specifies the page title and is placed between the <head> tags.", tip: true },
+              { t: "<body>...</body> holds the actual content of the page; attributes: bgcolor (background colour), background (picture background), text (text colour), link (link colour), vlink (visited-link colour).", tip: true },
               "<!--comment--> does not show up when the page loads.",
               "Minimal example: <html><body>The content of the body element is displayed in your browser.</body></html>"
             ]
@@ -1845,14 +1845,14 @@ const SUBJECTS = [
               "<p>...</p> defines a paragraph (HTML adds a blank line before and after); <p align='right'> aligns it.",
               "<center>...</center> centres content; <br> is a line break; <hr> is a horizontal rule.",
               "<b>...</b> bold, <i>...</i> italic; <font size='+1' color='yellow' style='arial'> sets font size/colour/face.",
-              "Headings: <h1> to <h6> (h1 largest, h6 smallest).",
+              { t: "Headings: <h1> to <h6> (h1 largest, h6 smallest).", tip: true },
               "Other formatting: <strong> (strong), <big> (big), <small> (small), <sub> (subscript), <sup> (superscript)."
             ]
           },
           {
             heading: "Links",
             points: [
-              "<a href='http://www.netscape.com'>TRIPOD</a> creates a hyperlink to another or the same page.",
+              { t: "<a href='http://www.netscape.com'>TRIPOD</a> creates a hyperlink to another or the same page.", tip: true },
               "Link using an image: <a href='http://www.mdc.com.my'><img src='mdc.jpeg'></a>.",
               "Email link: <a href='mailto:abc@unitar.edu.my'>abc@unitar.edu.my</a> opens an email message to that address."
             ]
@@ -1860,15 +1860,15 @@ const SUBJECTS = [
           {
             heading: "Lists",
             points: [
-              "Ordered (numbered) list: <ol> surrounds the whole list; <li> precedes each item.",
-              "Unordered (bulleted) list: <ul> surrounds the list; <li> for each item."
+              { t: "Ordered (numbered) list: <ol> surrounds the whole list; <li> precedes each item.", tip: true },
+              { t: "Unordered (bulleted) list: <ul> surrounds the list; <li> for each item.", tip: true }
             ]
           },
           {
             heading: "Images",
             points: [
               "<img> places an image on a page.",
-              "Attributes: src (where to get the image), alt (description shown before load), width / height (in pixels), border (0 = no border), align (left, center, right; default left), hspace (horizontal space around image), vspace (vertical space).",
+              { t: "Attributes: src (where to get the image), alt (description shown before load), width / height (in pixels), border (0 = no border), align (left, center, right; default left), hspace (horizontal space around image), vspace (vertical space).", tip: true },
               "Example: <img src='welcomeimage.gif' alt='welcome to my pages' width='200' height='50' border='0' align='right' hspace='5' vspace='5'>"
             ]
           },
@@ -1882,9 +1882,9 @@ const SUBJECTS = [
           {
             heading: "Forms",
             points: [
-              "<form>...</form> with attributes ACTION (CGI on the server collects/processes the data) and METHOD ('POST' or 'GET').",
+              { t: "<form>...</form> with attributes ACTION (CGI on the server collects/processes the data) and METHOD ('POST' or 'GET').", tip: true },
               "<input> defines an input field (no end tag); attributes: NAME, TYPE, VALUE, CHECKED, SIZE, MAXLENGTH.",
-              "Input types: Text field, Checkbox, Radio button, Password, Submit button, Reset button.",
+              { t: "Input types: Text field, Checkbox, Radio button, Password, Submit button, Reset button.", tip: true },
               "Mailto form: <form action='mailto:halim@unitar.my' method='POST' enctype='text/plain'>. Tip: tables are useful for laying out forms."
             ]
           },
@@ -1892,7 +1892,7 @@ const SUBJECTS = [
             heading: "Frames",
             points: [
               "Frames let you display more than one HTML document in the same browser window; each frame is independent.",
-              "<frameset> defines how to divide the window into rows or columns; <frame src='...'> puts a document into each frame.",
+              { t: "<frameset> defines how to divide the window into rows or columns; <frame src='...'> puts a document into each frame.", tip: true },
               "Disadvantages: the developer must track more HTML documents, and it is difficult to print the entire page.",
               "Add <noframes>...</noframes> for browsers that do not support frames.",
               "Example: <frameset cols='25%,75%'><frame src='frame_a.htm'><frame src='frame_b.htm'></frameset>"
@@ -1902,7 +1902,7 @@ const SUBJECTS = [
             heading: "Tables",
             points: [
               "A table is enclosed in <table>...</table>; it may contain an optional <caption>.",
-              "<tr> defines a table row (attributes: ALIGN, VALIGN, BGCOLOR).",
+              { t: "<tr> defines a table row (attributes: ALIGN, VALIGN, BGCOLOR).", tip: true },
               "<th> is a table heading cell; <td> is a data cell (attributes: NOWRAP, ROWSPAN, COLSPAN, ALIGN, VALIGN, WIDTH, HEIGHT, BGCOLOR).",
               "<table> attributes: ALIGN (left/center/right), WIDTH (pixels or %), BORDER, CELLSPACING (space between cells), CELLPADDING (gap between border and cell content), BGCOLOR.",
               "Example: <table border='1'><tr><th>Heading</th><th>Another Heading</th></tr><tr><td>row 1 cell 1</td><td>row 1 cell 2</td></tr></table>"
@@ -1942,7 +1942,7 @@ const SUBJECTS = [
           {
             heading: "Computer Communications",
             points: [
-              "Computer communications is the process in which a computer transfers data, instructions and information to other computer(s).",
+              { t: "Computer communications is the process in which a computer transfers data, instructions and information to other computer(s).", tip: true },
               "For successful communications you need: a sending device, a communications device, a communications channel, a receiving device, and another communications device."
             ]
           },
@@ -1958,7 +1958,7 @@ const SUBJECTS = [
           {
             heading: "Communication Devices & Signals",
             points: [
-              "Modem — lets your computer communicate with other computers over a standard telephone line; it converts data between analog and digital form.",
+              { t: "Modem — lets your computer communicate with other computers over a standard telephone line; it converts data between analog and digital form.", tip: true },
               "Analog signal — a continuous electrical wave.",
               "Digital signal — individual electrical pulses that represent bits grouped as bytes."
             ]
@@ -1966,38 +1966,38 @@ const SUBJECTS = [
           {
             heading: "Communication Channel & Transmission Media",
             points: [
-              "A channel is the communications path between two devices; bandwidth is the amount of data that can travel through it.",
+              { t: "A channel is the communications path between two devices; bandwidth is the amount of data that can travel through it.", tip: true },
               "Physical media: Twisted Pair Cable (two insulated copper wires twisted; up to 1 Gbps Cat5e / 10 Gbps Cat6; low cost; up to 100 m; susceptible to EMI; used in LAN/phone lines).",
               "Coaxial Cable (central conductor with insulation/shielding; up to 1 Gbps; medium cost; up to 500 m; cable TV, legacy Ethernet).",
-              "Fiber Optic Cable (data as light through glass/plastic; very high speed up to Tbps; high cost; several km; immune to EMI; backbone/long-distance).",
+              { t: "Fiber Optic Cable (data as light through glass/plastic; very high speed up to Tbps; high cost; several km; immune to EMI; backbone/long-distance).", tip: true },
               "Shielded Twisted Pair (STP) — like UTP with shielding to reduce EMI; industrial networks.",
-              "Unshielded Twisted Pair (UTP) — most common, no shielding; 10 Mbps–10 Gbps; up to 100 m; common in LANs.",
+              { t: "Unshielded Twisted Pair (UTP) — most common, no shielding; 10 Mbps–10 Gbps; up to 100 m; common in LANs.", tip: true },
               "Wireless media: cellular radio, communications satellite (receives, amplifies and rebroadcasts microwave signals), microwave (high-speed, line-of-sight, no obstructions), infrared (IR; line-of-sight; IrDA port)."
             ]
           },
           {
             heading: "Networks",
             points: [
-              "A network is a collection of computers and devices connected by communication channels that allows users to share resources (data, software, hardware).",
+              { t: "A network is a collection of computers and devices connected by communication channels that allows users to share resources (data, software, hardware).", tip: true },
               "Connected using network cables, hubs, communication channels and special software.",
-              "Types of network: LAN (Local Area Network), MAN (Metropolitan), WAN (Wide Area), PAN (Personal Area Network)."
+              { t: "Types of network: LAN (Local Area Network), MAN (Metropolitan), WAN (Wide Area), PAN (Personal Area Network).", tip: true }
             ]
           },
           {
             heading: "Internetworks",
             points: [
-              "Intranet — makes company information accessible to employees and facilitates group work (e.g. directories, calendars, manuals, job postings).",
-              "Extranet — extends to authorised users outside the company (customers/suppliers); a firewall restricts access.",
+              { t: "Intranet — makes company information accessible to employees and facilitates group work (e.g. directories, calendars, manuals, job postings).", tip: true },
+              { t: "Extranet — extends to authorised users outside the company (customers/suppliers); a firewall restricts access.", tip: true },
               "Internet — the largest WAN."
             ]
           },
           {
             heading: "Network Topology",
             points: [
-              "Topology is the physical arrangement of devices in a network; networks usually combine three basic types.",
-              "Bus — a single central cable (backbone) to which all computers connect; inexpensive and easy to install.",
-              "Ring — cable forms a closed loop; data travels around the ring in one direction.",
-              "Star — all devices connect to a central hub; all data passes through the hub.",
+              { t: "Topology is the physical arrangement of devices in a network; networks usually combine three basic types.", tip: true },
+              { t: "Bus — a single central cable (backbone) to which all computers connect; inexpensive and easy to install.", tip: true },
+              { t: "Ring — cable forms a closed loop; data travels around the ring in one direction.", tip: true },
+              { t: "Star — all devices connect to a central hub; all data passes through the hub.", tip: true },
               "Hybrid — a combination of star/ring/bus (e.g. star+bus, star+ring)."
             ]
           },
@@ -2012,17 +2012,17 @@ const SUBJECTS = [
           {
             heading: "Network Architecture: Client/Server & Peer-to-Peer",
             points: [
-              "Client/Server — every computer (client) connects to a central, powerful server that provides resources, files and services; clients request and the server responds (e.g. a company file server or web server).",
-              "Peer-to-Peer (P2P) — computers connect directly to each other with no central server; each computer is both a client and a server, sharing its own resources (e.g. file-sharing, small office/home networks).",
-              "Key difference — Client/Server has central control and is easier to manage and secure; P2P is cheaper and simpler but harder to secure and back up."
+              { t: "Client/Server — every computer (client) connects to a central, powerful server that provides resources, files and services; clients request and the server responds (e.g. a company file server or web server).", tip: true },
+              { t: "Peer-to-Peer (P2P) — computers connect directly to each other with no central server; each computer is both a client and a server, sharing its own resources (e.g. file-sharing, small office/home networks).", tip: true },
+              { t: "Key difference — Client/Server has central control and is easier to manage and secure; P2P is cheaper and simpler but harder to secure and back up.", tip: true }
             ]
           },
           {
             heading: "Functions of a Router",
             points: [
-              "A router connects two or more networks and forwards data packets between them (e.g. your home router connects the LAN to the Internet).",
-              "It reads the destination IP address of each packet and chooses the best path/route to send it.",
-              "It assigns local IP addresses (via DHCP) and shares one public IP among many devices (NAT).",
+              { t: "A router connects two or more networks and forwards data packets between them (e.g. your home router connects the LAN to the Internet).", tip: true },
+              { t: "It reads the destination IP address of each packet and chooses the best path/route to send it.", tip: true },
+              { t: "It assigns local IP addresses (via DHCP) and shares one public IP among many devices (NAT).", tip: true },
               "It can filter traffic (basic firewall) and connect different network types (wired, wireless, fibre)."
             ]
           },
@@ -2172,7 +2172,7 @@ const SUBJECTS = [
           {
             heading: "Definitions & Roles",
             points: [
-              "E-Commerce — the process of buying, selling, transferring or exchanging products, information or services via computer networks.",
+              { t: "E-Commerce — the process of buying, selling, transferring or exchanging products, information or services via computer networks.", tip: true },
               "Roles in commerce: Buyers; Sellers/retailers/wholesalers/distributors; Producers.",
               "Examples: electronic fund transfers among banks; electronic data interchange between businesses."
             ]
@@ -2180,24 +2180,24 @@ const SUBJECTS = [
           {
             heading: "E-Commerce Models",
             points: [
-              "B2C (business-to-consumer) — sale of products/services from a business to the public (e.g. books, software).",
-              "C2C (consumer-to-consumer) — individuals using the Internet to sell to other individuals (e.g. online auctions like eBay).",
-              "B2B (business-to-business) — sale/exchange between businesses; many engage in both B2B and B2C; the supply chain creates and distributes products.",
-              "B2E (business-to-employee) — uses intranet technology for activities within a business (collaboration, file exchange); increases profit by reducing internal expenses (intrabusiness)."
+              { t: "B2C (business-to-consumer) — sale of products/services from a business to the public (e.g. books, software).", tip: true },
+              { t: "C2C (consumer-to-consumer) — individuals using the Internet to sell to other individuals (e.g. online auctions like eBay).", tip: true },
+              { t: "B2B (business-to-business) — sale/exchange between businesses; many engage in both B2B and B2C; the supply chain creates and distributes products.", tip: true },
+              { t: "B2E (business-to-employee) — uses intranet technology for activities within a business (collaboration, file exchange); increases profit by reducing internal expenses (intrabusiness).", tip: true }
             ]
           },
           {
             heading: "Mechanism & Payment Models",
             points: [
               "Mechanisms: electronic catalogs, electronic auctions, e-storefronts, e-malls, e-marketplaces.",
-              "Payment models: Cash, Cheque, Credit cards, E-wallet, BNPL (Buy Now Pay Later)."
+              { t: "Payment models: Cash, Cheque, Credit cards, E-wallet, BNPL (Buy Now Pay Later).", tip: true }
             ]
           },
           {
             heading: "Advantages & Disadvantages",
             points: [
-              "Advantages: lower transaction cost (no middleman), reduced distribution cost, larger purchases per transaction, 24/7 global market, easy price comparison, larger catalogues, paperless environment, improved customer interaction, FAQ support.",
-              "Disadvantages: exposure of personal information, products not as expected or different from the catalogue, products missing during shipping."
+              { t: "Advantages: lower transaction cost (no middleman), reduced distribution cost, larger purchases per transaction, 24/7 global market, easy price comparison, larger catalogues, paperless environment, improved customer interaction, FAQ support.", tip: true },
+              { t: "Disadvantages: exposure of personal information, products not as expected or different from the catalogue, products missing during shipping.", tip: true }
             ]
           },
           {
@@ -2231,7 +2231,7 @@ const SUBJECTS = [
           {
             heading: "CRM — Customer Relationship Management",
             points: [
-              "CRM is a strategy and set of tools used to manage a company's interactions and relationships with current and potential customers.",
+              { t: "CRM is a strategy and set of tools used to manage a company's interactions and relationships with current and potential customers.", tip: true },
               "It stores customer data, purchase history and communications so a business can improve service, target offers and retain customers.",
               "E-commerce uses CRM to personalise recommendations, track orders and run loyalty and marketing campaigns."
             ]
@@ -2336,38 +2336,38 @@ const SUBJECTS = [
           {
             heading: "Graphics, Animation & Web Media",
             points: [
-              "Multimedia elements used on the Web include graphics (often shown as small preview thumbnails), animation, audio and video.",
+              { t: "Multimedia elements used on the Web include graphics (often shown as small preview thumbnails), animation, audio and video.", tip: true },
               "Various technologies are used to create animation for the Web."
             ]
           },
           {
             heading: "Web Audio & Video Applications",
             points: [
-              "Types of web audio/video applications: Download-and-Play; Streaming; Progressive Download; MP3 and Audio-Only; Podcast Platforms; WebRTC-Based Audio/Video (Web Real-Time Communication)."
+              { t: "Types of web audio/video applications: Download-and-Play; Streaming; Progressive Download; MP3 and Audio-Only; Podcast Platforms; WebRTC-Based Audio/Video (Web Real-Time Communication).", tip: true }
             ]
           },
           {
             heading: "Virtual Reality (VR)",
             points: [
-              "VR provides a fully immersive digital environment; the simplest form can be a basic simulated space.",
+              { t: "VR provides a fully immersive digital environment; the simplest form can be a basic simulated space.", tip: true },
               "Types of VR and the technologies used vary; VRML (Virtual Reality Modeling Language) is a language for describing 3D virtual worlds on the Web."
             ]
           },
           {
             heading: "Augmented Reality (AR)",
             points: [
-              "Augmented Reality enhances the real world by overlaying digital information — images, sounds or 3D objects — through devices such as smartphones, tablets or AR glasses.",
-              "AR vs VR: Environment — AR adds digital elements to the real world, VR is a fully immersive digital environment. Device — AR uses smartphone/tablet/AR glasses, VR uses a headset (e.g. Oculus, HTC Vive). Interaction — AR interacts with both real and virtual elements, VR only within a virtual space. Mobility — AR typically allows free movement in real space, VR often requires stationary use or boundaries.",
+              { t: "Augmented Reality enhances the real world by overlaying digital information — images, sounds or 3D objects — through devices such as smartphones, tablets or AR glasses.", tip: true },
+              { t: "AR vs VR: Environment — AR adds digital elements to the real world, VR is a fully immersive digital environment. Device — AR uses smartphone/tablet/AR glasses, VR uses a headset (e.g. Oculus, HTC Vive). Interaction — AR interacts with both real and virtual elements, VR only within a virtual space. Mobility — AR typically allows free movement in real space, VR often requires stationary use or boundaries.", tip: true },
               "How AR works, its applications, benefits, challenges and future are active areas of development (e.g. medical training, navigation, retail previews)."
             ]
           },
           {
             heading: "How AR & VR Are Used Medically",
             points: [
-              "Medical training — AR/VR lets students and doctors practise procedures (e.g. surgery) in a safe, repeatable virtual environment with no risk to real patients.",
-              "Surgery assistance — AR overlays 3D scans, veins or vital signs onto the patient's body during an operation, helping the surgeon see beneath the skin.",
-              "Diagnosis & therapy — VR is used for pain distraction, physiotherapy and treating phobias; AR helps visualise tumours and plan treatment.",
-              "Remote care — AR can guide a distant specialist to advise a local clinician in real time."
+              { t: "Medical training — AR/VR lets students and doctors practise procedures (e.g. surgery) in a safe, repeatable virtual environment with no risk to real patients.", tip: true },
+              { t: "Surgery assistance — AR overlays 3D scans, veins or vital signs onto the patient's body during an operation, helping the surgeon see beneath the skin.", tip: true },
+              { t: "Diagnosis & therapy — VR is used for pain distraction, physiotherapy and treating phobias; AR helps visualise tumours and plan treatment.", tip: true },
+              { t: "Remote care — AR can guide a distant specialist to advise a local clinician in real time.", tip: true }
             ]
           }
         ],
@@ -2449,9 +2449,9 @@ const SUBJECTS = [
           {
             heading: "The Three Stages",
             points: [
-              "Pre-production — gives focus to the website and streamlines production; determines text content, website structure, visual style/layout and technical specifications.",
-              "Production — produces the actual web pages that make up the website.",
-              "Post-production — Site Updates and Additions."
+              { t: "Pre-production — gives focus to the website and streamlines production; determines text content, website structure, visual style/layout and technical specifications.", tip: true },
+              { t: "Production — produces the actual web pages that make up the website.", tip: true },
+              { t: "Post-production — Site Updates and Additions.", tip: true }
             ]
           },
           {
@@ -2472,7 +2472,7 @@ const SUBJECTS = [
               "2.1 Content Creation — text, images and other media are created; the website is built.",
               "2.2 Content Approval — content is previewed locally (staging the website); an approval team checks for errors and deadlines.",
               "2.3 Page Editing — check content is within technical specs and all links function properly.",
-              "2.4 Staging and Publishing — the Staging Server holds the site during production (no public access; used to test links/content/functionality); the Public Server holds the approved site (audience can access); register with search engines and use tracking services to collect viewing data."
+              { t: "2.4 Staging and Publishing — the Staging Server holds the site during production (no public access; used to test links/content/functionality); the Public Server holds the approved site (audience can access); register with search engines and use tracking services to collect viewing data.", tip: true }
             ]
           },
           {
@@ -2559,17 +2559,17 @@ const SUBJECTS = [
           {
             heading: "RFID — Radio-Frequency Identification",
             points: [
-              "RFID uses radio waves to automatically identify and track tags attached to objects without needing direct line of sight.",
-              "A tag (transponder) holds data and is powered passively by the reader's signal or by its own battery (active tag).",
-              "A reader (interrogator) sends a radio signal and reads the tag's response; tags can be read through packaging, skin or weather.",
+              { t: "RFID uses radio waves to automatically identify and track tags attached to objects without needing direct line of sight.", tip: true },
+              { t: "A tag (transponder) holds data and is powered passively by the reader's signal or by its own battery (active tag).", tip: true },
+              { t: "A reader (interrogator) sends a radio signal and reads the tag's response; tags can be read through packaging, skin or weather.", tip: true },
               "Uses: inventory and logistics, contactless payment and access cards, toll roads, library books, pet microchips, supply-chain tracking."
             ]
           },
           {
             heading: "HDLC — High-level Data Link Control",
             points: [
-              "HDLC is a bit-oriented data-link-layer protocol used to transmit data reliably between two points on a network.",
-              "It provides framing, error detection and flow control so data arrives complete and in the correct order.",
+              { t: "HDLC is a bit-oriented data-link-layer protocol used to transmit data reliably between two points on a network.", tip: true },
+              { t: "It provides framing, error detection and flow control so data arrives complete and in the correct order.", tip: true },
               "Data is sent in frames; common station types are primary (controls the link) and secondary (responds to the primary).",
               "It is the basis for later protocols such as PPP and is widely used on leased-line and WAN links."
             ]
