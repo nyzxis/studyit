@@ -1744,3 +1744,22 @@ body{ text-rendering:optimizeLegibility; }
   padding: 0.35rem 0.75rem;
   font-size: 0.8rem;
 }
+
+/* ---------- mobile safety net (small phones + overflow guards) ---------- */
+img, svg, video, canvas, table { max-width: 100%; }
+.quiz-topbar, .result-wrap, .match-grid, .formula-grid, .heat-grid { max-width: 100%; }
+.b-stat, .b-ring, .b-pomo, .b-hero { min-width: 0; }
+button, .quiz-option, .match-cell, .pager-link, .dock-tab, .cmdk-item { min-height: 40px; touch-action: manipulation; }
+
+@media (max-width: 480px) {
+  .b-hero { padding: 24px 16px; }
+  .b-grid { gap: 12px; }
+  .quiz-topbar { gap: 8px; padding: 10px 12px; }
+  .quiz-card, .q-card { padding: 18px 14px; }
+  .quiz-option { padding: 13px 14px; font-size: 14px; }
+  .result-wrap { gap: 16px; }
+  .match-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .heat-grid { padding: 10px; gap: 3px; }
+  .xp-bar { width: 30px; }
+  .boot-mark svg { width: 52px; height: 52px; }
+}

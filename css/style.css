@@ -1060,6 +1060,37 @@ footer{
   .notes-main li.important{ padding:10px 12px 10px 26px; }
 }
 
+/* ---------- mobile safety net (small phones + overflow guards) ---------- */
+img, svg, video, canvas, table{ max-width:100%; }
+* { -webkit-text-size-adjust:100%; }
+html, body{ overflow-x:hidden; }
+.wrap, .notes-main, .note-block, section, .hero, .topic-hero{ max-width:100%; }
+table.data-table{ display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+pre, code, .mono{ white-space:pre-wrap; word-break:break-word; }
+button, .topic-card, .subject-card, a.card, .dock-tab, .exam-tip-toggle{ touch-action:manipulation; }
+button, .exam-tip-toggle, .dock-tab, .pager-link, .quiz-option, .match-cell{ min-height:40px; }
+
+@media (max-width: 480px){
+  .wrap{ padding:0 14px; }
+  .subject-card{ padding:20px 18px 18px; }
+  .feature-card{ padding:18px 16px; }
+  .topic-hero{ gap:10px; }
+  .hero-title{ font-size:clamp(30px, 11vw, 40px); }
+  h1.hero-title{ font-size:clamp(30px, 11vw, 40px); }
+  .section-head h2, .notes-main h2{ font-size:21px; }
+  .note-block h4{ font-size:17px; }
+  .sec-head{ padding:12px 12px; gap:8px; }
+  .sec-title{ font-size:14px; }
+  .quiz-card, .q-card{ padding:18px 14px; }
+  .quiz-option{ padding:13px 14px; font-size:14px; }
+  .topic-pager a{ padding:14px 16px; }
+  .exam-tip-toggle{ width:100%; justify-content:center; }
+  .exam-tip-filter{ margin-top:12px; }
+  .topic-meta-row{ flex-wrap:wrap; gap:8px; }
+  .breadcrumb{ font-size:12px; }
+  .toast, .show-toast{ left:12px; right:12px; width:auto; }
+}
+
 /* ---------- Exam Tips highlight (subject dock) ---------- */
 .topic-card.exam-tip{
   border-color: var(--warn);
