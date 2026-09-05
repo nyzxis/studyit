@@ -1,0 +1,20 @@
+# StudyIt // Distraction-Free Study Workstation & Knowledge Hub
+
+> Official AI & LLM Context Manifest for https://studyitpi.vercel.app/
+
+## Project Information
+- **Name**: StudyIt
+- **Author**: Arfa Danial (@nyzxis)
+- **Author Portfolio**: https://nyzxis.vercel.app/
+- **Live Application**: https://studyitpi.vercel.app/
+- **GitHub**: https://github.com/nyzxis/studyit
+
+## Overview
+StudyIt is a calm, distraction-free desktop productivity and study workstation built for students and lifelong learners. It integrates active recall study topics, interactive self-tests, a Pomodoro timer, ambient lo-fi audio, and a progress dock to lock in subject mastery.
+
+## Features & Architecture
+- **Interactive Subject & Topic Decks**: Structured modular subjects with subtopics and mastery checkpoints.
+- **Active Recall Self-Tests**: Randomized practice quizzes verifying retention.
+- **Pomodoro Focus Timer**: Built-in 25-minute focus intervals and 5-minute restorative breaks.
+- **Ambient Lo-Fi Audio**: Integrated distraction-free soundscapes.
+- **Persistence**: Local browser storage caching session progress, notes, and completed study badges.
