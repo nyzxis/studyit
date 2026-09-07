@@ -77,7 +77,7 @@
       root.innerHTML = `
         <div class="pomo-head" id="pomoHead">
           <div class="pomo-title"><span class="pomo-dot"></span><span id="pomoHeadLabel">Focus timer</span></div>
-          <button class="pomo-toggle" type="button" aria-label="Expand timer" aria-expanded="${state.open}" id="pomoToggle">▲</button>
+          <button class="pomo-toggle" type="button" aria-label="Expand timer" id="pomoToggle">▲</button>
         </div>
         <div class="pomo-body">${controlsHTML("pomo")}</div>`;
       document.body.appendChild(root);
@@ -86,8 +86,6 @@
         if (e.target.closest(".pomo-toggle") || e.target.closest(".pomo-head")) {
           state.open = !state.open;
           root.classList.toggle("open", state.open);
-          const toggleBtn = root.querySelector("#pomoToggle");
-          if (toggleBtn) toggleBtn.setAttribute("aria-expanded", state.open);
           save();
         }
       });
