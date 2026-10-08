@@ -119,6 +119,16 @@ function renderTopicPage(subject, topic, isChapter, isSimple){
       const a = el("a", null, esc(sec.heading));
       a.href = "#" + anchorId;
       a.dataset.target = anchorId;
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const targetEl = document.getElementById(anchorId);
+        if(targetEl){
+          targetEl.classList.add("open");
+          const btn = targetEl.querySelector(".sec-head");
+          if(btn) btn.setAttribute("aria-expanded", "true");
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
       tocLinks.appendChild(a);
     }
   });

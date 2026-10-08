@@ -1763,3 +1763,18 @@ button, .quiz-option, .match-cell, .pager-link, .dock-tab, .cmdk-item { min-heig
   .xp-bar { width: 30px; }
   .boot-mark svg { width: 52px; height: 52px; }
 }
+
+/* ==========================================================
+   Smooth Snap-Scrolling for Sub-Topic Notes
+   ========================================================== */
+html:has(.page-topic) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 88px;
+}
+.page-topic .note-sec,
+.page-topic .note-block,
+.page-topic .key-takeaways {
+  scroll-snap-align: start;
+  scroll-margin-top: 88px;
+}
+
