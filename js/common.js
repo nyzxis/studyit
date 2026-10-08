@@ -162,7 +162,7 @@ function paintHeaderChrome(){
   let done = 0, total = 0;
   SUBJECTS.forEach(s=>{ const c = subjectCompletion(s); done += c.done; total += c.total; });
   const chip = document.getElementById("headerProgress");
-  if(chip) chip.innerHTML = `<span class="led ${done>0 ? "on":""}"></span> ${done}/${total} topics connected`;
+  if(chip) chip.innerHTML = `<span class="led ${done>0 ? "on":""}"></span> <span class="progress-count">${done}/${total}</span><span class="progress-label"> topics connected</span>`;
 
   const yearEl = document.getElementById("year");
   if(yearEl) yearEl.textContent = new Date().getFullYear();

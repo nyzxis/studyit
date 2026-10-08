@@ -197,7 +197,8 @@ header.site{
   display:flex; align-items:center; gap:11px;
   font-family:var(--display); font-weight:700; font-size:15px;
   letter-spacing:-.01em; text-decoration:none;
-  min-width:0;
+  flex-shrink:0;
+  white-space:nowrap;
 }
 .brand .mark{
   width:32px; height:32px; border-radius:9px; flex-shrink:0;
@@ -211,7 +212,7 @@ header.site{
   display:block; font-family:var(--mono); font-weight:500;
   font-size:9.5px; color:var(--ink-3); letter-spacing:.1em; text-transform:uppercase;
 }
-.nav-links{ display:flex; align-items:center; gap:4px; }
+.nav-links{ display:flex; align-items:center; gap:4px; flex-shrink:0; }
 .nav-links a{
   font-size:13px; color:var(--ink-2); text-decoration:none; font-weight:500;
   padding:7px 13px; border-radius:999px;
@@ -1043,12 +1044,17 @@ footer{
   .readout-cell:nth-child(1), .readout-cell:nth-child(2){ border-bottom:1px solid var(--line-soft); }
 }
 
+@media (max-width: 960px){
+  .nav-links{ display:none; }
+  .brand small{ display:none; }
+}
+
 @media (max-width: 720px){
   .wrap{ padding:0 18px; }
   header.site{ top:10px; margin-top:10px; padding:0 14px; }
   .nav-links{ display:none; }
   .brand small{ display:none; }
-  .progress-chip{ font-size:10px; padding:6px 10px; }
+  .progress-chip{ font-size:10.5px; padding:6px 10px; }
   .hero{ padding:56px 0 24px; }
   section{ padding:44px 0; }
   .section-head{ flex-direction:column; align-items:flex-start; }
@@ -1058,6 +1064,10 @@ footer{
   .topic-pager a{ justify-content:center; }
   h1.hero-title{ font-size:clamp(32px, 9vw, 42px); }
   .notes-main li.important{ padding:10px 12px 10px 26px; }
+}
+
+@media (max-width: 580px){
+  .progress-chip .progress-label{ display:none; }
 }
 
 /* ---------- mobile safety net (small phones + overflow guards) ---------- */
@@ -1072,6 +1082,13 @@ button, .exam-tip-toggle, .dock-tab, .pager-link, .quiz-option, .match-cell{ min
 
 @media (max-width: 480px){
   .wrap{ padding:0 14px; }
+  header.site{ padding:0 10px; }
+  .nav-row{ padding:6px 8px 6px 12px; gap:8px; }
+  .brand{ font-size:13.5px; gap:8px; }
+  .brand .mark{ width:28px; height:28px; }
+  .progress-chip{ font-size:9.5px; padding:5px 8px; gap:6px; }
+  .xp-chip{ padding:5px 8px; font-size:9.5px; gap:6px; }
+  .theme-toggle, .snd-toggle{ padding:6px; }
   .subject-card{ padding:20px 18px 18px; }
   .feature-card{ padding:18px 16px; }
   .topic-hero{ gap:10px; }
