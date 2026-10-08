@@ -1073,7 +1073,7 @@ footer{
 /* ---------- mobile safety net (small phones + overflow guards) ---------- */
 img, svg, video, canvas, table{ max-width:100%; }
 * { -webkit-text-size-adjust:100%; }
-html, body{ overflow-x:hidden; }
+html, body{ overflow-x:clip; }
 .wrap, .notes-main, .note-block, section, .hero, .topic-hero{ max-width:100%; }
 table.data-table{ display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 pre, code, .mono{ white-space:pre-wrap; word-break:break-word; }
