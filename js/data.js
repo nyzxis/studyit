@@ -3693,5 +3693,479 @@ const SUBJECTS = [
       "Dialogue notations = STN | flow charts | JSD | LDO/LDC | dialog network diagrams",
       "Ch.5 = metaphors (verbal/virtual/composite) | direct manipulation (3 principles) | icon guidelines (8) | 3D interfaces | tele-operation | VR (immersive) vs AR (augments real)"
     ]
-  }
+  },
+
+  /* ============================================================
+     SFQF0233 — ENGLISH FOR COMMUNICATION
+     ============================================================ */
+  {
+  id: "english",
+  name: "English for Communication",
+  code: "SFQF0233",
+  tagline: "Foundations of Human Communication, Interaction & Language",
+  color: "#0284c7",
+  icon: "english",
+  topics: [
+    /* ---------------- TOPIC 1 ---------------- */
+    {
+      id: "e1",
+      num: "01",
+      title: "Introduction to English for Communication",
+      summary: "Communication definitions, core process elements, why we communicate, and universal principles across cultures.",
+      sections: [
+        {
+          heading: "What is Communication?",
+          points: [
+            { t: "Communication = a process by which we assign and convey meaning to create shared understanding (Adler & Rodman, 2018).", important: true },
+            "It is the process of exchanging information, ideas, feelings, and meanings between individuals or groups through a common system of symbols, signs, or behavior.",
+            "Communication is not just about words — it is about meaning, relationships, and bridging the gap between what is in your mind and what someone else can grasp.",
+            { t: "Verbal communication = spoken or written words used to convey meaning.", important: true },
+            { t: "Non-verbal communication = body language, facial expressions, tone of voice, gestures, and eye contact.", important: true },
+            "In real life, we almost always use a combination of verbal and non-verbal communication to make our meaning clear."
+          ]
+        },
+        {
+          heading: "Key Elements of the Communication Process",
+          points: [
+            { t: "Sender = the person who creates and sends the message.", important: true },
+            { t: "Message = the information, idea, or feeling the sender wants to share.", important: true },
+            { t: "Medium/Channel = the method or pathway through which the message is delivered (speech, written text, digital media, gestures).", important: true },
+            { t: "Receiver = the person or group who receives and interprets the message.", important: true },
+            { t: "Feedback = the response from the receiver that shows whether the message was understood.", important: true },
+            { t: "Noise = any interference or distortion affecting the message (physical noise, poor connection, unclear language, emotional distraction).", important: true }
+          ]
+        },
+        {
+          heading: "Core Principles of Communication",
+          points: [
+            { t: "Communication is a continuous process — it is an ongoing exchange, not a one-time isolated act.", important: true },
+            "It requires both a sender and a receiver for shared meaning to exist.",
+            "Can occur face-to-face or mediated through digital technology.",
+            "Both verbal and non-verbal cues work together to convey the full message."
+          ]
+        },
+        {
+          heading: "Why Do We Need Communication? (6 Key Reasons)",
+          points: [
+            { t: "1. To Share Information & Knowledge — passing facts, concepts, and instructions (e.g. teachers teaching, supervisors directing).", important: true },
+            { t: "2. To Build & Maintain Relationships — connecting emotionally; trust and bonds grow through consistent interaction.", important: true },
+            { t: "3. To Express Emotions & Feelings — sharing joy, concerns, or excitement to reduce misunderstandings.", important: true },
+            { t: "4. To Make Decisions & Solve Problems — discussing options, debating viewpoints, and negotiating solutions.", important: true },
+            { t: "5. To Influence & Persuade — encouraging action or shifting opinions through evidence, clarity, and emotion.", important: true },
+            { t: "6. To Function in Society — communicating laws, community rules, public safety notices, and cultural traditions.", important: true }
+          ]
+        },
+        {
+          heading: "The Universal Nature of Communication",
+          points: [
+            { t: "Communication happens everywhere — in homes, workplaces, schools, and even through silent body language.", important: true },
+            { t: "Communication is a continuous process — interactions build upon previous conversations without rigid start or end points.", important: true },
+            { t: "Similar purposes across cultures — all humans communicate to inform, persuade, entertain, and connect.", important: true },
+            { t: "Verbal and non-verbal cues are universal — every culture combines spoken language with gestures, posture, and facial cues.", important: true },
+            { t: "Barriers exist everywhere — misunderstandings, distractions, and language differences are universal challenges to overcome.", important: true },
+            { t: "Adaptability is key — adjusting language style based on audience and context is universally required, especially when using English as a global bridge language.", important: true }
+          ]
+        }
+      ],
+      takeaways: [
+        "Communication is a continuous, dynamic process of creating shared understanding.",
+        "Effective communication requires sender, message, channel, receiver, feedback, and noise management.",
+        "We communicate to share knowledge, build relationships, express feelings, solve problems, persuade, and sustain society.",
+        "The core needs and processes of communication are universal across all human cultures."
+      ],
+      quiz: [
+        {
+          q: "How do Adler and Rodman (2018) define communication?",
+          options: [
+            "A one-way transmission of factual information",
+            "A process by which we assign and convey meaning to create shared understanding",
+            "The formal study of grammar and speech rhetoric",
+            "Speaking aloud to an audience without interruption"
+          ],
+          answer: 1,
+          explain: "Adler and Rodman define communication as a process by which we assign and convey meaning to create shared understanding."
+        },
+        {
+          q: "Which element in the communication process verifies whether the receiver understood the message?",
+          options: ["Noise", "Channel", "Feedback", "Encoding"],
+          answer: 2,
+          explain: "Feedback is the receiver's response that indicates to the sender whether the message was received and understood accurately."
+        },
+        {
+          q: "Which of the following is considered non-verbal communication?",
+          options: [
+            "Facial expressions and body gestures",
+            "A printed textbook chapter",
+            "An email sent to a colleague",
+            "A formal speech transcript"
+          ],
+          answer: 0,
+          explain: "Facial expressions, gestures, posture, tone of voice, and eye contact are non-verbal cues."
+        },
+        {
+          q: "Why is adaptability considered a universal requirement in communication?",
+          options: [
+            "Because grammar rules change every year",
+            "Because we must adjust language, tone, and cues to suit different audiences, contexts, and cultures",
+            "Because listeners rarely pay attention",
+            "Because non-verbal communication is prohibited in business"
+          ],
+          answer: 1,
+          explain: "Adaptability allows communicators to adjust their delivery and style to fit their audience, setting, and cultural differences."
+        }
+      ]
+    },
+
+    /* ---------------- TOPIC 2 ---------------- */
+    {
+      id: "e2",
+      num: "02",
+      title: "Types of Communication",
+      summary: "The four levels of communication: intrapersonal, interpersonal, small group, and public communication.",
+      sections: [
+        {
+          heading: "The Four Types of Communication Overview",
+          points: [
+            "Communication is classified into four primary types based on participant count, interaction dynamics, and intended outcome:",
+            { t: "1. Intrapersonal Communication = communication within yourself (inner dialogue, reflection, self-talk).", important: true },
+            { t: "2. Interpersonal Communication = direct interaction between two people (dyadic exchange).", important: true },
+            { t: "3. Small Group Communication = interaction among 3 to 15 people working towards a shared objective.", important: true },
+            { t: "4. Public Communication = one person addressing a large audience with structured delivery.", important: true },
+            "While distinct, these types frequently overlap (e.g., using intrapersonal self-talk to prepare before giving a public speech)."
+          ]
+        },
+        {
+          heading: "1. Intrapersonal Communication (Inner Dialogue)",
+          points: [
+            { t: "Intrapersonal communication = the internal cognitive process of communicating with oneself.", important: true },
+            "Includes self-reflection, internal monologues, mental visualization, daydreaming, and silent reasoning.",
+            { t: "Three core functions of intrapersonal communication:", important: true },
+            "• Self-awareness — recognizing and understanding your own values, emotions, and motivations.",
+            "• Problem-solving — internally weighing pros and cons to make rational choices.",
+            "• Self-regulation — controlling impulses, managing emotional reactions, and maintaining focus.",
+            "Examples: A student giving themselves a mental pep talk before an exam, or an athlete visualizing their performance."
+          ]
+        },
+        {
+          heading: "2. Interpersonal Communication (Two-Person Interaction)",
+          points: [
+            { t: "Interpersonal communication = interaction occurring between two individuals to share thoughts, feelings, and information.", important: true },
+            "Key features: direct interaction (face-to-face or digital), continuous real-time feedback loops, and influence from relational context (friends, coworkers, strangers).",
+            "Can be verbal (dialogue, text message) or non-verbal (eye contact, posture, vocal tone).",
+            { t: "According to Joseph A. DeVito, strong interpersonal skills are crucial for personal satisfaction, conflict resolution, and teamwork.", important: true },
+            "Examples: Two coworkers planning tasks during a break, or a recruiter conducting a one-on-one interview."
+          ]
+        },
+        {
+          heading: "3. Small Group Communication (Team Dynamics)",
+          points: [
+            { t: "Small group communication = interaction among three to approximately fifteen people where every member can actively participate.", important: true },
+            { t: "Key characteristics of small groups:", important: true },
+            "• Shared purpose — collaborating towards a common goal or project outcome.",
+            "• Interdependence — the overall success depends on the collective contribution of all members.",
+            "• Norms and roles — establishing ground rules, deadlines, and assigned responsibilities.",
+            "Can be formal (boardroom meetings) or informal (study groups, student clubs). Requires active conflict management and mutual respect.",
+            "Examples: Five students collaborating on a group slide deck, or a marketing committee organizing a product launch."
+          ]
+        },
+        {
+          heading: "4. Public Communication (Addressing an Audience)",
+          points: [
+            { t: "Public communication = one speaker delivering a structured message to a large audience.", important: true },
+            { t: "Key characteristics of public communication:", important: true },
+            "• Planned and rehearsed message — clear organization, rhetorical structure, and deliberate delivery.",
+            "• Primarily one-way delivery — limited real-time verbal feedback from listeners during the speech.",
+            "• Audience adaptation — tailoring content, examples, and tone to the listeners' demographics and expectations.",
+            "Examples: A keynote lecture delivered to 200 students, a CEO giving a launch address, or a TED Talk."
+          ]
+        }
+      ],
+      takeaways: [
+        "Intrapersonal communication shapes self-awareness, problem solving, and self-regulation.",
+        "Interpersonal communication builds trust and relational bonds through immediate feedback.",
+        "Small group communication requires shared purpose, interdependence, and clear roles.",
+        "Public communication relies on preparation, structured delivery, and audience adaptation."
+      ],
+      quiz: [
+        {
+          q: "What is intrapersonal communication?",
+          options: [
+            "Communication between two close friends",
+            "Communication within oneself via inner dialogue and self-reflection",
+            "A group meeting of up to 15 people",
+            "Delivering a keynote speech to a large conference"
+          ],
+          answer: 1,
+          explain: "Intrapersonal communication refers to communicating with oneself through thoughts, self-talk, and reflection."
+        },
+        {
+          q: "According to researchers, what are the three main functions of intrapersonal communication?",
+          options: [
+            "Reading, writing, and arithmetic",
+            "Self-awareness, problem-solving, and self-regulation",
+            "Encoding, decoding, and feedback",
+            "Formal, informal, and public speaking"
+          ],
+          answer: 1,
+          explain: "Intrapersonal communication serves self-awareness, problem-solving, and self-regulation."
+        },
+        {
+          q: "Which characteristic is essential to small group communication?",
+          options: [
+            "Absence of any disagreement or conflict",
+            "Interdependence — success depends on mutual cooperation and input",
+            "Strictly one-way delivery without questions",
+            "A minimum of 50 active participants"
+          ],
+          answer: 1,
+          explain: "Small groups are characterized by interdependence, shared purpose, and established norms and roles."
+        },
+        {
+          q: "Why is audience adaptation particularly crucial in public communication?",
+          options: [
+            "Because the speaker gets immediate verbal dialogue from every audience member",
+            "Because the message must be customized to the audience's demographics, knowledge, and expectations",
+            "Because speeches are never prepared in advance",
+            "Because public communication is only used in political campaigns"
+          ],
+          answer: 1,
+          explain: "Public speakers must tailor their message, tone, and examples to resonate with the specific audience."
+        }
+      ]
+    },
+
+    /* ---------------- TOPIC 3 ---------------- */
+    {
+      id: "e3",
+      num: "03",
+      title: "Elements of Communication & Transactional Model",
+      summary: "The 8 components of communication and how the dynamic Transactional Model explains simultaneous meaning-making.",
+      sections: [
+        {
+          heading: "The Transactional Model of Communication",
+          points: [
+            { t: "Transactional Model = views communication as a simultaneous, continuous, and circular process where all participants act as senders and receivers at the same time.", important: true },
+            "Contrasts with early linear models (such as Shannon and Weaver), which treated communication as a one-way transfer from sender to receiver.",
+            { t: "Key features of the transactional model:", important: true },
+            "• Simultaneous roles — you receive visual or verbal cues while you speak.",
+            "• Real-time feedback loop — responses occur continuously, enabling instant adjustments.",
+            "• Context awareness — interactions are shaped by physical environment, culture, social relations, and prior experience.",
+            "• Shared meaning creation — understanding is co-created and negotiated interactively, not simply delivered like a package.",
+            "Example: In a classroom, a lecturer reads students' puzzled facial expressions and rephrases an explanation immediately while students nod."
+          ]
+        },
+        {
+          heading: "The 8 Essential Elements of Communication",
+          points: [
+            { t: "1. Sender = the originator or creator of the message (e.g. a teacher preparing instructions).", important: true },
+            { t: "2. Message = the information, idea, emotion, or content being communicated.", important: true },
+            { t: "3. Encoding = converting internal ideas into words, symbols, gestures, or visual cues.", important: true },
+            { t: "4. Channel = the medium or pathway used to transmit the message (face-to-face voice, email, telephone, video call).", important: true },
+            { t: "5. Receiver = the individual or group who perceives and receives the transmitted message.", important: true },
+            { t: "6. Decoding = the receiver's mental process of interpreting and making sense of the symbols received.", important: true },
+            { t: "7. Feedback = the receiver's response returned to the sender, confirming or clarifying understanding.", important: true },
+            { t: "8. Noise = any interference that distorts, interrupts, or alters the message at any stage.", important: true }
+          ]
+        },
+        {
+          heading: "Forms of Noise in Communication",
+          points: [
+            { t: "Physical noise = external environmental sounds (traffic, construction, classroom chatter, poor speaker quality).", important: true },
+            { t: "Psychological noise = mental distractions, biases, stress, or emotional fatigue inside sender or receiver.", important: true },
+            { t: "Semantic noise = confusion caused by ambiguous wording, unfamiliar jargon, or cultural language differences.", important: true },
+            "While noise is inevitable in human communication, its impact can be minimized through clear encoding, active listening, and checking feedback."
+          ]
+        },
+        {
+          heading: "Real-World Applications of the Transactional Model",
+          points: [
+            { t: "In Education — teachers modify their pace, examples, and tone immediately based on students' confusion or engagement.", important: true },
+            { t: "In Business & Negotiation — professionals adjust pitches, proposals, and concessions by reading client body language and hesitation.", important: true },
+            { t: "In Healthcare — physicians re-explain medical diagnoses using everyday analogies when a patient appears overwhelmed.", important: true },
+            { t: "In Digital Meetings — presenters monitor video tiles and chat messages to pace slides and address instant inquiries.", important: true }
+          ]
+        }
+      ],
+      takeaways: [
+        "The Transactional Model shows communication as a continuous, simultaneous circular exchange.",
+        "Both parties act as sender and receiver at the same time, co-creating meaning.",
+        "The 8 elements (sender, message, encoding, channel, receiver, decoding, feedback, noise) must work together.",
+        "Managing noise and adapting to real-time feedback ensures clear understanding in professional settings."
+      ],
+      quiz: [
+        {
+          q: "What distinguishing feature separates the Transactional Model from older linear models?",
+          options: [
+            "It only applies to written communication",
+            "Participants act as senders and receivers simultaneously in an ongoing circular exchange",
+            "It eliminates all forms of noise completely",
+            "It requires computers and digital networks"
+          ],
+          answer: 1,
+          explain: "The Transactional Model views participants as both senders and receivers simultaneously, co-creating meaning in real time."
+        },
+        {
+          q: "What is 'Encoding' in the 8 elements of communication?",
+          options: [
+            "The physical channel carrying the signal",
+            "Translating thoughts and ideas into words, symbols, or gestures",
+            "The background chatter in a crowded room",
+            "The receiver's final grade on an exam"
+          ],
+          answer: 1,
+          explain: "Encoding is the process of translating internal thoughts and ideas into communicable words, symbols, or behaviors."
+        },
+        {
+          q: "What type of noise occurs when ambiguous wording or unfamiliar technical jargon causes confusion?",
+          options: ["Physical noise", "Semantic noise", "Mechanical noise", "Atmospheric noise"],
+          answer: 1,
+          explain: "Semantic noise arises from language ambiguity, jargon, or differences in word meanings."
+        },
+        {
+          q: "Why is feedback vital in the transactional communication process?",
+          options: [
+            "It proves the sender had the louder voice",
+            "It completes the communication cycle by confirming whether intended meaning was understood",
+            "It guarantees that no further conversation is needed",
+            "It replaces the need for a communication channel"
+          ],
+          answer: 1,
+          explain: "Feedback completes the loop by showing whether the receiver decoded the intended message, enabling immediate adjustments."
+        }
+      ]
+    },
+
+    /* ---------------- TOPIC 4 ---------------- */
+    {
+      id: "e4",
+      num: "04",
+      title: "The Power of Language",
+      summary: "Five key powers of language: communicating ideas, signaling user identity, strengthening social bonds, serving as play, and checking understanding.",
+      sections: [
+        {
+          heading: "The Multi-Faceted Power of Language",
+          points: [
+            "Language is far more than a practical tool — it shapes our cognition, identity, culture, and relationships.",
+            "Words possess the power to inspire, persuade, comfort, unite, or divide societies.",
+            { t: "The 5 key dimensions of language power:", important: true },
+            "1. Communicate Ideas · 2. Send Messages About Users · 3. Strengthen Social Bonds · 4. Serve as an Instrument of Play · 5. Check Understanding."
+          ]
+        },
+        {
+          heading: "1. Communicate Ideas",
+          points: [
+            { t: "Communicate ideas = conveying abstract concepts, meaning, knowledge, and beliefs from one mind to another.", important: true },
+            "Without language, abstract human knowledge, laws, scientific discoveries, and recorded history would be impossible.",
+            { t: "Cognitive impact — language does not merely transmit information; it frames how concepts are perceived and understood.", important: true },
+            "Precision and clarity are essential: carefully chosen vocabulary prevents ambiguity and distortion.",
+            "Example: Einstein explained complex relativistic physics using accessible analogies for students and scientists alike."
+          ]
+        },
+        {
+          heading: "2. Send Message About Users (Identity & Perception)",
+          points: [
+            { t: "Language as an identity marker — speech patterns, vocabulary, accents, and grammar reveal regional origin, culture, and social background.", important: true },
+            { t: "Code-switching = deliberately modifying language style, tone, or vocabulary to match context and fit into specific social or professional groups.", important: true },
+            { t: "Perception & snap judgments — listeners routinely form instant impressions of credibility, competence, and friendliness based on speech patterns.", important: true },
+            "Unintentional messaging: hesitations, fillers, or casual slang can inadvertently project confidence levels or lack of professionalism.",
+            "Example: Speaking formally in a job interview vs. using casual slang and emojis when texting friends."
+          ]
+        },
+        {
+          heading: "3. Strengthen Social Bonds",
+          points: [
+            { t: "Language is the social glue of human relationships — it expresses empathy, emotional support, and belonging.", important: true },
+            { t: "Cultural bonding — shared inside jokes, idioms, and community slang solidify collective identity.", important: true },
+            { t: "Conflict resolution — constructive language repairs damaged relationships when used for apologies, active listening, and reconciliation.", important: true },
+            "Non-verbal integration: vocal warmth, pacing, and rhythm reinforce emotional closeness.",
+            "Example: Family members developing unique inside phrases, or team members building psychological safety through respectful praise."
+          ]
+        },
+        {
+          heading: "4. Serve as an Instrument of Play",
+          points: [
+            { t: "Instrument of play = using language creatively for humor, wit, storytelling, relaxation, and entertainment.", important: true },
+            "Includes puns, rhymes, riddles, word games, comedic satire, poetry, and song lyrics.",
+            { t: "Cognitive benefits — wordplay expands vocabulary, stimulates mental agility, and enhances creative problem-solving skills.", important: true },
+            "Humor breaks tension, promotes rapport, and increases memory retention in classroom and workplace settings."
+          ]
+        },
+        {
+          heading: "5. Check Understanding (Feedback & Verification)",
+          points: [
+            { t: "Check understanding = using language to verify that the receiver's decoded meaning matches the sender's intended meaning.", important: true },
+            { t: "Clarification techniques:", important: true },
+            "• Paraphrasing — restating what was heard in your own words to verify accuracy.",
+            "• Asking clarifying questions — identifying points of ambiguity before proceeding.",
+            "• Active listening cues — providing verbal ('I see', 'Understood') and non-verbal nods of comprehension.",
+            { t: "Error prevention — confirming understanding avoids costly mistakes in safety briefings, medical instructions, and team handoffs.", important: true }
+          ]
+        }
+      ],
+      takeaways: [
+        "Language transmits abstract ideas, records human history, and coordinates society.",
+        "Our language style signals identity, education, and confidence, prompting code-switching.",
+        "Empathetic communication strengthens social bonds and resolves relationship conflicts.",
+        "Playful language fuels humor, mental agility, creativity, and memory retention.",
+        "Checking understanding through feedback and paraphrasing prevents critical errors."
+      ],
+      quiz: [
+        {
+          q: "What is 'code-switching' in communication?",
+          options: [
+            "Translating computer programming code into English",
+            "Adjusting language style and tone depending on context to match a group or setting",
+            "Switching between speaking and writing simultaneously",
+            "Ignoring feedback from listeners"
+          ],
+          answer: 1,
+          explain: "Code-switching is adjusting one's speech style, vocabulary, or dialect depending on the social or professional setting."
+        },
+        {
+          q: "How does language function as an 'instrument of play'?",
+          options: [
+            "Through strict legal writing and contracts",
+            "Through puns, riddles, humor, poetry, and creative wordplay that entertain and stimulate the mind",
+            "By replacing all verbal interaction with silent body language",
+            "By delivering formal academic lectures"
+          ],
+          answer: 1,
+          explain: "As an instrument of play, language is used creatively in puns, humor, wordplay, jokes, and storytelling."
+        },
+        {
+          q: "Which technique is an effective way to check understanding and verify meaning?",
+          options: [
+            "Paraphrasing the speaker's main points in your own words",
+            "Speaking louder without pausing",
+            "Assuming the listener understands everything without feedback",
+            "Changing the topic immediately"
+          ],
+          answer: 0,
+          explain: "Paraphrasing—restating concepts in your own words—allows both parties to verify that the intended meaning was accurately decoded."
+        },
+        {
+          q: "How does language help in strengthening social bonds?",
+          options: [
+            "By expressing empathy, praise, shared idioms, and resolving interpersonal conflicts",
+            "By using complicated jargon that isolates others",
+            "By relying strictly on written contracts",
+            "By minimizing contact with team members"
+          ],
+          answer: 0,
+          explain: "Language strengthens bonds through empathy, encouragement, shared humor, and constructive conflict resolution."
+        }
+      ]
+    }
+  ],
+  formulaSheet: [
+    "Communication (Adler & Rodman) = process by which we assign and convey meaning to create shared understanding",
+    "8 Elements = Sender → Message → Encoding → Channel → Receiver → Decoding → Feedback (mitigating Noise)",
+    "3 Forms of Noise = Physical (environment) | Psychological (mental/emotional) | Semantic (jargon/ambiguity)",
+    "4 Communication Types = Intrapersonal (self) | Interpersonal (dyad) | Small Group (3-15) | Public (one-to-many)",
+    "3 Intrapersonal Functions = Self-awareness | Problem-solving | Self-regulation",
+    "3 Small Group Hallmarks = Shared purpose | Interdependence | Norms & roles",
+    "Transactional Model = simultaneous sender-receiver roles + real-time feedback + shared meaning creation",
+    "5 Powers of Language = Communicate Ideas | Send Messages About Users (Code-switching) | Strengthen Social Bonds | Instrument of Play | Check Understanding (Paraphrasing)"
+  ]
+}
 ];
